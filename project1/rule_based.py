@@ -8,6 +8,7 @@ This module implements rule-based methods for correcting errors in Chinese text.
 
 import re
 import json
+import difflib
 from typing import Dict, List, Tuple, Any, Set
 from collections import defaultdict
 

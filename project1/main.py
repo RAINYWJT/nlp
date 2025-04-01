@@ -40,6 +40,8 @@ def main():
     """
     Main function to run the Chinese text correction pipeline.
     """
+    # 输入格式如下:
+    # python3 main.py --method xxx --analyze 1 --statistical_method xxx
     parser = argparse.ArgumentParser(description='Chinese Text Correction')
     parser.add_argument('--train_file', type=str, default='data/train.jsonl', help='Path to training data')
     parser.add_argument('--test_file', type=str, default='data/test.jsonl', help='Path to test data')
@@ -50,7 +52,7 @@ def main():
         default='statistical',
         help='Correction method to use',
     )
-    parser.add_argument('--analyze', action='store_true', help='Perform data analysis')
+    parser.add_argument('--analyze', type=int, default=0, help='Perform data analysis')
     parser.add_argument('--statistical_method', type=str, default='ml', help='Statistical method to use')
     args = parser.parse_args()
 
@@ -60,7 +62,8 @@ def main():
     test_data = load_data(args.test_file)
 
     # Data analysis
-    if args.analyze:
+    # print(args.analyze)
+    if args.analyze == 1:
         print("\nPerforming data analysis...")
         analysis_results = analyze_data(train_data)
         visualize_error_distribution(analysis_results)
@@ -70,6 +73,7 @@ def main():
         print("\nInitializing rule-based corrector...")
         corrector = RuleBasedCorrector()
         corrector.train(train_data)
+        # assert 0
     elif args.method == 'statistical':
         print("\nInitializing statistical corrector...")
         corrector = StatisticalCorrector(args.statistical_method)

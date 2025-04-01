@@ -88,19 +88,58 @@
     \item 其余可以加一些深度学习之类的方法实现。
 \end{itemize}
 
-\section{实现方法及其简单描述}
-
+\section{实现方法及其简单描述，遇到的问题和解决方案（全包含，就不单独列了，按照我的编程和问题思考思路来写的）}
 \subsection{数据分析部分}
+数据分析部分，我们将原来的args做了一点点修改，然后我们首先可以根据原词典数据进行统计，把label为1的错误数据中的错误字符全部统计
+出来，而且可以得到错误率最高的10个的错误模式和错误字符，这更方便我们后续处理：
+\begin{lstlisting}
+# 只看错的
+if label == 1:  
+    error_count += 1
+    
+    if len(source) == len(target):  
+        for i, (s_char, t_char) in enumerate(zip(source, target)):
+            if s_char != t_char:
+                char_error_freq[s_char] += 1
+                error_patterns[(s_char, t_char)] += 1
+\end{lstlisting}
+然后我们把它可视化, 同时，由于matplotlib不支持中文字体，需要更换自己电脑里面的路径。这个在对应
+data analysis的python文件里面有讲。
+
+可以看一个我做出来的效果，还是蛮不错的。
+\begin{figure}[h]
+    \centering
+    \label{error_distribution}
+    \includegraphics[width=1\textwidth]{../pic/error_distribution.png} 
+    \caption{error distribution}  
+\end{figure}
+可以看到的和地的错误最多，还有的和得之类的，一般都是些同音不同意的字。
 
 \subsection{3个方法部分}
+\subsubsection{方法1:rule}
+rule这个方法还蛮简单的，基本是基于人类的常识性的方法，有点像是打表。但是肯定有补全不了的规则，这个是硬伤。
+共有如下的需要填补的方法:
+\begin{itemize}
+    \item self.\_extract\_confusion\_pairs：这个方法已经给我们补全了。意思是提取了混淆字符对。
+    但是这个一眼就存在一些问题：
+    \begin{itemize}
+        \item 没有考虑插入和删除的错误
+        \item 没有考虑很强烈的上下文特征
+        \item 不同的count对于噪声过滤效果不一样，可以产生不一样的效果
+    \end{itemize}
+    我们首先修改这个混淆对的做法：
+    
+    \item self.\_extract\_punctuation\_rules
+    \item self.\_extract\_grammar\_rules
+    \item self.\_extract\_word\_confusion
+\end{itemize}
+
 
 \subsection{其余方法}
 
 \section{如何复现结果和代码环境依赖问题}
 
 \section{不同实验方法的对比结果}
-
-\section{遇到的问题和解决方案}
 
 \section{一些简单思考}
 
