@@ -127,13 +127,72 @@ rule这个方法还蛮简单的，基本是基于人类的常识性的方法，�
         \item 没有考虑很强烈的上下文特征
         \item 不同的count对于噪声过滤效果不一样，可以产生不一样的效果
     \end{itemize}
-    我们首先修改这个混淆对的做法：
+    我们首先修改这个混淆对的做法：我们加入一个insert，delete标识，这样就考虑了重复和缺失两个新的情况，然后对于count的噪声
+    过滤，我们设一个min\_count,这样就可以随时调控。
+    \textbf{但是，我写了之后发现还降低了，真没绷住啊，说明好像不需要考虑这么多，就注释掉了。但是我们保留一个count的修改}
     
-    \item self.\_extract\_punctuation\_rules
-    \item self.\_extract\_grammar\_rules
-    \item self.\_extract\_word\_confusion
-\end{itemize}
+    同时我们还尝试让他考虑上下文：$self.confusion\_pairs[s\_char][(t\_char, context)] += 1$,但是好像这样效果更差。
+    我们的思考是，引入上下文增加了噪声，反而让这个效果不好了，说明成对出现的错词可能多，而且可能存在故意的行为，我们就干脆不要好了。
 
+    \textbf{BTW，经过我反复尝试，mincount去噪为3效果好，这也证实了我的猜想，上下文反而会增加噪声。}
+    \item self.\_extract\_punctuation\_rules : 我的思路是将每一句的标点单独的提取出来，然后对比，看
+    哪一个位置的标点不一样，然后就记录。但是事实上好像训练集的标点正确率有点高吧，我只找到了一组有错误的。${'”': defaultdict(<class 'int'>, {'，': 1})}$
+    那这个就很恶心了，我可能需要自己去补充一些修正规则了。
+    \item self.\_extract\_grammar\_rules ：我的想法是，可以用一定的词性分析工具来看语法的正确或者错误。我们引入$import jieba.posseg as pseg$。这个库
+    可以拿来做词性分析。然后记录每种词性替换 (pos\_replace) 和单词替换 (word\_replace) 出现的次数。我们设置一个置信度，这样就不会乱换一些东西，跟之前的count其实是
+    一个东西。我们认为:
+    \[confidence = \frac{appear\ counts}{training\ set\ length} \]
+    这样就可以避免一些问题。\\
+    经过实验，其实我发现这个的作用率很小，因为如果我按照rule直接去设定规则，整个会有能修改的，但是同时也会违背一些规则本身，句法反而
+    被改变了，所以高置信度虽然可以保证不会错改，但是修改及其的少。
+    \item self.\_extract\_word\_confusion：同理我们还是分词，用高阈值过滤（置信度≥90\% + 最小出现次数3次）.
+    而且如果一个错误词可能对应多个正确词（如“的”可能改为“得”或“地”），只保留最可能的修正。我们可以看到他的一些提取:
+    \begin{lstlisting}
+        提取到14条易混淆词规则
+        '象' → '像' (置信度: 100.00%)
+        '唯个' → '唯一' (置信度: 100.00%)
+        '看做' → '看作' (置信度: 100.00%)
+        '当做' → '当作' (置信度: 100.00%)
+        '自已' → '自己' (置信度: 100.00%)
+        '好象' → '好像' (置信度: 100.00%)
+        '其它' → '其他' (置信度: 100.00%)
+        '纪录' → '记录' (置信度: 100.00%)
+        '来自' → '外地' (置信度: 100.00%)
+        '外地' → ',' (置信度: 100.00%) 
+    \end{lstlisting}
+    其实还真像那么一回事。但是肯定有问题，我们加两个约束就好，首先长度要一样，而且第一个字一般相同。
+    \begin{lstlisting}
+        '象' → '像' (置信度: 100.00%)
+        '唯个' → '唯一' (置信度: 100.00%)
+        '看做' → '看作' (置信度: 100.00%)
+        '当做' → '当作' (置信度: 100.00%)
+        '自已' → '自己' (置信度: 100.00%)
+        '好象' → '好像' (置信度: 100.00%)
+        '其它' → '其他' (置信度: 100.00%)
+    \end{lstlisting}这下确实对劲了
+\end{itemize}
+上面全部是提取，那么下面给出修改的规则：
+\begin{itemize}
+    \item self.\_correct\_punctuation(text):那么根据上面说的其实标点错的很少，我们就着重处理标点成对的问题，这也是观察发现的
+    。我们用stack来处理匹配问题，做自动补全，然后还调整引号和句号的顺序。
+    \item self.\_correct\_confusion\_chars(corrected):除了已经实现的，其实基于最开始的实现，我们也有加入insert或者delete的处理
+    ，只不过到后面发现没啥用QAQ，但是我们发现重复字词还是蛮多的，所以可以进行一个去重。那么要考虑的基本就是单字去重和单词去重。
+    \item self.\_correct\_grammar(corrected): 结合上面的就是先进性序列化修正，然后替换可能错误的词性，对于高置信度的语法错误，可以直接换。
+    \item self.\_correct\_word\_confusion(corrected): 这个结合上面的修正规则，用一个词的window去做过滤，然后进行修正。
+\end{itemize}
+最后实现的效果如下：\\
+\begin{figure}[h]
+    \centering
+    \label{rule}
+    \includegraphics[width=1\textwidth]{../pic/rule.png} 
+    \caption{rule}  
+\end{figure}
+
+说实话，rule这个方法是真的笨比，感觉不下降就很好了。
+
+\subsubsection{方法2:ml模型}
+
+\subsubsection{方法3:ensemble模型}
 
 \subsection{其余方法}
 

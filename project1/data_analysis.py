@@ -17,13 +17,15 @@ try:
     import matplotlib.pyplot as plt
     import matplotlib.font_manager as fm
 
-    # 找到系统已有的中文字体
+    # 找到系统已有的中文字体 我是mac（这个是mac的官方指定字体位置）
     # TODO 如果想要使用字体，需要更换自己电脑的路径
-    zh_font = "/System/Library/Fonts/Supplemental/Songti.ttc"  
-    font_prop = fm.FontProperties(fname=zh_font)
-    plt.rcParams["font.family"] = font_prop.get_name()
-    plt.rcParams["axes.unicode_minus"] = False
-
+    try:
+        zh_font = "/System/Library/Fonts/Supplemental/Songti.ttc"  
+        font_prop = fm.FontProperties(fname=zh_font)
+        plt.rcParams["font.family"] = font_prop.get_name()
+        plt.rcParams["axes.unicode_minus"] = False
+    except:
+        print("Warning: No suitable Chinese font found on this system. You may need to install a suitable font manually.")
 
     MATPLOTLIB_AVAILABLE = True
 except ImportError:

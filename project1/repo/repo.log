@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  1 APR 2025 21:36
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  3 APR 2025 19:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -628,7 +628,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 File: ../pic/error_distribution.png Graphic file (type bmp)
 <../pic/error_distribution.png>
- [2] [3]
+ [2]
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ≥ (U+2265) in font [lmroman10-regular]:mapping=tex-text;!
+[3]
+File: ../pic/rule.png Graphic file (type bmp)
+<../pic/rule.png>
+ [4]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./repo.aux)
  ***********
@@ -636,15 +642,15 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `repo.out' has not changed.
-(rerunfilecheck)             Checksum: ADB408F6AD06FB8669AAD8A1BFCA6682;1237.
+(rerunfilecheck)             Checksum: 08161DA5FB30CB0F58A96CE3ADA29AE2;1506.
  ) 
 Here is how much of TeX's memory you used:
- 17825 strings out of 474773
- 365277 string characters out of 5757724
- 1952839 words of memory out of 5000000
- 39761 multiletter control sequences out of 15000+600000
+ 17902 strings out of 474773
+ 370365 string characters out of 5757724
+ 1975839 words of memory out of 5000000
+ 39838 multiletter control sequences out of 15000+600000
  565499 words of font info for 86 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  74i,10n,81p,469b,1661s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on repo.pdf (3 pages).
+Output written on repo.pdf (4 pages).
