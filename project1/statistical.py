@@ -5,7 +5,7 @@
 Statistical corrector for Chinese Text Correction task.
 This module implements statistical methods for correcting errors in Chinese text.
 """
-
+import random
 import re
 import json
 import numpy as np
@@ -27,6 +27,16 @@ try:
     from sklearn.model_selection import train_test_split
     from sklearn.preprocessing import StandardScaler
     from sklearn.metrics import accuracy_score
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import LabelEncoder
+    from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
+    from sklearn.metrics import classification_report, accuracy_score
+    from sklearn.pipeline import Pipeline
+    from sklearn.svm import SVC
+    import numpy as np
+    import optuna 
+
 
     # Import CRF if available
     try:
@@ -82,12 +92,16 @@ class StatisticalCorrector:
         self.lambda_4 = 0.2  # Weight for 4-gram
 
         # Machine learning models
-        self.ml_model = None
-        self.vectorizer = None
-        self.feature_scaler = None
+        self.error_detection_model = None  # 错误检测模型
+        self.correction_model = None  # 纠错模型
+        self.vectorizer = TfidfVectorizer(tokenizer=self._jieba_tokenize)  # TF-IDF 词向量
+    
 
         # Character corrections dictionary
         self.char_corrections = defaultdict(Counter)
+
+        self.insertion_errors = defaultdict(int) 
+        self.deletion_errors = defaultdict(int)  
 
     def train(self, train_data: List[Dict[str, Any]]) -> None:
         """
@@ -103,6 +117,23 @@ class StatisticalCorrector:
         else:
             print(f"Warning: Method '{self.method}' not available. Falling back to n-gram model.")
             self._train_ngram_model(train_data)
+
+    def correct(self, text: str) -> str:
+        """
+        Apply statistical correction to the input text.
+
+        Args:
+            text: Input text to correct.
+
+        Returns:
+            Corrected text.
+        """
+        if self.method == 'ngram':
+            return self._correct_with_ngram(text)
+        elif self.method == 'ml' and SKLEARN_AVAILABLE:
+            return self._correct_with_ml(text)
+        else:
+            return self._correct_with_ngram(text)
 
     def _train_ngram_model(self, train_data: List[Dict[str, Any]]) -> None:
         """
@@ -122,6 +153,20 @@ class StatisticalCorrector:
                 self.unigram_counts[char] += 1
 
             # TODO Count bigrams, trigrams, and 4-grams
+            # 统计 bigram（相邻两个字的组合）
+            for i in range(len(text) - 1):
+                bigram = (text[i], text[i + 1])
+                self.bigram_counts[bigram] += 1
+
+            # 统计 trigram（相邻三个字的组合）
+            for i in range(len(text) - 2):
+                trigram = (text[i], text[i + 1], text[i + 2])
+                self.trigram_counts[trigram] += 1
+
+            # 统计 fourgram（相邻四个字的组合）
+            for i in range(len(text) - 3):
+                fourgram = (text[i], text[i + 1], text[i + 2], text[i + 3])
+                self.fourgram_counts[fourgram] += 1
 
             # Build confusion matrix from error pairs
             if sample['label'] == 1:  # Only for sentences with errors
@@ -152,46 +197,11 @@ class StatisticalCorrector:
         for char, count in self.error_probs.items():
             self.error_probs[char] = count / self.unigram_counts.get(char, 1)
 
+        # print(self.unigram_counts, self.bigram_counts, self.trigram_counts, self.fourgram_counts)
         print(
             f"Trained n-gram model with {len(self.unigram_counts)} unigrams, "
             f"{len(self.bigram_counts)} bigrams, and {len(self.trigram_counts)} trigrams."
         )
-
-    def _train_ml_model(self, train_data: List[Dict[str, Any]]) -> None:
-        """
-        Train a machine learning model for text correction.
-
-        Args:
-            train_data: List of dictionaries containing the training data.
-        """
-
-        if not SKLEARN_AVAILABLE:
-            print("Cannot train ML model: scikit-learn not available.")
-            return
-
-        # TODO 完成ml方法实现，可选择不同的文本编码方式、不同的特征提取和不同的模型, 推荐先使用一个模型检测，再使用一个模型来纠错。
-        # 可以先将训练数据分为训练集和验证集，分别检测两个模型的效果，并调参
-        # 可以使用数据增强或者预训练的词向量来提高模型的准确性
-        return
-
-###################################################################################################################################################################################################
-
-    def correct(self, text: str) -> str:
-        """
-        Apply statistical correction to the input text.
-
-        Args:
-            text: Input text to correct.
-
-        Returns:
-            Corrected text.
-        """
-        if self.method == 'ngram':
-            return self._correct_with_ngram(text)
-        elif self.method == 'ml' and SKLEARN_AVAILABLE and self.ml_model is not None:
-            return self._correct_with_ml(text)
-        else:
-            return self._correct_with_ngram(text)
 
     def _correct_with_ngram(self, text: str) -> str:
         """
@@ -264,8 +274,56 @@ class StatisticalCorrector:
                         sum(self.unigram_counts.values()) + len(self.unigram_counts)
                     )
                     score += self.lambda_1 * unigram_prob
-
+                    # print(score)
                     # TODO Bigram, trigram, and 4-gram probabilities
+                    # Bigram probability (context: left)
+                    if len(left_context) > 0:
+                        bigram_left = left_context[-1] + candidate
+                        bigram_left_prob = (self.bigram_counts.get(bigram_left, 0) + 1) / (
+                            self.unigram_counts.get(left_context[-1], 0) + len(self.unigram_counts)
+                        )
+                        score += self.lambda_2 * bigram_left_prob
+
+                    # Bigram probability (context: right)
+                    if len(right_context) > 0:
+                        bigram_right = candidate + right_context[0]
+                        bigram_right_prob = (self.bigram_counts.get(bigram_right, 0) + 1) / (
+                            self.unigram_counts.get(candidate, 0) + len(self.unigram_counts)
+                        )
+                        score += self.lambda_2 * bigram_right_prob
+
+                    # Trigram probability (context: left)
+                    if len(left_context) > 1:
+                        trigram_left = left_context[-2] + left_context[-1] + candidate
+                        trigram_left_prob = (self.trigram_counts.get(trigram_left, 0) + 1) / (
+                            self.bigram_counts.get(left_context[-2] + left_context[-1], 0) + len(self.unigram_counts)
+                        )
+                        score += self.lambda_3 * trigram_left_prob
+
+                    # Trigram probability (context: right)
+                    if len(right_context) > 1:
+                        trigram_right = candidate + right_context[0] + right_context[1]
+                        trigram_right_prob = (self.trigram_counts.get(trigram_right, 0) + 1) / (
+                            self.bigram_counts.get(candidate + right_context[0], 0) + len(self.unigram_counts)
+                        )
+                        score += self.lambda_3 * trigram_right_prob
+
+                    # 4-gram probability (context: left)
+                    if len(left_context) > 2:
+                        fourgram_left = left_context[-3] + left_context[-2] + left_context[-1] + candidate
+                        fourgram_left_prob = (self.fourgram_counts.get(fourgram_left, 0) + 1) / (
+                            self.trigram_counts.get(left_context[-3] + left_context[-2] + left_context[-1], 0) + len(self.unigram_counts)
+                        )
+                        score += self.lambda_4 * fourgram_left_prob
+
+                    # 4-gram probability (context: right)
+                    if len(right_context) > 2:
+                        fourgram_right = candidate + right_context[0] + right_context[1] + right_context[2]
+                        fourgram_right_prob = (self.fourgram_counts.get(fourgram_right, 0) + 1) / (
+                            self.trigram_counts.get(candidate + right_context[0] + right_context[1], 0) + len(self.unigram_counts)
+                        )
+                        score += self.lambda_4 * fourgram_right_prob
+
 
                     if score > best_score:
                         best_score = score
@@ -294,7 +352,27 @@ class StatisticalCorrector:
                     corrected_text[i] = best_char
 
         return ''.join(corrected_text)
+    
+###################################################################################################################################################################################################
+    
+    def _train_ml_model(self, train_data: List[Dict[str, Any]]) -> None:
+        """
+        Train a machine learning model for text correction.
 
+        Args:
+            train_data: List of dictionaries containing the training data.
+        """
+
+        if not SKLEARN_AVAILABLE:
+            print("Cannot train ML model: scikit-learn not available.")
+            return
+
+        # TODO 完成ml方法实现，可选择不同的文本编码方式、不同的特征提取和不同的模型, 推荐先使用一个模型检测，再使用一个模型来纠错。
+        # 可以先将训练数据分为训练集和验证集，分别检测两个模型的效果，并调参
+        # 可以使用数据增强或者预训练的词向量来提高模型的准确性
+        return 
+    
+    
     def _correct_with_ml(self, text: str) -> str:
         """
         Correct text using machine learning model.
@@ -305,5 +383,4 @@ class StatisticalCorrector:
         Returns:
             Corrected text.
         """
-        # TODO
         return text
