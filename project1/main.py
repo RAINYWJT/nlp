@@ -15,8 +15,34 @@ from tqdm import tqdm
 # Import modules
 from data_analysis import analyze_data, visualize_error_distribution
 from rule_based import RuleBasedCorrector
-from statistical import StatisticalCorrector
+from statistical import StatisticalMLCorrector,StatisticalNgramCorrector
 from evaluation import evaluate_performance, print_detailed_metrics
+from sklearn.model_selection import train_test_split
+from itertools import product
+
+def grid_search_optimize(train_data):
+    train_subset, valid_data = train_test_split(train_data, test_size=0.2, random_state=42)
+    lambda_1_values = [0.1, 0.5, 1, 2]
+    lambda_2_values = [0.5, 1, 2, 3]
+    lambda_3_values = [1, 2, 3, 4]
+    lambda_4_values = [0.5, 1, 1.5, 2]
+
+    best_score = -float('inf')
+    best_params = None
+
+    param_combinations = list(product(lambda_1_values, lambda_2_values, lambda_3_values, lambda_4_values))
+    for lambda_1, lambda_2, lambda_3, lambda_4 in tqdm(param_combinations):
+        corrector = StatisticalNgramCorrector(lambda_1, lambda_2, lambda_3, lambda_4)
+        corrector.train(train_subset)
+        correct_count = sum(
+            1 for sample in valid_data if corrector.correct(sample['source']) == sample['target']
+        )
+        score = correct_count / len(valid_data)
+        if score > best_score:
+            best_score = score
+            best_params = (lambda_1, lambda_2, lambda_3, lambda_4)
+
+    return {"best_params": best_params, "best_score": best_score}
 
 
 def load_data(file_path: str) -> List[Dict[str, Any]]:
@@ -76,17 +102,26 @@ def main():
         # assert 0
     elif args.method == 'statistical':
         print("\nInitializing statistical corrector...")
-        corrector = StatisticalCorrector(args.statistical_method)
-        corrector.train(train_data)
+        if args.statistical_method == 'ngram':
+            print('ngram grid search!')
+            best_result = grid_search_optimize(train_data)
+            best_lambda_1, best_lambda_2, best_lambda_3, best_lambda_4 = best_result["best_params"]
+            print('best param', best_lambda_1, best_lambda_2, best_lambda_3, best_lambda_4)
+            corrector = StatisticalNgramCorrector(lambda_1=best_lambda_1, 
+                                                lambda_2=best_lambda_2, 
+                                                lambda_3=best_lambda_3, 
+                                                lambda_4=best_lambda_4)
+            corrector.train(train_data)
+        elif args.statistical_method == 'ml':
+            corrector = StatisticalMLCorrector()
+            corrector.train(train_data)
+        else:
+            print('There is no method named ' + args.statistical_method)
+
     elif args.method == 'ensemble':
         print("\nInitializing ensemble corrector...")
         # TODO start
         # Implement ensemble method that combines rule-based and statistical methods
-        rule_corrector = RuleBasedCorrector()
-        rule_corrector.train(train_data)
-
-        stat_corrector = StatisticalCorrector()
-        stat_corrector.train(train_data)
 
         # You can implement a simple voting mechanism or a more sophisticated ensemble method
         # For example, you could use rule-based method first, then apply statistical method on the results

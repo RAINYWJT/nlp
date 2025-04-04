@@ -21,21 +21,8 @@ except ImportError:
     JIEBA_AVAILABLE = False
     print("Warning: jieba not available. Some features will be disabled.")
 
-try:
     from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.model_selection import train_test_split
-    from sklearn.preprocessing import StandardScaler
-    from sklearn.metrics import accuracy_score
-    from sklearn.ensemble import RandomForestClassifier
-    from sklearn.pipeline import make_pipeline
-    from sklearn.preprocessing import LabelEncoder
-    from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score
-    from sklearn.metrics import classification_report, accuracy_score
-    from sklearn.pipeline import Pipeline
-    from sklearn.svm import SVC
     import numpy as np
-    import optuna 
 
 
     # Import CRF if available
@@ -55,20 +42,18 @@ except ImportError:
     print("Warning: scikit-learn not available. Some features will be disabled.")
 
 
-class StatisticalCorrector:
+class StatisticalNgramCorrector:
     """
     A statistical corrector for Chinese text.
     """
 
-    def __init__(self, method='ngram'):
+    def __init__(self, lambda_1=0.1, lambda_2=0.3, lambda_3=0.4, lambda_4=0.2):
         """
         Initialize the statistical corrector.
 
         Args:
             method: The statistical method to use. Options: 'ngram', 'ml', 'crf'.
         """
-        self.method = method
-
         # N-gram language model
         self.unigram_counts = Counter()
         self.bigram_counts = Counter()
@@ -86,56 +71,15 @@ class StatisticalCorrector:
         self.visual_similarity = defaultdict(dict)
 
         # Interpolation weights for different n-gram models
-        self.lambda_1 = 0.1  # Weight for unigram
-        self.lambda_2 = 0.3  # Weight for bigram
-        self.lambda_3 = 0.4  # Weight for trigram
-        self.lambda_4 = 0.2  # Weight for 4-gram
-
-        # Machine learning models
-        self.error_detection_model = None  # 错误检测模型
-        self.correction_model = None  # 纠错模型
-        self.vectorizer = TfidfVectorizer(tokenizer=self._jieba_tokenize)  # TF-IDF 词向量
-    
+        self.lambda_1 = lambda_1  # Weight for unigram
+        self.lambda_2 = lambda_2 # Weight for bigram
+        self.lambda_3 = lambda_3  # Weight for trigram
+        self.lambda_4 = lambda_4  # Weight for 4-gram
 
         # Character corrections dictionary
         self.char_corrections = defaultdict(Counter)
 
-        self.insertion_errors = defaultdict(int) 
-        self.deletion_errors = defaultdict(int)  
-
     def train(self, train_data: List[Dict[str, Any]]) -> None:
-        """
-        Train the statistical corrector using the training data.
-
-        Args:
-            train_data: List of dictionaries containing the training data.
-        """
-        if self.method == 'ngram':
-            self._train_ngram_model(train_data)
-        elif self.method == 'ml' and SKLEARN_AVAILABLE:
-            self._train_ml_model(train_data)
-        else:
-            print(f"Warning: Method '{self.method}' not available. Falling back to n-gram model.")
-            self._train_ngram_model(train_data)
-
-    def correct(self, text: str) -> str:
-        """
-        Apply statistical correction to the input text.
-
-        Args:
-            text: Input text to correct.
-
-        Returns:
-            Corrected text.
-        """
-        if self.method == 'ngram':
-            return self._correct_with_ngram(text)
-        elif self.method == 'ml' and SKLEARN_AVAILABLE:
-            return self._correct_with_ml(text)
-        else:
-            return self._correct_with_ngram(text)
-
-    def _train_ngram_model(self, train_data: List[Dict[str, Any]]) -> None:
         """
         Train an n-gram language model for text correction.
 
@@ -198,12 +142,12 @@ class StatisticalCorrector:
             self.error_probs[char] = count / self.unigram_counts.get(char, 1)
 
         # print(self.unigram_counts, self.bigram_counts, self.trigram_counts, self.fourgram_counts)
-        print(
-            f"Trained n-gram model with {len(self.unigram_counts)} unigrams, "
-            f"{len(self.bigram_counts)} bigrams, and {len(self.trigram_counts)} trigrams."
-        )
+        # print(
+        #     f"Trained n-gram model with {len(self.unigram_counts)} unigrams, "
+        #     f"{len(self.bigram_counts)} bigrams, and {len(self.trigram_counts)} trigrams."
+        # )
 
-    def _correct_with_ngram(self, text: str) -> str:
+    def correct(self, text: str) -> str:
         """
         Correct text using the n-gram language model.
 
@@ -354,8 +298,17 @@ class StatisticalCorrector:
         return ''.join(corrected_text)
     
 ###################################################################################################################################################################################################
+
+
+
+class StatisticalMLCorrector():
+    def __init__(self):
+         # Machine learning models
+        self.error_detection_model = None  # 错误检测模型
+        self.correction_model = None  # 纠错模型
+        self.vectorizer = TfidfVectorizer(tokenizer=self._jieba_tokenize)  # TF-IDF 词向量
     
-    def _train_ml_model(self, train_data: List[Dict[str, Any]]) -> None:
+    def train(self, train_data: List[Dict[str, Any]]) -> None:
         """
         Train a machine learning model for text correction.
 
@@ -373,7 +326,7 @@ class StatisticalCorrector:
         return 
     
     
-    def _correct_with_ml(self, text: str) -> str:
+    def correct(self, text: str) -> str:
         """
         Correct text using machine learning model.
 
