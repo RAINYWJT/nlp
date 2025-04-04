@@ -16,6 +16,7 @@ from tqdm import tqdm
 from data_analysis import analyze_data, visualize_error_distribution
 from rule_based import RuleBasedCorrector
 from statistical import StatisticalMLCorrector,StatisticalNgramCorrector
+from nn import NNCorrector
 from evaluation import evaluate_performance, print_detailed_metrics
 from sklearn.model_selection import train_test_split
 from itertools import product
@@ -74,12 +75,13 @@ def main():
     parser.add_argument(
         '--method',
         type=str,
-        choices=['rule', 'statistical', 'ensemble'],
+        choices=['rule', 'statistical', 'ensemble', 'nn'],
         default='statistical',
         help='Correction method to use',
     )
     parser.add_argument('--analyze', type=int, default=0, help='Perform data analysis')
     parser.add_argument('--statistical_method', type=str, default='ml', help='Statistical method to use')
+    parser.add_argument('--statistical_optparam', type=int, default=0, help='Statistical girdsearch to use')
     args = parser.parse_args()
 
     # Load data
@@ -103,20 +105,27 @@ def main():
     elif args.method == 'statistical':
         print("\nInitializing statistical corrector...")
         if args.statistical_method == 'ngram':
-            print('ngram grid search!')
-            best_result = grid_search_optimize(train_data)
-            best_lambda_1, best_lambda_2, best_lambda_3, best_lambda_4 = best_result["best_params"]
-            print('best param', best_lambda_1, best_lambda_2, best_lambda_3, best_lambda_4)
-            corrector = StatisticalNgramCorrector(lambda_1=best_lambda_1, 
-                                                lambda_2=best_lambda_2, 
-                                                lambda_3=best_lambda_3, 
-                                                lambda_4=best_lambda_4)
-            corrector.train(train_data)
+            if args.statistical_optparam == 1:
+                print('ngram grid search!')
+                best_result = grid_search_optimize(train_data)
+                best_lambda_1, best_lambda_2, best_lambda_3, best_lambda_4 = best_result["best_params"]
+                print('best param', best_lambda_1, best_lambda_2, best_lambda_3, best_lambda_4)
+                corrector = StatisticalNgramCorrector(lambda_1=best_lambda_1, 
+                                                    lambda_2=best_lambda_2, 
+                                                    lambda_3=best_lambda_3, 
+                                                    lambda_4=best_lambda_4)
+                corrector.train(train_data)
+            else:
+                corrector = StatisticalNgramCorrector()
+                corrector.train(train_data)
         elif args.statistical_method == 'ml':
             corrector = StatisticalMLCorrector()
             corrector.train(train_data)
         else:
             print('There is no method named ' + args.statistical_method)
+    elif args.method == 'nn':
+        corrector = NNCorrector()
+        corrector.train(train_data)
 
     elif args.method == 'ensemble':
         print("\nInitializing ensemble corrector...")
