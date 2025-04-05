@@ -283,6 +283,9 @@ class StatisticalMLCorrector:
         X_d = self.vectorizer.fit_transform(d_texts)
         y_d = np.array(d_labels)
         X_train_d, X_val_d, y_train_d, y_val_d = train_test_split(X_d, y_d, test_size=0.2, random_state=42)
+        
+        print(X_train_d, y_train_d)
+        assert 0
         print('fit')
         self.detection_model.fit(X_train_d, y_train_d)
         print("Error Detection Report:\n", classification_report(y_val_d, self.detection_model.predict(X_val_d)))

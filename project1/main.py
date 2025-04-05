@@ -21,6 +21,37 @@ from evaluation import evaluate_performance, print_detailed_metrics
 from sklearn.model_selection import train_test_split
 from itertools import product
 
+# 封装 EnsembleCorrector
+class EnsembleCorrector:
+    def __init__(self, rule_corrector, stat_corrector):
+        self.rule_corrector = rule_corrector
+        self.stat_corrector = stat_corrector
+
+    def correct(self, sample):
+        if isinstance(sample, dict):
+            text = sample['source']
+        else:
+            text = sample
+        text_after_rule = self.rule_corrector.correct(text)
+        text_after_stat = self.stat_corrector.correct(text_after_rule)
+        return text_after_stat
+
+    def train(self, train_data):
+        # Step 1: 训练规则模型
+        self.rule_corrector.train(train_data)
+
+        # Step 2: 先用规则模型纠错训练数据（每个sample是dict）
+        rule_corrected_data = []
+        for sample in train_data:
+            corrected_text = self.rule_corrector.correct(sample['source'])  # 单句文本输入
+            new_sample = sample.copy()
+            new_sample['source'] = corrected_text
+            rule_corrected_data.append(new_sample)
+
+        # Step 3: 再训练统计模型
+        self.stat_corrector.train(rule_corrected_data)
+
+
 def grid_search_optimize(train_data):
     train_subset, valid_data = train_test_split(train_data, test_size=0.2, random_state=42)
     lambda_1_values = [0.1, 0.5, 1, 2]
@@ -136,6 +167,10 @@ def main():
         # For example, you could use rule-based method first, then apply statistical method on the results
         # Or you could use different methods for different types of errors
         # TODO end
+        rule_corrector = RuleBasedCorrector()
+        stat_corrector = StatisticalNgramCorrector()
+        corrector = EnsembleCorrector(rule_corrector, stat_corrector)
+        corrector.train(train_data)
 
     # Evaluate on test data
     print("\nEvaluating on test data...")
