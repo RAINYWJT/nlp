@@ -202,103 +202,108 @@ class StatisticalNgramCorrector:
     
 ###################################################################################################################################################################################################
 import numpy as np
+import jieba
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-import jieba  # 中文分词
+from sklearn.metrics import classification_report
+from tqdm import tqdm
 
 class StatisticalMLCorrector:
-    def __init__(self, encoder_type='tfidf', detection_model='svm', correction_model='random_forest'):
-        """
-        Initialize the corrector with encoding type, detection model, and correction model.
-        """
-        self.encoder_type = encoder_type
-        self.detection_model = detection_model
-        self.correction_model = correction_model
-        self.vectorizer = None
-        self.detection_model_obj = None
-        self.correction_model_obj = None
+    def __init__(self, confusion_dict=None, window_size=2):
+        self.vectorizer = TfidfVectorizer()
+        self.detection_model = SVC(kernel='linear', probability=True)
+        self.correction_model = RandomForestClassifier()
+        self.confusion_dict = confusion_dict if confusion_dict else {}
+        self.window_size = window_size
 
-    def encode_text(self, texts):
-        """Encode Chinese text using TF-IDF or other encoders."""
-        if self.encoder_type == 'tfidf':
-            # 中文分词
-            texts = [" ".join(jieba.cut(text)) for text in texts]
-            vectorizer = TfidfVectorizer()
-            encoded_text = vectorizer.fit_transform(texts).toarray()
-            return encoded_text, vectorizer
+    def extract_windows(self, text, window_size=2):
+        """从文本中提取字符级上下文窗口片段"""
+        padded = ["<PAD>"] * window_size + list(text) + ["<PAD>"] * window_size
+        windows = []
+        for i in range(window_size, len(padded) - window_size):
+            context = padded[i - window_size:i + window_size + 1]
+            windows.append("".join(context))
+        return windows
+
+    def generate_typo(self, text):
+        """简单模拟错字生成"""
+        chars = list(text)
+        for i, c in enumerate(chars):
+            if c in self.confusion_dict and np.random.rand() < 0.3:
+                chars[i] = np.random.choice(self.confusion_dict[c])
+        return "".join(chars)
+
+    def prepare_training_data(self, samples):
+        detection_texts = []
+        detection_labels = []
+        correction_texts = []
+        correction_labels = []
+
+        for sample in tqdm(samples):
+            src = sample["source"]
+            tgt = sample["target"]
+
+            if len(src) != len(tgt):
+                # 暂不支持对齐策略，跳过不等长样本
+                continue
+
+            padded_src = ["<"] * self.window_size + list(src) + [">"] * self.window_size
+            padded_tgt = ["<"] * self.window_size + list(tgt) + [">"] * self.window_size
+
+            for i in range(self.window_size, len(padded_src) - self.window_size):
+                window = padded_src[i - self.window_size: i + self.window_size + 1]
+                window_str = "".join(window)
+
+                detection_texts.append(window_str)
+                detection_labels.append(int(padded_src[i] != padded_tgt[i]))
+
+                if padded_src[i] != padded_tgt[i]:
+                    correction_texts.append(window_str)
+                    correction_labels.append(padded_tgt[i])
+
+        return detection_texts, detection_labels, correction_texts, correction_labels
+
+    def train(self, samples):
+        # 数据增强
+        augmented = []
+        for s in samples:
+            noisy = self.generate_typo(s["source"])
+            if noisy != s["target"]:
+                augmented.append({"source": noisy, "target": s["target"]})
+        samples += augmented
+
+        # 准备训练数据
+        print('prepare training data...')
+        d_texts, d_labels, c_texts, c_labels = self.prepare_training_data(samples)
+
+        # 训练检测器
+        X_d = self.vectorizer.fit_transform(d_texts)
+        y_d = np.array(d_labels)
+        X_train_d, X_val_d, y_train_d, y_val_d = train_test_split(X_d, y_d, test_size=0.2, random_state=42)
+        print('fit')
+        self.detection_model.fit(X_train_d, y_train_d)
+        print("Error Detection Report:\n", classification_report(y_val_d, self.detection_model.predict(X_val_d)))
+
+        # 训练纠正器
+        if c_texts:
+            X_c = self.vectorizer.transform(c_texts)
+            y_c = np.array(c_labels)
+            self.correction_model.fit(X_c, y_c)
         else:
-            raise ValueError(f"Unsupported encoder type: {self.encoder_type}")
-
-    def data_augmentation(self, text):
-        """Apply simple data augmentation like synonym replacement."""
-        words = text.split()
-        augmented_text = words.copy()
-        for i in range(len(words)):
-            # 这里可以扩展同义词替换的策略
-            # 示例中没有同义词词库，假设可以用 WordNet 获取同义词（需要调整中文同义词库）
-            synonyms = words[i]  # 这里没有实际同义词库，直接使用原词
-            if synonyms != words[i]:
-                augmented_text[i] = synonyms
-        return ' '.join(augmented_text)
-
-    def train(self, train_data):
-        """Train error detection and correction models."""
-        source = [sample['source'] for sample in train_data]
-        target = [sample['target'] for sample in train_data]
-        label = [sample['label'] for sample in train_data]
-
-        # Data augmentation: augment the source and target data
-        augmented_sources = [self.data_augmentation(text) for text in source]
-        augmented_targets = [self.data_augmentation(text) for text in target]  # Augment target data as well
-        source += augmented_sources
-        target += augmented_targets  # Make sure target and source data are augmented equally
-        label += label  # Keep the same labels for augmented data
-        print(source, target, label)
-
-        # Split into train and validation sets
-        X, self.vectorizer = self.encode_text(source)
-        label = np.array(label)
-        print(X.shape, label.shape)
-        X_train, X_val, y_train, y_val, target_train, target_val = train_test_split(X, label, target, test_size=0.3, random_state=42)
-
-        print(X_train.shape, X_val.shape, y_train.shape, y_val.shape)
-    
-
-        # Train error detection model
-        if self.detection_model == 'svm':
-            self.detection_model_obj = SVC(kernel='rbf')
-        elif self.detection_model == 'random_forest':
-            self.detection_model_obj = RandomForestClassifier()
-        self.detection_model_obj.fit(X_train, y_train)
-
-        # Evaluate error detection model
-        y_val_pred = self.detection_model_obj.predict(X_val)
-        print(f"Error detection model accuracy: {accuracy_score(y_val, y_val_pred)}")
-
-        # Train error correction model
-        if self.correction_model == 'logistic_regression':
-            self.correction_model_obj = LogisticRegression()
-            self.correction_model_obj.fit(X_train, target_train)
-        elif self.correction_model == 'random_forest':
-            self.correction_model_obj = RandomForestClassifier()
-            self.correction_model_obj.fit(X_train, target_train)
-        else:
-            raise ValueError(f"Unsupported correction model: {self.correction_model}")
+            print("No correction samples to train.")
 
     def correct(self, text):
-        """Use the trained models to detect and correct errors."""
-        # Step 1: Use error detection model
-        X = self.vectorizer.transform([text]).toarray()
-        detection_result = self.detection_model_obj.predict(X)
+        chars = list(text)
+        windows = self.extract_windows(text, self.window_size)
+        X = self.vectorizer.transform(windows)
+        detection_preds = self.detection_model.predict(X)
 
-        # Step 2: If an error is detected, use the correction model
-        if detection_result == 1:  # Error detected
-            corrected_text = self.correction_model_obj.predict(X)[0]
-            # print(f"Corrected text: {corrected_text}")
-            return corrected_text
-        else:
-            return text  # No error detected, return original text
+        for i, is_wrong in enumerate(detection_preds):
+            if is_wrong == 1:
+                window = windows[i]
+                pred_char = self.correction_model.predict(self.vectorizer.transform([window]))[0]
+                chars[i] = pred_char
+        return "".join(chars)
