@@ -191,18 +191,59 @@ rule这个方法还蛮简单的，基本是基于人类的常识性的方法，�
 说实话，rule这个方法是真的笨比，感觉不下降就很好了。
 
 \subsubsection{方法2:ml模型}
-这个板块分为ngram和ml方法，先看ngram吧：\\
+这个板块分为ngram和ml方法，先看ngram吧：btw我稍微修改了一下类别的问题，单独把两个拆开了，变成了两个单独的类别，这样好修改\\
 \medskip
 
 \textbf{1.ngram模型}:\\
 ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先看他干了啥：很显然，现在是最简单的，一个gram的实现。
+\begin{itemize}
+    \item train部分：这个模块主要是对训练样本进行一元，二元，三元，四元的统计并更新counter。然后对错误label=1的进行分析，
+    然后和目标文本对比，加入误差矩阵。并且储存每一个字的一个错误概率
+    \item correct：主要是逐字去看错误概率，如果小于某个阈值就跳过。然后根据上下文纠错，看是否要纠正，然后用ngram进行选择。对比原字符看替换哪一个
+\end{itemize}
+那么对于这个，涉及到我到底看哪一个字符的评分，这个问题比较重要。事实上，好像把补全了之后没有很明显的提升，那就说明参数要调，还有一个问题是
+除了参数，阈值这个东西在我看的里面确实做的不够。然后我更换了阈值和调参数，
+具体操作:python3 main.py --method statistical --analyze 0 --statistical\_method ngram --statistical\_optparam 1.然后做出来的结果如下 \\
+\begin{figure}[h]
+    \centering
+    \label{ngram}
+    \includegraphics[width=1\textwidth]{../pic/ngram.png} 
+    \caption{ngram}  
+\end{figure}
 
+从结果来看，这个任务用ngram的统计方法可能有点鸡肋了。
+
+\medskip
+
+\textbf{2.ml模型}:\\
+1
 
 \subsubsection{方法3:ensemble模型}
 
 \subsection{其余方法}
 
 \section{如何复现结果和代码环境依赖问题}
+
+rulebase:
+\textbf{复现指令:}
+\begin{lstlisting}
+    python3 main.py --method rule --analyze 0  
+\end{lstlisting}
+
+statistical ngram:
+\textbf{复现指令:}
+\begin{lstlisting}
+    python3 main.py --method statistical --analyze 0 --statistical_method ngram 
+    --statistical_optparam 0
+\end{lstlisting}
+
+statistical ml:
+\textbf{复现指令:}
+\begin{lstlisting}
+    python3 main.py --method statistical --analyze 0 --statistical_method ml 
+\end{lstlisting}
+
+
 
 \section{不同实验方法的对比结果}
 

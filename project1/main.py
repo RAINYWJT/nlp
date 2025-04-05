@@ -125,7 +125,7 @@ def main():
             print('There is no method named ' + args.statistical_method)
     elif args.method == 'nn':
         corrector = NNCorrector()
-        corrector.train(train_data)
+        corrector.train_model(train_data)
 
     elif args.method == 'ensemble':
         print("\nInitializing ensemble corrector...")

@@ -123,7 +123,7 @@ class StatisticalNgramCorrector:
                     corrected_text[i] = correction
                     continue
 
-            if self.error_probs.get(char, 0) >= 0.05 and i > 0 and i < len(text) - 1:
+            if self.error_probs.get(char, 0) >= 0.3 and i > 0 and i < len(text) - 1:
                 candidates = set(list(self.unigram_counts.keys())[:500])
                 for context_key in self.confusion_matrix:
                     if context_key[0] == char:
@@ -201,42 +201,104 @@ class StatisticalNgramCorrector:
 
     
 ###################################################################################################################################################################################################
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import jieba  # 中文分词
 
+class StatisticalMLCorrector:
+    def __init__(self, encoder_type='tfidf', detection_model='svm', correction_model='random_forest'):
+        """
+        Initialize the corrector with encoding type, detection model, and correction model.
+        """
+        self.encoder_type = encoder_type
+        self.detection_model = detection_model
+        self.correction_model = correction_model
+        self.vectorizer = None
+        self.detection_model_obj = None
+        self.correction_model_obj = None
 
+    def encode_text(self, texts):
+        """Encode Chinese text using TF-IDF or other encoders."""
+        if self.encoder_type == 'tfidf':
+            # 中文分词
+            texts = [" ".join(jieba.cut(text)) for text in texts]
+            vectorizer = TfidfVectorizer()
+            encoded_text = vectorizer.fit_transform(texts).toarray()
+            return encoded_text, vectorizer
+        else:
+            raise ValueError(f"Unsupported encoder type: {self.encoder_type}")
 
-class StatisticalMLCorrector():
-    def __init__(self):
-         # Machine learning models
-        self.error_detection_model = None  # 错误检测模型
-        self.correction_model = None  # 纠错模型
-        self.vectorizer = TfidfVectorizer(tokenizer=self._jieba_tokenize)  # TF-IDF 词向量
+    def data_augmentation(self, text):
+        """Apply simple data augmentation like synonym replacement."""
+        words = text.split()
+        augmented_text = words.copy()
+        for i in range(len(words)):
+            # 这里可以扩展同义词替换的策略
+            # 示例中没有同义词词库，假设可以用 WordNet 获取同义词（需要调整中文同义词库）
+            synonyms = words[i]  # 这里没有实际同义词库，直接使用原词
+            if synonyms != words[i]:
+                augmented_text[i] = synonyms
+        return ' '.join(augmented_text)
+
+    def train(self, train_data):
+        """Train error detection and correction models."""
+        source = [sample['source'] for sample in train_data]
+        target = [sample['target'] for sample in train_data]
+        label = [sample['label'] for sample in train_data]
+
+        # Data augmentation: augment the source and target data
+        augmented_sources = [self.data_augmentation(text) for text in source]
+        augmented_targets = [self.data_augmentation(text) for text in target]  # Augment target data as well
+        source += augmented_sources
+        target += augmented_targets  # Make sure target and source data are augmented equally
+        label += label  # Keep the same labels for augmented data
+        print(source, target, label)
+
+        # Split into train and validation sets
+        X, self.vectorizer = self.encode_text(source)
+        label = np.array(label)
+        print(X.shape, label.shape)
+        X_train, X_val, y_train, y_val, target_train, target_val = train_test_split(X, label, target, test_size=0.3, random_state=42)
+
+        print(X_train.shape, X_val.shape, y_train.shape, y_val.shape)
     
-    def train(self, train_data: List[Dict[str, Any]]) -> None:
-        """
-        Train a machine learning model for text correction.
 
-        Args:
-            train_data: List of dictionaries containing the training data.
-        """
+        # Train error detection model
+        if self.detection_model == 'svm':
+            self.detection_model_obj = SVC(kernel='rbf')
+        elif self.detection_model == 'random_forest':
+            self.detection_model_obj = RandomForestClassifier()
+        self.detection_model_obj.fit(X_train, y_train)
 
-        if not SKLEARN_AVAILABLE:
-            print("Cannot train ML model: scikit-learn not available.")
-            return
+        # Evaluate error detection model
+        y_val_pred = self.detection_model_obj.predict(X_val)
+        print(f"Error detection model accuracy: {accuracy_score(y_val, y_val_pred)}")
 
-        # TODO 完成ml方法实现，可选择不同的文本编码方式、不同的特征提取和不同的模型, 推荐先使用一个模型检测，再使用一个模型来纠错。
-        # 可以先将训练数据分为训练集和验证集，分别检测两个模型的效果，并调参
-        # 可以使用数据增强或者预训练的词向量来提高模型的准确性
-        return 
-    
-    
-    def correct(self, text: str) -> str:
-        """
-        Correct text using machine learning model.
+        # Train error correction model
+        if self.correction_model == 'logistic_regression':
+            self.correction_model_obj = LogisticRegression()
+            self.correction_model_obj.fit(X_train, target_train)
+        elif self.correction_model == 'random_forest':
+            self.correction_model_obj = RandomForestClassifier()
+            self.correction_model_obj.fit(X_train, target_train)
+        else:
+            raise ValueError(f"Unsupported correction model: {self.correction_model}")
 
-        Args:
-            text: Input text.
+    def correct(self, text):
+        """Use the trained models to detect and correct errors."""
+        # Step 1: Use error detection model
+        X = self.vectorizer.transform([text]).toarray()
+        detection_result = self.detection_model_obj.predict(X)
 
-        Returns:
-            Corrected text.
-        """
-        return text
+        # Step 2: If an error is detected, use the correction model
+        if detection_result == 1:  # Error detected
+            corrected_text = self.correction_model_obj.predict(X)[0]
+            # print(f"Corrected text: {corrected_text}")
+            return corrected_text
+        else:
+            return text  # No error detected, return original text
