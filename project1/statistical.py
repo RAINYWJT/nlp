@@ -202,112 +202,111 @@ class StatisticalNgramCorrector:
 
     
 ###################################################################################################################################################################################################
-import numpy as np
-import jieba
+from typing import List, Dict, Any
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.svm import SVC
+from sklearn.linear_model import SGDClassifier, LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-from tqdm import tqdm
+from sklearn.base import BaseEstimator, TransformerMixin
+import random
 
+# 上下文窗口提取器：将文本按字符滑动窗口方式提取局部上下文
+class ContextWindowExtractor(BaseEstimator, TransformerMixin):
+    def __init__(self, window_size=3):
+        self.window_size = window_size  # 滑动窗口大小
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X):
+        contexts = []
+        for text in X:
+            # 在首尾填充 [PAD] 以保证窗口完整
+            padded = ['[PAD]'] * (self.window_size // 2) + list(text) + ['[PAD]'] * (self.window_size // 2)
+            for i in range(len(text)):
+                window = padded[i:i + self.window_size]
+                contexts.append("".join(window))  # 将窗口内字符合并为字符串
+        return contexts
+
+# 统计机器学习纠错器：检测 + 替换字符级别错误
 class StatisticalMLCorrector:
-    def __init__(self, confusion_dict=None, window_size=2):
-        self.vectorizer = TfidfVectorizer()
-        self.detection_model = SVC(kernel='linear', probability=True)
-        self.correction_model = RandomForestClassifier()
-        self.confusion_dict = confusion_dict if confusion_dict else {}
+    def __init__(self, confusion_dict=None, window_size=3, seed = 1):
+        self.confusion_dict = confusion_dict or {}
         self.window_size = window_size
+        self.detector = None        # 错误检测器（分类器）
+        self.corrector = None       # 错误纠正器（字符分类器）
+        # 使用 TF-IDF 提取特征：字符 n-gram（1 到 3 元）
+        self.detect_vectorizer = TfidfVectorizer(analyzer='char', ngram_range=(1, 5), max_features=20000)
+        self.correct_vectorizer = TfidfVectorizer(analyzer='char', ngram_range=(1, 5), max_features=20000)
+        self.seed = seed 
+        random.seed(seed)
 
-    def extract_windows(self, text, window_size=2):
-        """从文本中提取字符级上下文窗口片段"""
-        padded = ["<PAD>"] * window_size + list(text) + ["<PAD>"] * window_size
-        windows = []
-        for i in range(window_size, len(padded) - window_size):
-            context = padded[i - window_size:i + window_size + 1]
-            windows.append("".join(context))
-        return windows
+    # 提取用于检测模型训练的样本（窗口 + 是否错误）
+    def _extract_detection_samples(self, sources, targets, labels):
+        contexts, ys = [], []
+        for src, tgt, lbl in zip(sources, targets, labels):
+            if lbl == 1:
+                if len(src) != len(tgt): continue  # 只处理等长样本
+                padded = ['[PAD]'] * (self.window_size // 2) + list(src) + ['[PAD]'] * (self.window_size // 2)
+                for i in range(len(src)):
+                    window = padded[i:i + self.window_size]
+                    contexts.append("".join(window))
+                    ys.append(int(src[i] != tgt[i]))  # 该字符是否是错误
+        return contexts, ys
 
-    def generate_typo(self, text):
-        """简单模拟错字生成"""
-        chars = list(text)
-        for i, c in enumerate(chars):
-            if c in self.confusion_dict and np.random.rand() < 0.3:
-                chars[i] = np.random.choice(self.confusion_dict[c])
-        return "".join(chars)
+    # 提取用于纠错模型训练的样本（错误窗口 + 正确字符标签）
+    def _extract_correction_samples(self, sources, targets, labels):
+        contexts, y_chars = [], []
+        for src, tgt, lbl in zip(sources, targets, labels):
+            if lbl == 1 and len(src) == len(tgt):
+                padded = ['[PAD]'] * (self.window_size // 2) + list(src) + ['[PAD]'] * (self.window_size // 2)
+                for i in range(len(src)):
+                    if src[i] != tgt[i]:
+                        window = padded[i:i + self.window_size]
+                        contexts.append("".join(window))
+                        y_chars.append(tgt[i])  # 正确的字符标签
+        return contexts, y_chars
 
-    def prepare_training_data(self, samples):
-        detection_texts = []
-        detection_labels = []
-        correction_texts = []
-        correction_labels = []
+    # 模型训练入口
+    def train(self, train_data: List[Dict[str, Any]]) -> None:
+        sources = [item['source'] for item in train_data]  # 原始文本
+        targets = [item['target'] for item in train_data]  # 正确文本
+        labels = [item['label'] for item in train_data]    # 标签：是否有误
 
-        for sample in tqdm(samples):
-            src = sample["source"]
-            tgt = sample["target"]
+        # 1. 训练错误检测模型
+        print('[检测模型训练]')
+        detect_X, detect_y = self._extract_detection_samples(sources, targets, labels)
+        detect_X_vec = self.detect_vectorizer.fit_transform(detect_X)
+        self.detector = SGDClassifier(loss='perceptron', class_weight='balanced', max_iter=1000, n_jobs=-1, random_state=self.seed)
+        self.detector.fit(detect_X_vec, detect_y)
+        print(classification_report(detect_y, self.detector.predict(detect_X_vec)))
 
-            if len(src) != len(tgt):
-                # 暂不支持对齐策略，跳过不等长样本
-                continue
+        # 2. 训练字符纠错模型
+        print('[纠错模型训练]')
+        corr_X, corr_y = self._extract_correction_samples(sources, targets, labels)
+        corr_X_vec = self.correct_vectorizer.fit_transform(corr_X)
+        # self.corrector = SGDClassifier(loss='huber', max_iter=1000, n_jobs=-1,random_state=self.seed)
+        self.corrector = RandomForestClassifier(n_estimators=500)
+        self.corrector.fit(corr_X_vec, corr_y)
+        # print(classification_report(corr_y, self.corrector.predict(corr_X_vec)))
 
-            padded_src = ["<"] * self.window_size + list(src) + [">"] * self.window_size
-            padded_tgt = ["<"] * self.window_size + list(tgt) + [">"] * self.window_size
+    # 文本纠错函数：检测 + 替换错误字符
+    def correct(self, text: str) -> str:
+        corrected = list(text)
+        padded = ['[PAD]'] * (self.window_size // 2) + list(text) + ['[PAD]'] * (self.window_size // 2)
+        windows = ["".join(padded[i:i + self.window_size]) for i in range(len(text))]
 
-            for i in range(self.window_size, len(padded_src) - self.window_size):
-                window = padded_src[i - self.window_size: i + self.window_size + 1]
-                window_str = "".join(window)
+        # 批量提取特征并检测错误位置
+        detect_vecs = self.detect_vectorizer.transform(windows)
+        is_wrong = self.detector.predict(detect_vecs)
 
-                detection_texts.append(window_str)
-                detection_labels.append(int(padded_src[i] != padded_tgt[i]))
-
-                if padded_src[i] != padded_tgt[i]:
-                    correction_texts.append(window_str)
-                    correction_labels.append(padded_tgt[i])
-
-        return detection_texts, detection_labels, correction_texts, correction_labels
-
-    def train(self, samples):
-        # 数据增强
-        augmented = []
-        for s in samples:
-            noisy = self.generate_typo(s["source"])
-            if noisy != s["target"]:
-                augmented.append({"source": noisy, "target": s["target"]})
-        samples += augmented
-
-        # 准备训练数据
-        print('prepare training data...')
-        d_texts, d_labels, c_texts, c_labels = self.prepare_training_data(samples)
-
-        # 训练检测器
-        X_d = self.vectorizer.fit_transform(d_texts)
-        y_d = np.array(d_labels)
-        X_train_d, X_val_d, y_train_d, y_val_d = train_test_split(X_d, y_d, test_size=0.2, random_state=42)
-        
-        print(X_train_d, y_train_d)
-        assert 0
-        print('fit')
-        self.detection_model.fit(X_train_d, y_train_d)
-        print("Error Detection Report:\n", classification_report(y_val_d, self.detection_model.predict(X_val_d)))
-
-        # 训练纠正器
-        if c_texts:
-            X_c = self.vectorizer.transform(c_texts)
-            y_c = np.array(c_labels)
-            self.correction_model.fit(X_c, y_c)
-        else:
-            print("No correction samples to train.")
-
-    def correct(self, text):
-        chars = list(text)
-        windows = self.extract_windows(text, self.window_size)
-        X = self.vectorizer.transform(windows)
-        detection_preds = self.detection_model.predict(X)
-
-        for i, is_wrong in enumerate(detection_preds):
-            if is_wrong == 1:
-                window = windows[i]
-                pred_char = self.correction_model.predict(self.vectorizer.transform([window]))[0]
-                chars[i] = pred_char
-        return "".join(chars)
+        if any(is_wrong):
+            # 提取被检测为错误的窗口和位置
+            to_correct_windows = [windows[i] for i, w in enumerate(is_wrong) if w]
+            to_correct_indices = [i for i, w in enumerate(is_wrong) if w]
+            corr_vecs = self.correct_vectorizer.transform(to_correct_windows)
+            corr_preds = self.corrector.predict(corr_vecs)
+            # 替换错误字符为预测结果
+            for idx, pred_char in zip(to_correct_indices, corr_preds):
+                corrected[idx] = pred_char
+        return "".join(corrected)
