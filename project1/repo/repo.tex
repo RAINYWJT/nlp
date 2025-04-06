@@ -277,6 +277,30 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 
 直接运行run.sh. 指令如下:
 \textbf{sh run.sh}
+
+当然，因为run只是帮你运行的更快，如果你要调参或者看数据格式的话：解析如下：
+
+\begin{itemize}
+    \item \texttt{--train\_file}: 训练数据路径（默认为 \texttt{data/train.jsonl}）
+    \item \texttt{--test\_file}: 测试数据路径（默认为 \texttt{data/test.jsonl}）
+    \item \texttt{--method}: 选择纠错方法，可选项如下：
+    \begin{itemize}
+        \item \texttt{rule}: 基于规则的纠错
+        \item \texttt{statistical}: 统计模型纠错
+        \item \texttt{ensemble}: 融合多个模型
+        \item \texttt{nn}: 神经网络模型
+        \item \texttt{ol}: 在线集成学习
+    \end{itemize}
+    \item \texttt{--analyze}: 是否进行数据分析（\texttt{0} 表示否，\texttt{1} 表示是）
+    \item \texttt{--statistical\_method}: 统计方法选择：
+    \begin{itemize}
+        \item \texttt{ml}: 使用机器学习模型
+        \item \texttt{ngram}: 使用 N-gram 模型
+    \end{itemize}
+    \item \texttt{--statistical\_optparam}: 是否进行超参数网格搜索（\texttt{0} 表示否，\texttt{1} 表示是）
+\end{itemize}
+
+
 \begin{itemize}
     \item \textbf{Rule-based 复现指令:}
     \begin{lstlisting}
