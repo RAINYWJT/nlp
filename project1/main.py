@@ -17,12 +17,11 @@ import numpy as np
 from data_analysis import analyze_data, visualize_error_distribution
 from rule_based import RuleBasedCorrector
 from statistical import StatisticalMLCorrector,StatisticalNgramCorrector
-from ensemble import EnsembleCorrector, OnlineEnsembleCorrector
+from ensemble import OnlineEnsembleCorrector, MultiEnsembleCorrector
 from nn import NNCorrector
 from evaluation import evaluate_performance, print_detailed_metrics
 from sklearn.model_selection import train_test_split
 from itertools import product
-
 
 
 def grid_search_optimize(train_data):
@@ -140,9 +139,13 @@ def main():
         # For example, you could use rule-based method first, then apply statistical method on the results
         # Or you could use different methods for different types of errors
         # TODO end
-        rule_corrector = RuleBasedCorrector()
-        stat_corrector = StatisticalNgramCorrector()
-        corrector = EnsembleCorrector(rule_corrector, stat_corrector)
+        # 2个corrector
+        # rule_corrector = RuleBasedCorrector()
+        # stat_corrector = StatisticalNgramCorrector()
+        # corrector = EnsembleCorrector(rule_corrector, stat_corrector)
+        # corrector.train(train_data)
+        # 3个corrector，理论上说，你可以集成无数个。至于为什么这里集成3个，因为3个效果好，问就是其他情况我都试过。
+        corrector = MultiEnsembleCorrector([StatisticalMLCorrector() ,RuleBasedCorrector(), StatisticalNgramCorrector()])
         corrector.train(train_data)
 
     elif args.method == 'ol':
@@ -154,6 +157,7 @@ def main():
 
             rule_corr = RuleBasedCorrector()
             stat_corr = StatisticalNgramCorrector()
+            # 我们不使用ml的学习器做在线集成，因为并不是所有的算法支持partial fit
             corrector = OnlineEnsembleCorrector(rule_corr, stat_corr, seed= seed)
             corrector.train(train_data)
             

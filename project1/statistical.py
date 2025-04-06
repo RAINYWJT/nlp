@@ -5,13 +5,16 @@
 Statistical corrector for Chinese Text Correction task.
 This module implements statistical methods for correcting errors in Chinese text.
 """
+
 import random
-import re
-import json
-import numpy as np
-from typing import Dict, List, Tuple, Any
+from typing import Dict, List, Any
 from collections import Counter, defaultdict
-from difflib import SequenceMatcher
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import SGDClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+from sklearn.base import BaseEstimator, TransformerMixin
+import random
 
 # Try to import optional dependencies
 try:
@@ -202,13 +205,6 @@ class StatisticalNgramCorrector:
 
     
 ###################################################################################################################################################################################################
-from typing import List, Dict, Any
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import SGDClassifier, LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report
-from sklearn.base import BaseEstimator, TransformerMixin
-import random
 
 # 上下文窗口提取器：将文本按字符滑动窗口方式提取局部上下文
 class ContextWindowExtractor(BaseEstimator, TransformerMixin):
@@ -235,24 +231,75 @@ class StatisticalMLCorrector:
         self.window_size = window_size
         self.detector = None        # 错误检测器（分类器）
         self.corrector = None       # 错误纠正器（字符分类器）
-        # 使用 TF-IDF 提取特征：字符 n-gram（1 到 3 元）
-        self.detect_vectorizer = TfidfVectorizer(analyzer='char', ngram_range=(1, 5), max_features=20000)
-        self.correct_vectorizer = TfidfVectorizer(analyzer='char', ngram_range=(1, 5), max_features=20000)
+        # 使用 TF-IDF 提取特征：字符 n-gram（1 到 6 元）
+        self.detect_vectorizer = TfidfVectorizer(
+            analyzer='char',
+            ngram_range=(1, 6),
+            max_features=30000,
+            min_df=1,
+            max_df=0.95,
+            sublinear_tf=True
+        )
+        self.correct_vectorizer = TfidfVectorizer(
+            analyzer='char',
+            ngram_range=(1, 6),
+            max_features=30000,
+            min_df=1,
+            max_df=0.95,
+            sublinear_tf=True
+        )
         self.seed = seed 
         random.seed(seed)
+
+    def _augment_error_sample(self, src: str, tgt: str, n=3):
+        augmented_list = []
+        flags_list = []
+        for _ in range(n):
+            noisy_src = list(src)
+            augmented = []
+            ys = []
+            for i in range(len(src)):
+                if src[i] != tgt[i]:
+                    augmented.append(noisy_src[i])
+                    ys.append(1)
+                else:
+                    if noisy_src[i] in self.confusion_dict and random.random() < 0.1:
+                        augmented.append(random.choice(self.confusion_dict[noisy_src[i]]))
+                        ys.append(1)
+                    else:
+                        augmented.append(noisy_src[i])
+                        ys.append(0)
+            augmented_list.append("".join(augmented))
+            flags_list.append(ys)
+        return augmented_list, flags_list
+
 
     # 提取用于检测模型训练的样本（窗口 + 是否错误）
     def _extract_detection_samples(self, sources, targets, labels):
         contexts, ys = [], []
         for src, tgt, lbl in zip(sources, targets, labels):
-            if lbl == 1:
-                if len(src) != len(tgt): continue  # 只处理等长样本
+            if not src or not tgt:
+                continue  # 跳过空字符串
+
+            if lbl == 1 and len(src) == len(tgt):
+                # 原始错误样本处理
                 padded = ['[PAD]'] * (self.window_size // 2) + list(src) + ['[PAD]'] * (self.window_size // 2)
                 for i in range(len(src)):
                     window = padded[i:i + self.window_size]
                     contexts.append("".join(window))
-                    ys.append(int(src[i] != tgt[i]))  # 该字符是否是错误
+                    ys.append(int(src[i] != tgt[i]))
+
+                # 多个增强样本处理（增强数量你可以改，比如 3）
+                augmented_list, flags_list = self._augment_error_sample(src, tgt)
+                for aug_src, aug_flags in zip(augmented_list, flags_list):
+                    padded_aug = ['[PAD]'] * (self.window_size // 2) + list(aug_src) + ['[PAD]'] * (self.window_size // 2)
+                    for i in range(len(aug_src)):
+                        window = padded_aug[i:i + self.window_size]
+                        contexts.append("".join(window))
+                        ys.append(aug_flags[i])
         return contexts, ys
+
+
 
     # 提取用于纠错模型训练的样本（错误窗口 + 正确字符标签）
     def _extract_correction_samples(self, sources, targets, labels):

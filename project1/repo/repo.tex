@@ -219,29 +219,57 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 \medskip
 
 \textbf{2.ml模型}:\\
-1
+
+这个模型呢要基于传统机器学习模型来做，根据代码的提示呢，可以分为检测器和纠正器。具体如下：
+\begin{itemize}
+    \item \textbf{上下文特征提取（\texttt{ContextWindowExtractor}}）: 使用滑动窗口提取文本的局部上下文，每个字符由其左右若干字符构成的上下文表示，窗口大小可调，默认为 3。
+    \item \textbf{错误检测器（\texttt{self.detector}}）: 使用 TF-IDF 特征编码字符级上下文，结合 \texttt{SGDClassifier} 进行二分类判断当前位置字符是否错误，训练样本通过源-目标文本对生成，包含数据增强。\textbf{这个有说法，数据增强在我其他所有方法都做了尝试，只有ml方法有提升}
+    \item \textbf{字符纠正器（\texttt{self.corrector}}）: 对检测为错误的位置，提取其上下文窗口并使用 \texttt{RandomForestClassifier} 分类器预测正确字符。训练时只使用那些被标注为有误且原始与目标文本长度相同的样本。
+    \item \textbf{数据增强机制}: 对于标注为有误的样本，利用混淆集 \texttt{confusion\_dict} 对正确字符引入干扰，模拟更丰富的错误形式以提升模型鲁棒性。
+    \item \textbf{纠错流程}: 给定输入文本，首先滑窗提取上下文并检测错误位置，再对错误窗口进行纠正预测并替换原字符，输出最终纠错结果。
+\end{itemize}
+
+说实话，基于ml的方法很难做好，因为其实是需要有时候去看伪标签的，这个就很麻烦：
+
+\begin{figure}[H]
+    \centering
+    \label{ml}
+    \includegraphics[width=.6\textwidth]{../pic/ml.png} 
+    \caption{ml}  
+\end{figure}
+
 
 \subsubsection{方法3:ensemble模型}
 
-对于集成学习模型，由于本身两个学习器就是弱学习器，所以也不可能做的多好，那就按照说的基于规则和
-统计模型来做集成就好了。就先用规则来训练，然后纠错，交给统计学习模型去训练就好了。
+对于集成学习模型，由于每个单独的学习器本身都是弱学习器，因此整体性能的提升依赖于合理的集成策略。我们采用规则模型与统计模型的串联训练方式：先由规则模型进行初步纠错，然后将结果作为统计模型的训练输入。
 
-当然在这个里面我们也引入权重，其实是拿来平衡两个学习器做集成学习的贡献度的问题。那么决策的时候为了更精准，引入编辑距离和随机的方法:
+在此基础上，为了在推理时做出更精确的决策，我们引入编辑距离和模型权重来综合评估多个学习器的输出。决策策略如下：
+
 \begin{itemize}
-    \item 如果有tar，rule距离小，选rule
-    \item 如果有tar，stat距离小，选stat
-    \item 如果有tar，距离一样，随机。
-    \item 如果没有tar，那就衡量不了编辑距离了，那就根据我们的输出的权重来选。
+    \item 如果有目标文本（target）：
+    \begin{itemize}
+        \item 选择编辑距离最小的模型输出；
+        \item 若多个模型的编辑距离相同，则根据这些模型的权重进行加权随机选择。
+    \end{itemize}
+
+    \item 如果没有目标文本（target）：
+    \begin{itemize}
+        \item 无法计算编辑距离，直接根据模型权重进行加权随机选择。
+    \end{itemize}
 \end{itemize}
 
-结果如下:
+\textbf{那这个就不讲道理了，因为我从理论上说，可以集成一百个或者任意多个学习器，但是确实是因为弱学习器的
+原因，导致效果不好。}代码里面集成3个corrector，理论上说，你可以集成无数个。至于为什么这里集成3个，因为3个效果好，问就是其他情况我都试过。
+而且可以有无数种顺序。
 
 \begin{figure}[H]
     \centering
     \label{ensemble}
-    \includegraphics[width=0.6\textwidth]{../pic/ensemble.png} 
+    \includegraphics[width=.6\textwidth]{../pic/ensemble.png} 
     \caption{ensemble}  
 \end{figure}
+
+
 
 \subsection{其余方法:深度学习}
 
@@ -286,7 +314,7 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
     \toprule
     \textbf{模型} & \textbf{rule模型} & \textbf{统计ngram模型} & \textbf{统计ml模型} & \textbf{集成模型} & \textbf{深度学习模型}\\
     \midrule
-    Final F0.5 & 0.0774 & 0.0452 & - & 0.0571 & - \\
+    Final F0.5 & 0.0774 & 0.0452 & 0.0473 & 0.0503 & - \\
     \bottomrule
     \end{tabular}
     \caption{方法性能对比}
@@ -318,7 +346,7 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
     \toprule
     \textbf{模型} & \textbf{rule模型} & \textbf{统计ngram模型} & \textbf{统计ml模型} & \textbf{集成模型} & \textbf{深度学习模型} &\textbf{在线学习模型}\\
     \midrule
-    Final F0.5 & 0.0774 & 0.0452 & - & 0.0571 & - & \textbf{0.1812 ± 0.0055} \\
+    Final F0.5 & 0.0774 & 0.0452 & 0.0473 & 0.0503 & - & \textbf{0.1812 ± 0.0055} \\
     \bottomrule
     \end{tabular}
     \caption{方法性能对比}

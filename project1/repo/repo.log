@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  6 APR 2025 12:10
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  6 APR 2025 16:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -654,35 +654,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--215
  []
 
 [4]
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+
+ []
+
+
+Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
+(fontspec)                Script "CJK".
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 225.
+
+Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
+(fontspec)             'FandolFang-Regular' with options
+(fontspec)             [Script={CJK},Extension={.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Overfull \hbox (18.1298pt too wide) in paragraph at lines 227--228
+[]\TU/FandolSong-Regular(0)/b/n/10 字 符 纠 正 器  |（\TU/lmtt/b/n/10 self.corrector\TU/FandolSong-Regular(0)/m/n/10 ）| \TU/lmr/m/n/10 : \TU/FandolSong-Regular(0)/m/n/10 对 检 测 为 错 误 的 位 置，|  提 取 其 上 下 文 窗 口 并 使 用 \TU/lmtt/m/n/10 RandomForestClassifier
+ []
+
+File: ../pic/ml.png Graphic file (type bmp)
+<../pic/ml.png>
+[5]
 File: ../pic/ensemble.png Graphic file (type bmp)
 <../pic/ensemble.png>
 
-Overfull \hbox (4.24982pt too wide) in paragraph at lines 256--257
+Overfull \hbox (4.24982pt too wide) in paragraph at lines 284--285
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[5]
-Overfull \hbox (23.57512pt too wide) in paragraph at lines 317--324
+[6]
+Overfull \hbox (23.57512pt too wide) in paragraph at lines 345--352
  [][] 
  []
 
-[6]
+[7]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./repo.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `repo.out' has not changed.
 (rerunfilecheck)             Checksum: 86D40E2DDE7E3E17C8CD2FE114F6425E;1583.
  ) 
 Here is how much of TeX's memory you used:
- 18004 strings out of 474773
- 372786 string characters out of 5757724
+ 18065 strings out of 474773
+ 375821 string characters out of 5757724
  1975839 words of memory out of 5000000
- 39934 multiletter control sequences out of 15000+600000
- 565499 words of font info for 86 fonts, out of 8000000 for 9000
+ 39986 multiletter control sequences out of 15000+600000
+ 565539 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  74i,10n,81p,469b,1661s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on repo.pdf (6 pages).
+Output written on repo.pdf (7 pages).
