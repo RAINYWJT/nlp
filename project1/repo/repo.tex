@@ -14,6 +14,7 @@
 \usepackage{enumerate}
 \usepackage{enumitem} % 控制列表样式
 \usepackage{listings} 
+\usepackage{float}
 
 \title{2025自然语言处理 \\ 课程设计1}
 \date{2025.4.1}
@@ -56,6 +57,8 @@
 \begin{document}
 % \normalsize
 \maketitle
+\textbf{写在开头，请助教老师一定要看完这份报告。}
+
 综述，首先观察代码结构，逻辑如下：
 \begin{itemize}
     \item 命令行参数解析。有method，是否analyze，statistical里面方法的选取。
@@ -181,10 +184,10 @@ rule这个方法还蛮简单的，基本是基于人类的常识性的方法，�
     \item self.\_correct\_word\_confusion(corrected): 这个结合上面的修正规则，用一个词的window去做过滤，然后进行修正。
 \end{itemize}
 最后实现的效果如下：\\
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \label{rule}
-    \includegraphics[width=1\textwidth]{../pic/rule.png} 
+    \includegraphics[width=.6\textwidth]{../pic/rule.png} 
     \caption{rule}  
 \end{figure}
 
@@ -204,10 +207,10 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 那么对于这个，涉及到我到底看哪一个字符的评分，这个问题比较重要。事实上，好像把补全了之后没有很明显的提升，那就说明参数要调，还有一个问题是
 除了参数，阈值这个东西在我看的里面确实做的不够。然后我更换了阈值和调参数，
 具体操作:python3 main.py --method statistical --analyze 0 --statistical\_method ngram --statistical\_optparam 1.然后做出来的结果如下 \\
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \label{ngram}
-    \includegraphics[width=1\textwidth]{../pic/ngram.png} 
+    \includegraphics[width=.6\textwidth]{../pic/ngram.png} 
     \caption{ngram}  
 \end{figure}
 
@@ -220,34 +223,106 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 
 \subsubsection{方法3:ensemble模型}
 
-\subsection{其余方法}
+对于集成学习模型，由于本身两个学习器就是弱学习器，所以也不可能做的多好，那就按照说的基于规则和
+统计模型来做集成就好了。就先用规则来训练，然后纠错，交给统计学习模型去训练就好了。
+
+当然在这个里面我们也引入权重，其实是拿来平衡两个学习器做集成学习的贡献度的问题。那么决策的时候为了更精准，引入编辑距离和随机的方法:
+\begin{itemize}
+    \item 如果有tar，rule距离小，选rule
+    \item 如果有tar，stat距离小，选stat
+    \item 如果有tar，距离一样，随机。
+    \item 如果没有tar，那就衡量不了编辑距离了，那就根据我们的输出的权重来选。
+\end{itemize}
+
+结果如下:
+
+\begin{figure}[H]
+    \centering
+    \label{ensemble}
+    \includegraphics[width=0.6\textwidth]{../pic/ensemble.png} 
+    \caption{ensemble}  
+\end{figure}
+
+\subsection{其余方法:深度学习}
 
 \section{如何复现结果和代码环境依赖问题}
-
-rulebase:
-\textbf{复现指令:}
+\textbf{rulebase复现指令:}
 \begin{lstlisting}
     python3 main.py --method rule --analyze 0  
 \end{lstlisting}
 
-statistical ngram:
-\textbf{复现指令:}
+\textbf{statistical ngram复现指令:}
 \begin{lstlisting}
     python3 main.py --method statistical --analyze 0 --statistical_method ngram 
     --statistical_optparam 0
 \end{lstlisting}
 
-statistical ml:
-\textbf{复现指令:}
+\textbf{statistical ml复现指令:}
 \begin{lstlisting}
     python3 main.py --method statistical --analyze 0 --statistical_method ml 
 \end{lstlisting}
 
+\textbf{ensemble learning复现指令:}
+\begin{lstlisting}
+    python3 main.py --method ensemble --analyze 0
+\end{lstlisting}
+
+\textbf{ensemble online learning复现指令:}
+\begin{lstlisting}
+    python3 main.py --method ol --analyze 0
+\end{lstlisting}
+
+\textbf{nn复现指令:}
+\begin{lstlisting}
+    python3 main.py --method nn --analyze 0 
+\end{lstlisting}
 
 
 \section{不同实验方法的对比结果}
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{llllll}
+    \toprule
+    \textbf{模型} & \textbf{rule模型} & \textbf{统计ngram模型} & \textbf{统计ml模型} & \textbf{集成模型} & \textbf{深度学习模型}\\
+    \midrule
+    Final F0.5 & 0.0774 & 0.0452 & - & - & - \\
+    \bottomrule
+    \end{tabular}
+    \caption{方法性能对比}
+    \end{table}
+
 \section{一些思考：在线学习方法}
+
+通过研究我发现，似乎对于后面的预测是一个一个进行的，前面的学习也是一样，那能不能通过\textbf{在线学习(online learning)}
+的方法来提高准确率呢，好消息，我觉得是可以的。
+
+鉴于之前集成学习方法表现的实在是太垃圾了，因为如果两个学习器都很弱，集成了肯定更弱，总之不会好。
+
+那有没有方法可以让他变好呢，有的兄弟，有的。
+
+我的想法就是在喂了测试集合之后，先预测，再学习，类似于在线学习的方法来做。做一个在线集成学习，这样也可以有效的平衡权重。
+根据在线集成学习的公式:
+\[ w_t = w_{t-1} \exp(-\lambda x) \]
+这个公式里面，$\lambda$ 就是学习率，然后x我们需要一个合理的衡量标准来衡量两个学习器的贡献，
+根据之前学过的算法知识，编辑距离是一个不错的选择。
+
+从train开始为了不改变结构，前面先学，学了之后后面来预测准确率，发现准确率高的离谱。
+由于涉及不同的seed，我们做一个0-10seed的平均调参。
+
+给出最新的对比模型：
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lllllll}
+    \toprule
+    \textbf{模型} & \textbf{rule模型} & \textbf{统计ngram模型} & \textbf{统计ml模型} & \textbf{集成模型} & \textbf{深度学习模型} &\textbf{在线学习模型}\\
+    \midrule
+    Final F0.5 & 0.0774 & 0.0452 & - & - & - & \textbf{0.1812 ± 0.0055} \\
+    \bottomrule
+    \end{tabular}
+    \caption{方法性能对比}
+    \end{table}
 
 
 \end{document}

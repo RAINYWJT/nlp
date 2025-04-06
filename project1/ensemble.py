@@ -21,7 +21,7 @@ class EnsembleCorrector:
             new_sample['source'] = corrected_text
             rule_corrected_data.append(new_sample)
 
-        print(rule_corrected_data)
+       #  print(rule_corrected_data)
 
         self.stat_corrector.train(rule_corrected_data)
         self.update_weights(train_data)

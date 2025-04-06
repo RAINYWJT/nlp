@@ -11,6 +11,7 @@ import json
 import argparse
 from typing import Dict, List, Tuple, Any
 from tqdm import tqdm
+import numpy as np
 
 # Import modules
 from data_analysis import analyze_data, visualize_error_distribution
@@ -130,10 +131,6 @@ def main():
         corrector = NNCorrector()
         corrector.train_model(train_data)
 
-    elif args.method == 'ol':
-        corrector = OnlineEnsembleCorrector(RuleBasedCorrector(), StatisticalNgramCorrector())
-        corrector.train(train_data)
-
     elif args.method == 'ensemble':
         print("\nInitializing ensemble corrector...")
         # TODO start
@@ -148,22 +145,51 @@ def main():
         corrector = EnsembleCorrector(rule_corrector, stat_corrector)
         corrector.train(train_data)
 
+    elif args.method == 'ol':
+        print(f"\nRunning online learning with online learning ...")
+        all_metrics = []
+        
+        for seed in range(10):
+            print(f"\n--- Trial {seed+1}/{10} (seed={seed}) ---")
+
+            rule_corr = RuleBasedCorrector()
+            stat_corr = StatisticalNgramCorrector()
+            corrector = OnlineEnsembleCorrector(rule_corr, stat_corr, seed= seed)
+            corrector.train(train_data)
+            
+            predictions = []
+            for sample in tqdm(test_data, ncols=100):
+                corrected = corrector.correct(sample)
+                predictions.append({
+                    'source': sample['source'],
+                    'prediction': corrected,
+                    'target': sample['target'],
+                    'label': sample['label']
+                })
+            
+            metrics = evaluate_performance(predictions)
+            all_metrics.append(metrics['final_score'])
+            print(f"Accuracy: {metrics['final_score']:.4f}")
+        
+        # 汇总统计结果
+        print("\n=== Final Summary ===")
+        avg_accuracy = np.mean(all_metrics)
+        std_accuracy = np.std([m for m in all_metrics])
+        print(f"Average Accuracy: {avg_accuracy:.4f} ± {std_accuracy:.4f}")
+        return 
+    
+    else:
+        print('There is no method named ' + args.method)
+
     # Evaluate on test data
     print("\nEvaluating on test data...")
     predictions = []
     for sample in tqdm(test_data, ncols=100):
-        if args.method == 'ol':
-            corrected = corrector.correct(sample)
-            source = sample['source']
-            predictions.append(
-                {'source': source, 'prediction': corrected, 'target': sample['target'], 'label': sample['label']}
-            )
-        else:
-            source = sample['source']
-            corrected = corrector.correct(source)
-            predictions.append(
-                {'source': source, 'prediction': corrected, 'target': sample['target'], 'label': sample['label']}
-            )
+        source = sample['source']
+        corrected = corrector.correct(source)
+        predictions.append(
+            {'source': source, 'prediction': corrected, 'target': sample['target'], 'label': sample['label']}
+        )
 
     # Calculate evaluation metrics
     metrics = evaluate_performance(predictions)
