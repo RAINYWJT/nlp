@@ -7,12 +7,8 @@ This module provides functions for evaluating the performance of correction mode
 including precision, recall, F1, and F0.5 metrics for both detection and correction.
 """
 
-import re
-import json
-import numpy as np
 import Levenshtein
 from typing import Dict, List, Tuple, Any
-from collections import Counter, OrderedDict
 
 
 def get_edits(src_text: str, tgt_text: str) -> List[Tuple]:

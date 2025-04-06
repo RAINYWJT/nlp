@@ -7,9 +7,7 @@ This module implements rule-based methods for correcting errors in Chinese text.
 """
 
 import re
-import json
-import difflib
-from typing import Dict, List, Tuple, Any, Set
+from typing import Dict, List, Any
 from collections import defaultdict
 import jieba.posseg as pseg
 

@@ -6,10 +6,9 @@ Main script for Chinese Text Correction task.
 This script provides a framework for analyzing and correcting errors in Chinese text.
 """
 
-import os
 import json
 import argparse
-from typing import Dict, List, Tuple, Any
+from typing import Dict, List, Any
 from tqdm import tqdm
 import numpy as np
 

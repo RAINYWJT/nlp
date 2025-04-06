@@ -6,11 +6,8 @@ Data analysis module for Chinese Text Correction task.
 This module provides functions for analyzing error patterns in the dataset.
 """
 
-import re
-import json
-import numpy as np
-from typing import Dict, List, Tuple, Any
-from collections import Counter, defaultdict
+from typing import Dict, List, Any
+from collections import Counter
 
 # Try to import optional dependencies for visualization
 try:

@@ -3,6 +3,7 @@ import torch.nn as nn
 from transformers import BertTokenizer, BertModel
 from typing import List, Dict, Any
 from collections import Counter
+
 class NNCorrector(nn.Module):
     def __init__(self):
         super(NNCorrector, self).__init__()

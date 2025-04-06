@@ -274,36 +274,43 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 \subsection{其余方法:深度学习}
 
 \section{如何复现结果和代码环境依赖问题}
-\textbf{rulebase复现指令:}
-\begin{lstlisting}
-    python3 main.py --method rule --analyze 0  
-\end{lstlisting}
 
-\textbf{statistical ngram复现指令:}
-\begin{lstlisting}
+直接运行run.sh. 指令如下:
+\textbf{sh run.sh}
+\begin{itemize}
+    \item \textbf{Rule-based 复现指令:}
+    \begin{lstlisting}
+    python3 main.py --method rule --analyze 0  
+    \end{lstlisting}
+
+    \item \textbf{Statistical Ngram 复现指令:}
+    \begin{lstlisting}
     python3 main.py --method statistical --analyze 0 --statistical_method ngram 
     --statistical_optparam 0
-\end{lstlisting}
+    \end{lstlisting}
 
-\textbf{statistical ml复现指令:}
-\begin{lstlisting}
+    \item \textbf{Statistical ML 复现指令:}
+    \begin{lstlisting}
     python3 main.py --method statistical --analyze 0 --statistical_method ml 
-\end{lstlisting}
+    \end{lstlisting}
 
-\textbf{ensemble learning复现指令:}
-\begin{lstlisting}
+    \item \textbf{Ensemble Learning 复现指令:}
+    \begin{lstlisting}
     python3 main.py --method ensemble --analyze 0
-\end{lstlisting}
+    \end{lstlisting}
 
-\textbf{ensemble online learning复现指令:}
-\begin{lstlisting}
+    \item \textbf{Ensemble Online Learning 复现指令:}
+    \begin{lstlisting}
     python3 main.py --method ol --analyze 0
-\end{lstlisting}
+    \end{lstlisting}
 
-\textbf{nn复现指令:}
-\begin{lstlisting}
+    \item \textbf{Neural Network (NN) 复现指令:}
+    \begin{lstlisting}
     python3 main.py --method nn --analyze 0 
-\end{lstlisting}
+    \end{lstlisting}
+\end{itemize}
+
+环境依赖问题：见requirments.txt.运行run.sh 会帮你自己安装。
 
 
 \section{不同实验方法的对比结果}
