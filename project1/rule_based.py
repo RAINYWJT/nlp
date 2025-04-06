@@ -40,6 +40,7 @@ class RuleBasedCorrector:
 
         # or else
         self.confusion_pairs = defaultdict(lambda: defaultdict(int))
+        
 
     def train(self, train_data: List[Dict[str, Any]]) -> None:
         """
@@ -77,7 +78,11 @@ class RuleBasedCorrector:
                             # context = left_context + '_' + right_context
                             # 尝试一个字
                             # context = (source[i - 1] if i > 0 else '', source[i + 1] if i < len(source) - 1 else '')
+                            if s_char not in self.confusion_pairs:
+                                self.confusion_pairs[s_char] = {}
 
+                            if t_char not in self.confusion_pairs[s_char]:
+                                self.confusion_pairs[s_char][t_char] = 0
                             self.confusion_pairs[s_char][t_char] += 1
                             # self.confusion_pairs[s_char][(t_char, context)] += 1
 
@@ -238,9 +243,10 @@ class RuleBasedCorrector:
             )
         }
 
-        print("过滤后的规则（排除长度=2且首字不同的词对）：")
-        for src, (tgt, conf) in list(filtered_rules.items())[:10]:
-            print(f"'{src}' → '{tgt}' (置信度: {conf:.2%})")
+        # TODO() 可以选择查看
+        # print("过滤后的规则（排除长度=2且首字不同的词对）：")
+        # for src, (tgt, conf) in list(filtered_rules.items())[:10]:
+        #     print(f"'{src}' → '{tgt}' (置信度: {conf:.2%})")
 
         # 可选：更新原始规则字典
         self.word_confusion_rules = filtered_rules

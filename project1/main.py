@@ -16,40 +16,12 @@ from tqdm import tqdm
 from data_analysis import analyze_data, visualize_error_distribution
 from rule_based import RuleBasedCorrector
 from statistical import StatisticalMLCorrector,StatisticalNgramCorrector
+from ensemble import EnsembleCorrector, OnlineEnsembleCorrector
 from nn import NNCorrector
 from evaluation import evaluate_performance, print_detailed_metrics
 from sklearn.model_selection import train_test_split
 from itertools import product
 
-# 封装 EnsembleCorrector
-class EnsembleCorrector:
-    def __init__(self, rule_corrector, stat_corrector):
-        self.rule_corrector = rule_corrector
-        self.stat_corrector = stat_corrector
-
-    def correct(self, sample):
-        if isinstance(sample, dict):
-            text = sample['source']
-        else:
-            text = sample
-        text_after_rule = self.rule_corrector.correct(text)
-        text_after_stat = self.stat_corrector.correct(text_after_rule)
-        return text_after_stat
-
-    def train(self, train_data):
-        # Step 1: 训练规则模型
-        self.rule_corrector.train(train_data)
-
-        # Step 2: 先用规则模型纠错训练数据（每个sample是dict）
-        rule_corrected_data = []
-        for sample in train_data:
-            corrected_text = self.rule_corrector.correct(sample['source'])  # 单句文本输入
-            new_sample = sample.copy()
-            new_sample['source'] = corrected_text
-            rule_corrected_data.append(new_sample)
-
-        # Step 3: 再训练统计模型
-        self.stat_corrector.train(rule_corrected_data)
 
 
 def grid_search_optimize(train_data):
@@ -106,7 +78,7 @@ def main():
     parser.add_argument(
         '--method',
         type=str,
-        choices=['rule', 'statistical', 'ensemble', 'nn'],
+        choices=['rule', 'statistical', 'ensemble', 'nn', 'ol'],
         default='statistical',
         help='Correction method to use',
     )
@@ -158,6 +130,10 @@ def main():
         corrector = NNCorrector()
         corrector.train_model(train_data)
 
+    elif args.method == 'ol':
+        corrector = OnlineEnsembleCorrector(RuleBasedCorrector(), StatisticalNgramCorrector())
+        corrector.train(train_data)
+
     elif args.method == 'ensemble':
         print("\nInitializing ensemble corrector...")
         # TODO start
@@ -176,11 +152,18 @@ def main():
     print("\nEvaluating on test data...")
     predictions = []
     for sample in tqdm(test_data, ncols=100):
-        source = sample['source']
-        corrected = corrector.correct(source)
-        predictions.append(
-            {'source': source, 'prediction': corrected, 'target': sample['target'], 'label': sample['label']}
-        )
+        if args.method == 'ol':
+            corrected = corrector.correct(sample)
+            source = sample['source']
+            predictions.append(
+                {'source': source, 'prediction': corrected, 'target': sample['target'], 'label': sample['label']}
+            )
+        else:
+            source = sample['source']
+            corrected = corrector.correct(source)
+            predictions.append(
+                {'source': source, 'prediction': corrected, 'target': sample['target'], 'label': sample['label']}
+            )
 
     # Calculate evaluation metrics
     metrics = evaluate_performance(predictions)

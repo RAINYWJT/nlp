@@ -94,11 +94,12 @@ class StatisticalNgramCorrector:
         for char, count in self.error_probs.items():
             self.error_probs[char] = count / self.unigram_counts.get(char, 1)
 
-        print(
-            f"Trained n-gram model with {len(self.unigram_counts)} unigrams, "
-            f"{len(self.bigram_counts)} bigrams, {len(self.trigram_counts)} trigrams, "
-            f"and {len(self.fourgram_counts)} 4-grams."
-        )
+        # TODO() 可以选择查看
+        # print(
+        #     f"Trained n-gram model with {len(self.unigram_counts)} unigrams, "
+        #     f"{len(self.bigram_counts)} bigrams, {len(self.trigram_counts)} trigrams, "
+        #     f"and {len(self.fourgram_counts)} 4-grams."
+        # )
 
     def correct(self, text: str) -> str:
         corrected_text = list(text)
