@@ -1,13 +1,12 @@
 from nn import NNCorrector
 
-corrector = NNCorrector()
 
 import random
 from nltk.corpus import wordnet
 import nltk
 import json
 from typing import Dict, List, Any
-
+from tqdm import tqdm
 # 下载 WordNet 数据
 nltk.download('wordnet')
 nltk.download('omw-1.4')
@@ -74,7 +73,7 @@ def load_data(file_path: str) -> List[Dict[str, Any]]:
 
 # 示例训练数据
 train_data = load_data('data/train.jsonl')
-
+test_data = load_data('data/test.jsonl')
 
 # # 使用数据增强生成100个样本
 # augmented_data = augment_data(train_data, augment_factor=50)  # 这里设置增强5倍，变成100个样本
@@ -83,18 +82,12 @@ train_data = load_data('data/train.jsonl')
 # for sample in augmented_data[:10]:  # 打印前10个样本
 #     print(sample)
 
-
-corrector.train_model(train_data[:50])
-test_data = [
-    {"source": "敬请管注。", "target": "敬请关注。", "label": 1},
-    {"source": "尽情关注", "target": "敬请关注。", "label": 1},
-    {"source": "尽情灌注", "target": "敬请关注。", "label": 1},
-    {"source": "敬请关住。", "target": "敬请关注。", "label": 1},
-]
+corrector = NNCorrector(train_data=train_data)
+corrector.train_model(train_data)
 # 纠正文本
 
-for sample in test_data:
+for sample in tqdm(test_data):
     corrected_text = corrector.correct(sample['source'])
-    print(f"原始文本: {sample['target']}")
-    print(f"纠正文本: {corrected_text}")
-    print(' ')
+    # print(f"原始文本: {sample['target']}")
+    # print(f"纠正文本: {corrected_text}")
+    # print(' ')
