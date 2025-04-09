@@ -8,15 +8,15 @@ import json
 from typing import Dict, List, Any
 from tqdm import tqdm
 # 下载 WordNet 数据
-nltk.download('wordnet')
-nltk.download('omw-1.4')
+# nltk.download('wordnet')
+# nltk.download('omw-1.4')
 
-# 训练
-train_data = [
-    {"source": "敬请关注。", "target": "敬请关注。", "label": 0},
-    {"source": "经请关注。", "target": "敬请关注。", "label": 1},
-    # 更多训练样本...
-]
+# # 训练
+# train_data = [
+#     {"source": "敬请关注。", "target": "敬请关注。", "label": 0},
+#     {"source": "经请关注。", "target": "敬请关注。", "label": 1},
+#     # 更多训练样本...
+# ]
 
 def synonym_augmentation(text: str) -> str:
     """通过同义词替换增强文本"""
@@ -74,6 +74,7 @@ def load_data(file_path: str) -> List[Dict[str, Any]]:
 # 示例训练数据
 train_data = load_data('data/train.jsonl')
 test_data = load_data('data/test.jsonl')
+
 
 # # 使用数据增强生成100个样本
 # augmented_data = augment_data(train_data, augment_factor=50)  # 这里设置增强5倍，变成100个样本
