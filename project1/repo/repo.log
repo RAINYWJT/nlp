@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  7 APR 2025 09:40
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  9 APR 2025 22:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -534,7 +534,11 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-(./repo.aux)
+(./repo.aux
+
+LaTeX Warning: Label `ensemble' multiply defined.
+
+)
 \openout1 = `repo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -686,25 +690,39 @@ File: ../pic/ml.png Graphic file (type bmp)
 [5]
 File: ../pic/ensemble.png Graphic file (type bmp)
 <../pic/ensemble.png>
+File: ../pic/nnpre.png Graphic file (type bmp)
+<../pic/nnpre.png>
  [6]
-Overfull \hbox (29.24982pt too wide) in paragraph at lines 312--313
+Overfull \hbox (29.24982pt too wide) in paragraph at lines 332--333
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (11.24963pt too wide) in paragraph at lines 318--319
+Overfull \hbox (11.24963pt too wide) in paragraph at lines 338--339
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (23.57512pt too wide) in paragraph at lines 376--383
- [][] 
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+[]\TU/FandolSong-Regular(0)/b/n/10 模
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 404--404
+[]\TU/lmr/bx/n/10 rule
+ []
 
-[7] [8]
+
+Overfull \hbox (5.08363pt too wide) in paragraph at lines 406--406
+[]\TU/lmr/m/n/10 F0.5| 
+ []
+
+
+Overfull \hbox (5.01772pt too wide) in paragraph at lines 406--406
+[]\TU/lmr/m/n/10 0.0774| 
+ []
+
+[8]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./repo.aux)
  ***********
@@ -713,19 +731,16 @@ L3 programming layer <2022/08/05>
  ***********
 
 
-Package rerunfilecheck Warning: File `repo.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: Checksums for `repo.out':
-(rerunfilecheck)             Before: 86D40E2DDE7E3E17C8CD2FE114F6425E;1583
-(rerunfilecheck)             After:  CC8E8901C4EE92CF4DB2C28805E99569;1647.
+Package rerunfilecheck Info: File `repo.out' has not changed.
+(rerunfilecheck)             Checksum: CC8E8901C4EE92CF4DB2C28805E99569;1647.
  ) 
 Here is how much of TeX's memory you used:
- 18065 strings out of 474773
- 375821 string characters out of 5757724
+ 18075 strings out of 474773
+ 376013 string characters out of 5757724
  1975839 words of memory out of 5000000
- 39986 multiletter control sequences out of 15000+600000
+ 39995 multiletter control sequences out of 15000+600000
  565539 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  74i,10n,81p,469b,1661s stack positions out of 10000i,1000n,20000p,200000b,200000s

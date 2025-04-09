@@ -17,7 +17,7 @@ from data_analysis import analyze_data, visualize_error_distribution
 from rule_based import RuleBasedCorrector
 from statistical import StatisticalMLCorrector,StatisticalNgramCorrector
 from ensemble import OnlineEnsembleCorrector, MultiEnsembleCorrector
-from nn import NNCorrector
+from nn import NNPreCorrector, NNCorrector
 from evaluation import evaluate_performance, print_detailed_metrics
 from sklearn.model_selection import train_test_split
 from itertools import product
@@ -77,7 +77,7 @@ def main():
     parser.add_argument(
         '--method',
         type=str,
-        choices=['rule', 'statistical', 'ensemble', 'nn', 'ol'],
+        choices=['rule', 'statistical', 'ensemble', 'nn', 'ol', 'nnpre'],
         default='statistical',
         help='Correction method to use',
     )
@@ -127,6 +127,10 @@ def main():
             print('There is no method named ' + args.statistical_method)
     elif args.method == 'nn':
         corrector = NNCorrector(train_data=train_data)
+        corrector.train_model(train_data)
+    
+    elif args.method == 'nnpre':
+        corrector = NNPreCorrector()
         corrector.train_model(train_data)
 
     elif args.method == 'ensemble':

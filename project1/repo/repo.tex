@@ -272,6 +272,26 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 
 
 \subsection{其余方法:深度学习}
+\medskip
+(1)从零开始的bert训练学习：
+
+\medskip
+(2)用了预训练bert的学习：主要干了几件事：在初始化时，模型加载了BERT tokenizer和一个
+掩码语言模型（BertForMaskedLM），并使用Adam优化器和交叉熵损失函数进行训练。
+训练过程中，输入和目标文本会被转换为token IDs，并且确保它们的长度一致，模型通过前向传播计算损失并更新参数。
+在纠错阶段，correct方法接收一个文本输入，使用BERT模型进行预测，输出修正后的文本。
+通过选择每个位置的最大概率token来生成纠错文本，并返回去掉空格后的修正结果。
+
+但其实根据要求好像挺作弊的，就给出一个实现吧，大概结果如下：
+
+\begin{figure}[H]
+    \centering
+    \label{nnpre}
+    \includegraphics[width=.6\textwidth]{../pic/nnpre.png} 
+    \caption{nnpre}  
+\end{figure}
+
+
 
 \section{如何复现结果和代码环境依赖问题： sh run.sh}
 
@@ -332,6 +352,12 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
     \begin{lstlisting}
     python3 main.py --method nn --analyze 0 
     \end{lstlisting}
+
+
+    \item \textbf{Neural Network Pretrained Bert(NN) 复现指令:}
+    \begin{lstlisting}
+    python3 main.py --method nnpre --analyze 0 
+    \end{lstlisting}
 \end{itemize}
 
 环境依赖问题：见requirments.txt.运行run.sh 会帮你自己安装。
@@ -341,11 +367,11 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{cccccc}
+    \begin{tabular}{ccccccc}
     \toprule
-    \textbf{模型} & \textbf{rule模型} & \textbf{统计ngram模型} & \textbf{统计ml模型} & \textbf{集成模型} & \textbf{深度学习模型}\\
+    \textbf{模型} & \textbf{rule模型} & \textbf{统计ngram模型} & \textbf{统计ml模型} & \textbf{集成模型} & \textbf{深度学习模型} & \textbf{预训练bert}\\
     \midrule
-    Final F0.5 & 0.0774 & 0.0452 & 0.0473 & 0.0503 & - \\
+    Final F0.5 & 0.0774 & 0.0452 & 0.0473 & 0.0503 & - & 0.4120\\
     \bottomrule
     \end{tabular}
     \caption{方法性能对比}
@@ -373,11 +399,11 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 
 \begin{table}[h]
     \centering
-    \begin{tabular}{ccccccc}
+    \begin{tabular}{p{0.5cm}p{0.8cm}cp{1.3cm}ccp{1.2cm}c}
     \toprule
-    \textbf{模型} & \textbf{rule模型} & \textbf{统计ngram模型} & \textbf{统计ml模型} & \textbf{集成模型} & \textbf{深度学习模型} &\textbf{在线学习模型}\\
+    \textbf{模型} & \textbf{rule模型} & \textbf{统计ngram模型} & \textbf{统计ml模型} & \textbf{集成模型} & \textbf{深度学习模型} & \textbf{预训练bert} &\textbf{在线学习模型}\\
     \midrule
-    Final F0.5 & 0.0774 & 0.0452 & 0.0473 & 0.0503 & - & \textbf{0.1812 ± 0.0055} \\
+    F0.5 & 0.0774 & 0.0452 & 0.0473 & 0.0503 & - & 0.4120 & \textbf{0.1812 ± 0.0055} \\
     \bottomrule
     \end{tabular}
     \caption{方法性能对比}
