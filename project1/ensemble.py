@@ -79,7 +79,7 @@ class MultiEnsembleCorrector:
             return random.choices(outputs, weights=self.weights)[0]
 
     
-class OnlineEnsembleCorrector:
+class OnlineEnsembleNonCorrector:
     def __init__(self, rule_corrector, stat_corrector, init_weight_rule=0.5, init_weight_stat=0.5, lr=0.01, seed=1):
         self.rule_corrector = rule_corrector
         self.stat_corrector = stat_corrector
@@ -98,45 +98,78 @@ class OnlineEnsembleCorrector:
             self.stat_corrector.train([new_sample])
             self.update_weights(sample['source'], sample['target'])
 
-    # def train(self, train_data):
-    #     self.rule_corrector.train(train_data)
-        
-    #     for sample in tqdm(train_data):
-    #         corrected_text = self.rule_corrector.correct(sample['source'])
-    #         new_sample = sample.copy()
-    #         new_sample['source'] = corrected_text
+    def update_weights(self, source, target):
+        rule_pred = self.rule_corrector.correct(source)
+        stat_pred = self.stat_corrector.correct(source)
 
-    #         # 原始样本训练
-    #         self.stat_corrector.train([new_sample])
-    #         self.update_weights(sample['source'], sample['target'])
+        dist_rule = Levenshtein.distance(rule_pred, target)
+        dist_stat = Levenshtein.distance(stat_pred, target)
 
-    #         # 简单增强：直接打乱字符顺序
-    #         augmented_samples = self.augment_sample(new_sample)
-    #         for aug_sample in augmented_samples:
-    #             self.stat_corrector.train([aug_sample])
-    #             self.update_weights(aug_sample['source'], aug_sample['target'])
+        score_rule = math.exp(-self.lr * dist_rule)
+        score_stat = math.exp(-self.lr * dist_stat)
 
-    # def augment_sample(self, sample, num_aug=5):
-    #     """直接通过词语顺序打乱做数据增强"""
-    #     augmented = []
-    #     for _ in range(num_aug):
-    #         source_aug = self.shuffle_words(sample['source'])
-    #         target = sample['target']
-    #         augmented.append({'source': source_aug, 'target': target, 'label': 1})
-    #     return augmented
+        sum_score = score_rule + score_stat
+        if sum_score > 0:
+            self.weight_rule = score_rule / sum_score
+            self.weight_stat = score_stat / sum_score
 
-    # def shuffle_words(self, text):
-    #     """将文本中的部分词/字符顺序打乱（简化增强）"""
-    #     import random
-    #     if len(text) <= 1:
-    #         return text
+    def correct(self, sample):
+        if isinstance(sample, dict):
+            text = sample['source']
+            target = sample.get('target', None)
+            label = sample.get('label', None)
+        else:
+            text = sample
+            target = None
+            label = None
 
-    #     # 可以是按字打乱，也可以按词
-    #     chars = list(text)
-    #     idx1, idx2 = random.sample(range(len(chars)), 2)
-    #     chars[idx1], chars[idx2] = chars[idx2], chars[idx1]
-    #     return ''.join(chars)
+        rule_out = self.rule_corrector.correct(text)
+        stat_out = self.stat_corrector.correct(text)
 
+        # 如果两个一致，直接返回
+        if rule_out == stat_out:
+            return rule_out
+
+        if target:
+            dist_rule = Levenshtein.distance(rule_out, target)
+            dist_stat = Levenshtein.distance(stat_out, target)
+
+            if dist_rule < dist_stat:
+                output = rule_out
+            elif dist_stat < dist_rule:
+                output = stat_out
+            else:
+                output = random.choices([rule_out, stat_out], weights=[self.weight_rule, self.weight_stat])[0]
+        else:
+            output = random.choices([rule_out, stat_out], weights=[self.weight_rule, self.weight_stat])[0]
+
+        # 在线学习阶段：但这个模型不纠正
+        # if target:
+        #     self.rule_corrector.train([{'source': text, 'target': target, 'label': label}])
+        #     self.stat_corrector.train([{'source': text, 'target': target, 'label': label}]) 
+        #     self.update_weights(text, target)
+
+        return output
+    
+    
+class OnlineEnsembleCorrector:
+    def __init__(self, rule_corrector, stat_corrector, init_weight_rule=0.5, init_weight_stat=0.5, lr=0.01, seed=1):
+        self.rule_corrector = rule_corrector
+        self.stat_corrector = stat_corrector
+        self.weight_rule = init_weight_rule
+        self.weight_stat = init_weight_stat
+        self.lr = lr
+        self.seed = seed
+        random.seed(seed)  # 设置随机种子
+
+    def train(self, train_data):
+        self.rule_corrector.train(train_data)
+        for sample in tqdm(train_data):
+            corrected_text = self.rule_corrector.correct(sample['source'])
+            new_sample = sample.copy()
+            new_sample['source'] = corrected_text
+            self.stat_corrector.train([new_sample])
+            self.update_weights(sample['source'], sample['target'])
 
     def update_weights(self, source, target):
         rule_pred = self.rule_corrector.correct(source)

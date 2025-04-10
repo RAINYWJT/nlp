@@ -29,7 +29,7 @@ echo "5. Online Ensemble Learning"
 echo "6. Neural Network"
 echo "7. Neural Network"
 
-read -p "请输入对应编号 (1-6): " model_id
+read -p "请输入对应编号 (1-8): " model_id
 
 case $model_id in
   1)
@@ -53,14 +53,18 @@ case $model_id in
     python3 main.py --method ol --analyze 0
     ;;
   6)
+    echo "[Running Online Ensemble Learning model(True)]"
+    python3 main.py --method olnc --analyze 0
+    ;;
+  7)
     echo "[Running Neural Network model]"
     python3 main.py --method nn --analyze 0
     ;;
-  7)
+  8)
     echo "[Running Neural Network Pretrained Bert model]"
     python3 main.py --method nnpre --analyze 0
     ;;
   *)
-    echo "无效输入，请输入 1 到 7 的数字。"
+    echo "无效输入，请输入 1 到 8 的数字。"
     ;;
 esac

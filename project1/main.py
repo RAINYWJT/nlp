@@ -16,7 +16,7 @@ import numpy as np
 from data_analysis import analyze_data, visualize_error_distribution
 from rule_based import RuleBasedCorrector
 from statistical import StatisticalMLCorrector,StatisticalNgramCorrector
-from ensemble import OnlineEnsembleCorrector, MultiEnsembleCorrector
+from ensemble import OnlineEnsembleCorrector, MultiEnsembleCorrector, OnlineEnsembleNonCorrector
 from nn import NNPreCorrector, NNCorrector
 from evaluation import evaluate_performance, print_detailed_metrics
 from sklearn.model_selection import train_test_split
@@ -77,7 +77,7 @@ def main():
     parser.add_argument(
         '--method',
         type=str,
-        choices=['rule', 'statistical', 'ensemble', 'nn', 'ol', 'nnpre'],
+        choices=['rule', 'statistical', 'ensemble', 'nn', 'ol', 'olnc','nnpre'],
         default='statistical',
         help='Correction method to use',
     )
@@ -162,6 +162,39 @@ def main():
             stat_corr = StatisticalNgramCorrector()
             # 我们不使用ml的学习器做在线集成，因为并不是所有的算法支持partial fit
             corrector = OnlineEnsembleCorrector(rule_corr, stat_corr, seed= seed)
+            corrector.train(train_data)
+            
+            predictions = []
+            for sample in tqdm(test_data, ncols=100):
+                corrected = corrector.correct(sample)
+                predictions.append({
+                    'source': sample['source'],
+                    'prediction': corrected,
+                    'target': sample['target'],
+                    'label': sample['label']
+                })
+            
+            metrics = evaluate_performance(predictions)
+            all_metrics.append(metrics['final_score'])
+            print(f"Accuracy: {metrics['final_score']:.4f}")
+        
+        # 汇总统计结果
+        print("\n=== Final Summary ===")
+        avg_accuracy = np.mean(all_metrics)
+        std_accuracy = np.std([m for m in all_metrics])
+        print(f"Average Accuracy: {avg_accuracy:.4f} ± {std_accuracy:.4f}")
+        return 
+    elif args.method == 'olnc':
+        print(f"\nRunning online learning with online learning ...")
+        all_metrics = []
+        
+        for seed in range(10):
+            print(f"\n--- Trial {seed+1}/{10} (seed={seed}) ---")
+
+            rule_corr = RuleBasedCorrector()
+            stat_corr = StatisticalNgramCorrector()
+            # 我们不使用ml的学习器做在线集成，因为并不是所有的算法支持partial fit, 这个的区别就是不做oline
+            corrector = OnlineEnsembleNonCorrector(rule_corr, stat_corr, seed= seed)
             corrector.train(train_data)
             
             predictions = []

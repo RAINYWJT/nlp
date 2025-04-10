@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  9 APR 2025 22:56
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  10 APR 2025 16:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -534,11 +534,7 @@ Package fontspec Info: Font family 'FandolSong-Regular(0)' created for font
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-(./repo.aux
-
-LaTeX Warning: Label `ensemble' multiply defined.
-
-)
+(./repo.aux)
 \openout1 = `repo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -646,19 +642,19 @@ Missing character: There is no ≥ (U+2265) in font [lmroman10-regular]:mapping=
 File: ../pic/rule.png Graphic file (type bmp)
 <../pic/rule.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--192
+Underfull \hbox (badness 10000) in paragraph at lines 188--194
 
  []
 
 File: ../pic/ngram.png Graphic file (type bmp)
 <../pic/ngram.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--215
+Underfull \hbox (badness 10000) in paragraph at lines 209--217
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
@@ -667,7 +663,7 @@ Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
 (fontspec)                Script "CJK".
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 225.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 227.
 
 Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
 (fontspec)             'FandolFang-Regular' with options
@@ -681,7 +677,7 @@ Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
-Overfull \hbox (18.1298pt too wide) in paragraph at lines 227--228
+Overfull \hbox (18.1298pt too wide) in paragraph at lines 229--230
 []\TU/FandolSong-Regular(0)/b/n/10 字 符 纠 正 器  |（\TU/lmtt/b/n/10 self.corrector\TU/FandolSong-Regular(0)/m/n/10 ）| \TU/lmr/m/n/10 : \TU/FandolSong-Regular(0)/m/n/10 对 检 测 为 错 误 的 位 置，|  提 取 其 上 下 文 窗 口 并 使 用 \TU/lmtt/m/n/10 RandomForestClassifier
  []
 
@@ -690,59 +686,63 @@ File: ../pic/ml.png Graphic file (type bmp)
 [5]
 File: ../pic/ensemble.png Graphic file (type bmp)
 <../pic/ensemble.png>
+File: ../pic/nn.png Graphic file (type bmp)
+<../pic/nn.png>
+ [6]
 File: ../pic/nnpre.png Graphic file (type bmp)
 <../pic/nnpre.png>
- [6]
-Overfull \hbox (29.24982pt too wide) in paragraph at lines 332--333
+
+Overfull \hbox (29.24982pt too wide) in paragraph at lines 347--348
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (11.24963pt too wide) in paragraph at lines 338--339
+Overfull \hbox (11.24963pt too wide) in paragraph at lines 353--354
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 404--404
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 []\TU/FandolSong-Regular(0)/b/n/10 模
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--404
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 []\TU/lmr/bx/n/10 rule
  []
 
 
-Overfull \hbox (5.08363pt too wide) in paragraph at lines 406--406
+Overfull \hbox (5.08363pt too wide) in paragraph at lines 426--426
 []\TU/lmr/m/n/10 F0.5| 
  []
 
 
-Overfull \hbox (5.01772pt too wide) in paragraph at lines 406--406
+Overfull \hbox (5.01772pt too wide) in paragraph at lines 426--426
 []\TU/lmr/m/n/10 0.0774| 
  []
 
-[8]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ../pic/olnc.png Graphic file (type bmp)
+<../pic/olnc.png>
+[8] [9]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./repo.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `repo.out' has not changed.
-(rerunfilecheck)             Checksum: CC8E8901C4EE92CF4DB2C28805E99569;1647.
+(rerunfilecheck)             Checksum: 1E5E3C2CAF0CD8E8F69CB150A865EB7E;1936.
  ) 
 Here is how much of TeX's memory you used:
- 18075 strings out of 474773
- 376013 string characters out of 5757724
+ 18107 strings out of 474773
+ 377241 string characters out of 5757724
  1975839 words of memory out of 5000000
- 39995 multiletter control sequences out of 15000+600000
+ 40025 multiletter control sequences out of 15000+600000
  565539 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  74i,10n,81p,469b,1661s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on repo.pdf (8 pages).
+Output written on repo.pdf (9 pages).
