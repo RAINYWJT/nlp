@@ -10,7 +10,6 @@ import re
 from typing import Dict, List, Any
 from collections import defaultdict
 import jieba.posseg as pseg
-
 # Try to import optional dependencies
 try:
     import jieba
@@ -270,7 +269,6 @@ class RuleBasedCorrector:
         corrected = self._correct_confusion_chars(corrected)
         corrected = self._correct_grammar(corrected)
         corrected = self._correct_word_confusion(corrected)
-
         return corrected
 
     def _correct_punctuation(self, text: str) -> str:
