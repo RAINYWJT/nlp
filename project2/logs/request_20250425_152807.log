@@ -1,0 +1,1740 @@
+2025-04-25 15:28:07,774 - INFO - Processing 200 prompts...
+2025-04-25 15:28:13,351 - WARNING - Attempt 1/5 failed for Prompt #7... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:13,352 - WARNING - Attempt 1/5 failed for Prompt #5... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:13,415 - WARNING - Attempt 1/5 failed for Prompt #4... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:13,421 - WARNING - Attempt 1/5 failed for Prompt #2... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:13,431 - WARNING - Attempt 1/5 failed for Prompt #1... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,096 - WARNING - Attempt 1/5 failed for Prompt #18... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,097 - WARNING - Attempt 1/5 failed for Prompt #19... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,164 - WARNING - Attempt 1/5 failed for Prompt #3... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,165 - WARNING - Attempt 1/5 failed for Prompt #9... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,166 - WARNING - Attempt 1/5 failed for Prompt #20... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,168 - WARNING - Attempt 1/5 failed for Prompt #14... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,202 - WARNING - Attempt 1/5 failed for Prompt #22... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,253 - WARNING - Attempt 1/5 failed for Prompt #15... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,259 - WARNING - Attempt 1/5 failed for Prompt #16... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,260 - WARNING - Attempt 1/5 failed for Prompt #17... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,261 - WARNING - Attempt 1/5 failed for Prompt #6... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,264 - WARNING - Attempt 1/5 failed for Prompt #25... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,267 - WARNING - Attempt 1/5 failed for Prompt #21... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,268 - WARNING - Attempt 1/5 failed for Prompt #13... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,270 - WARNING - Attempt 1/5 failed for Prompt #10... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,412 - WARNING - Attempt 1/5 failed for Prompt #8... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,429 - WARNING - Attempt 1/5 failed for Prompt #24... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,433 - WARNING - Attempt 1/5 failed for Prompt #12... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,525 - WARNING - Attempt 1/5 failed for Prompt #11... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,549 - WARNING - Attempt 2/5 failed for Prompt #5... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,554 - WARNING - Attempt 2/5 failed for Prompt #4... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,555 - WARNING - Attempt 1/5 failed for Prompt #23... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,557 - WARNING - Attempt 2/5 failed for Prompt #7... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,559 - WARNING - Attempt 2/5 failed for Prompt #2... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:14,561 - WARNING - Attempt 2/5 failed for Prompt #1... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,257 - WARNING - Attempt 2/5 failed for Prompt #19... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,265 - WARNING - Attempt 2/5 failed for Prompt #9... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,270 - WARNING - Attempt 2/5 failed for Prompt #3... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,275 - WARNING - Attempt 2/5 failed for Prompt #18... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,417 - WARNING - Attempt 2/5 failed for Prompt #25... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,423 - WARNING - Attempt 2/5 failed for Prompt #6... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,426 - WARNING - Attempt 2/5 failed for Prompt #16... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,441 - WARNING - Attempt 2/5 failed for Prompt #15... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,453 - WARNING - Attempt 2/5 failed for Prompt #22... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,456 - WARNING - Attempt 2/5 failed for Prompt #20... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,458 - WARNING - Attempt 2/5 failed for Prompt #10... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,459 - WARNING - Attempt 2/5 failed for Prompt #14... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,482 - WARNING - Attempt 2/5 failed for Prompt #17... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,484 - WARNING - Attempt 2/5 failed for Prompt #13... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,496 - WARNING - Attempt 2/5 failed for Prompt #21... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,503 - WARNING - Attempt 2/5 failed for Prompt #8... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,525 - WARNING - Attempt 2/5 failed for Prompt #24... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,600 - WARNING - Attempt 2/5 failed for Prompt #11... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,618 - WARNING - Attempt 2/5 failed for Prompt #12... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:15,721 - WARNING - Attempt 2/5 failed for Prompt #23... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:16,621 - WARNING - Attempt 3/5 failed for Prompt #7... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:16,623 - WARNING - Attempt 3/5 failed for Prompt #4... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:16,626 - WARNING - Attempt 3/5 failed for Prompt #5... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:16,631 - WARNING - Attempt 3/5 failed for Prompt #1... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:16,663 - WARNING - Attempt 3/5 failed for Prompt #2... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,341 - WARNING - Attempt 3/5 failed for Prompt #19... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,344 - WARNING - Attempt 3/5 failed for Prompt #3... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,352 - WARNING - Attempt 3/5 failed for Prompt #9... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,361 - WARNING - Attempt 3/5 failed for Prompt #18... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,494 - WARNING - Attempt 3/5 failed for Prompt #25... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,495 - WARNING - Attempt 3/5 failed for Prompt #6... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,538 - WARNING - Attempt 3/5 failed for Prompt #16... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,692 - WARNING - Attempt 3/5 failed for Prompt #15... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,693 - WARNING - Attempt 3/5 failed for Prompt #22... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,713 - WARNING - Attempt 3/5 failed for Prompt #14... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,722 - WARNING - Attempt 3/5 failed for Prompt #10... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,828 - WARNING - Attempt 3/5 failed for Prompt #17... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,843 - WARNING - Attempt 3/5 failed for Prompt #8... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,855 - WARNING - Attempt 3/5 failed for Prompt #21... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:17,860 - WARNING - Attempt 3/5 failed for Prompt #24... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:18,069 - WARNING - Attempt 3/5 failed for Prompt #20... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:18,112 - WARNING - Attempt 3/5 failed for Prompt #12... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:18,152 - WARNING - Attempt 3/5 failed for Prompt #11... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:18,156 - WARNING - Attempt 3/5 failed for Prompt #13... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:18,173 - WARNING - Attempt 3/5 failed for Prompt #23... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:20,716 - WARNING - Attempt 4/5 failed for Prompt #1... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:20,719 - WARNING - Attempt 4/5 failed for Prompt #5... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:20,726 - WARNING - Attempt 4/5 failed for Prompt #4... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:20,749 - WARNING - Attempt 4/5 failed for Prompt #7... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:20,754 - WARNING - Attempt 4/5 failed for Prompt #2... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,438 - WARNING - Attempt 4/5 failed for Prompt #19... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,450 - WARNING - Attempt 4/5 failed for Prompt #3... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,464 - WARNING - Attempt 4/5 failed for Prompt #9... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,477 - WARNING - Attempt 4/5 failed for Prompt #18... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,577 - WARNING - Attempt 4/5 failed for Prompt #6... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,604 - WARNING - Attempt 4/5 failed for Prompt #25... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,682 - WARNING - Attempt 4/5 failed for Prompt #16... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,809 - WARNING - Attempt 4/5 failed for Prompt #15... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,815 - WARNING - Attempt 4/5 failed for Prompt #22... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,948 - WARNING - Attempt 4/5 failed for Prompt #14... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,951 - WARNING - Attempt 4/5 failed for Prompt #10... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:21,986 - WARNING - Attempt 4/5 failed for Prompt #17... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:22,151 - WARNING - Attempt 4/5 failed for Prompt #24... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:22,152 - WARNING - Attempt 4/5 failed for Prompt #8... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:22,185 - WARNING - Attempt 4/5 failed for Prompt #20... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:22,190 - WARNING - Attempt 4/5 failed for Prompt #21... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:23,191 - WARNING - Attempt 4/5 failed for Prompt #12... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:23,200 - WARNING - Attempt 4/5 failed for Prompt #13... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:23,213 - WARNING - Attempt 4/5 failed for Prompt #11... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:23,238 - WARNING - Attempt 4/5 failed for Prompt #23... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:28,797 - WARNING - Attempt 5/5 failed for Prompt #1... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:28,804 - ERROR - Failed to process prompt after 5 attempts: #1...
+2025-04-25 15:28:28,808 - WARNING - Attempt 5/5 failed for Prompt #5... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:28,808 - ERROR - Failed to process prompt after 5 attempts: #5...
+2025-04-25 15:28:28,809 - WARNING - Attempt 5/5 failed for Prompt #4... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:28,809 - ERROR - Failed to process prompt after 5 attempts: #4...
+2025-04-25 15:28:28,853 - WARNING - Attempt 5/5 failed for Prompt #2... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:28,853 - ERROR - Failed to process prompt after 5 attempts: #2...
+2025-04-25 15:28:28,859 - WARNING - Attempt 5/5 failed for Prompt #7... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:28,859 - ERROR - Failed to process prompt after 5 attempts: #7...
+2025-04-25 15:28:29,583 - WARNING - Attempt 5/5 failed for Prompt #19... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,583 - ERROR - Failed to process prompt after 5 attempts: #19...
+2025-04-25 15:28:29,585 - WARNING - Attempt 5/5 failed for Prompt #3... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,585 - ERROR - Failed to process prompt after 5 attempts: #3...
+2025-04-25 15:28:29,585 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪神秘的约翰·Q·博迪先生，正在宅邸里举办一场... Error: Attempt 5/5 failed for Prompt #1... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,585 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪神秘的约翰·Q·博迪先生，正在宅邸里举办一场... Error: Attempt 5/5 failed for Prompt #2... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,586 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富甲一方却行踪诡秘的约翰·Q·博迪先生，此刻正举办一场小型... Error: Attempt 5/5 failed for Prompt #3... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,586 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪诡秘的约翰·Q·博迪先生，正在宅邸里举办一场... Error: Attempt 5/5 failed for Prompt #4... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,586 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富商约翰·Q·博迪邀请了几位最亲密的伙伴，举办了一场奢华的... Error: Attempt 5/5 failed for Prompt #5... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,730 - WARNING - Attempt 5/5 failed for Prompt #18... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,730 - ERROR - Failed to process prompt after 5 attempts: #18...
+2025-04-25 15:28:29,733 - WARNING - Attempt 5/5 failed for Prompt #9... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,733 - ERROR - Failed to process prompt after 5 attempts: #9...
+2025-04-25 15:28:29,740 - WARNING - Attempt 5/5 failed for Prompt #6... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,740 - ERROR - Failed to process prompt after 5 attempts: #6...
+2025-04-25 15:28:29,747 - WARNING - Attempt 1/5 failed for Prompt #27... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,751 - WARNING - Attempt 1/5 failed for Prompt #26... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,755 - WARNING - Attempt 1/5 failed for Prompt #30... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,759 - WARNING - Attempt 1/5 failed for Prompt #29... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,762 - WARNING - Attempt 1/5 failed for Prompt #28... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,851 - WARNING - Attempt 5/5 failed for Prompt #25... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,851 - ERROR - Failed to process prompt after 5 attempts: #25...
+2025-04-25 15:28:29,927 - WARNING - Attempt 5/5 failed for Prompt #15... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,927 - ERROR - Failed to process prompt after 5 attempts: #15...
+2025-04-25 15:28:29,928 - WARNING - Attempt 5/5 failed for Prompt #16... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,928 - ERROR - Failed to process prompt after 5 attempts: #16...
+2025-04-25 15:28:29,929 - WARNING - Attempt 5/5 failed for Prompt #22... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:29,929 - ERROR - Failed to process prompt after 5 attempts: #22...
+2025-04-25 15:28:30,036 - WARNING - Attempt 5/5 failed for Prompt #14... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,036 - ERROR - Failed to process prompt after 5 attempts: #14...
+2025-04-25 15:28:30,042 - WARNING - Attempt 5/5 failed for Prompt #10... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,042 - ERROR - Failed to process prompt after 5 attempts: #10...
+2025-04-25 15:28:30,061 - WARNING - Attempt 5/5 failed for Prompt #17... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,061 - ERROR - Failed to process prompt after 5 attempts: #17...
+2025-04-25 15:28:30,240 - WARNING - Attempt 5/5 failed for Prompt #8... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,241 - ERROR - Failed to process prompt after 5 attempts: #8...
+2025-04-25 15:28:30,241 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富商约翰·Q·博迪邀请了几位至交参加私密晚宴，水晶吊灯将宴... Error: Attempt 5/5 failed for Prompt #6... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,241 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪神秘的约翰·Q·博迪先生，正在宅邸里举办一场... Error: Attempt 5/5 failed for Prompt #7... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,241 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——那位富有而神秘的绅士——正在举办一场... Error: Attempt 5/5 failed for Prompt #8... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,242 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富商约翰·Q·博迪邀请了几位最亲密的伙伴，举办了一场奢华的... Error: Attempt 5/5 failed for Prompt #9... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,242 - ERROR - Item failed: 冬夜深沉，雪花无声地覆盖了都铎庄园的尖顶。富商约翰·Q·博迪邀请了几位至交参加私密晚宴，水晶吊灯将猩... Error: Attempt 5/5 failed for Prompt #10... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,242 - WARNING - Attempt 5/5 failed for Prompt #24... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,242 - ERROR - Failed to process prompt after 5 attempts: #24...
+2025-04-25 15:28:30,270 - WARNING - Attempt 5/5 failed for Prompt #20... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,271 - ERROR - Failed to process prompt after 5 attempts: #20...
+2025-04-25 15:28:30,271 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪诡秘的约翰·Q·博迪先生，正在举办一场小型而... Error: Attempt 5/5 failed for Prompt #16... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,271 - ERROR - Item failed: 冬夜，寒风如刀。富豪约翰·Q·博迪在都铎庄园举办了一场小型却奢华的晚宴，邀请了几位最亲密的伙伴。然而... Error: Attempt 5/5 failed for Prompt #17... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,271 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——那位富有而神秘的绅士——正在举办一场... Error: Attempt 5/5 failed for Prompt #18... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,271 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。神秘的富豪约翰·Q·博迪邀请了七位最亲近的伙伴前来赴宴——... Error: Attempt 5/5 failed for Prompt #19... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,271 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——那位富可敌国却行踪诡秘的绅士——正在... Error: Attempt 5/5 failed for Prompt #20... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,388 - WARNING - Attempt 1/5 failed for Prompt #31... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,391 - WARNING - Attempt 5/5 failed for Prompt #21... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,391 - ERROR - Failed to process prompt after 5 attempts: #21...
+2025-04-25 15:28:30,483 - WARNING - Attempt 1/5 failed for Prompt #33... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,609 - WARNING - Attempt 1/5 failed for Prompt #34... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,611 - WARNING - Attempt 1/5 failed for Prompt #35... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,613 - WARNING - Attempt 1/5 failed for Prompt #32... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,615 - WARNING - Attempt 1/5 failed for Prompt #37... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,618 - WARNING - Attempt 1/5 failed for Prompt #36... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,626 - WARNING - Attempt 1/5 failed for Prompt #39... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,680 - WARNING - Attempt 1/5 failed for Prompt #40... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,683 - WARNING - Attempt 1/5 failed for Prompt #38... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,835 - WARNING - Attempt 2/5 failed for Prompt #26... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,866 - WARNING - Attempt 2/5 failed for Prompt #27... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,950 - WARNING - Attempt 2/5 failed for Prompt #29... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,959 - WARNING - Attempt 2/5 failed for Prompt #28... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:30,988 - WARNING - Attempt 2/5 failed for Prompt #30... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,487 - WARNING - Attempt 5/5 failed for Prompt #11... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,487 - ERROR - Failed to process prompt after 5 attempts: #11...
+2025-04-25 15:28:31,491 - WARNING - Attempt 5/5 failed for Prompt #13... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,491 - ERROR - Failed to process prompt after 5 attempts: #13...
+2025-04-25 15:28:31,491 - WARNING - Attempt 5/5 failed for Prompt #23... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,491 - ERROR - Failed to process prompt after 5 attempts: #23...
+2025-04-25 15:28:31,491 - ERROR - Item failed: 冬夜，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——那位富有而神秘的绅士——正在举办一场小型... Error: Attempt 5/5 failed for Prompt #21... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,491 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪诡秘的约翰·Q·博迪先生，正在举办一场小型而... Error: Attempt 5/5 failed for Prompt #22... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,491 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——那位富可敌国却行踪诡秘的绅士——正在... Error: Attempt 5/5 failed for Prompt #23... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,491 - ERROR - Item failed: 冬夜，都铎庄园的灯火在风雪中摇曳。约翰·Q·博迪先生——那位以神秘著称的富豪——正举办一场小型晚宴。... Error: Attempt 5/5 failed for Prompt #24... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,491 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪诡秘的约翰·Q·博迪先生，此刻正躺在血泊中。... Error: Attempt 5/5 failed for Prompt #25... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,579 - WARNING - Attempt 2/5 failed for Prompt #31... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,580 - WARNING - Attempt 5/5 failed for Prompt #12... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,581 - ERROR - Failed to process prompt after 5 attempts: #12...
+2025-04-25 15:28:31,581 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——那位富有而神秘的绅士——正在举办一场... Error: Attempt 5/5 failed for Prompt #11... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,581 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪诡秘的约翰·Q·博迪先生，正在宅邸里举办一场... Error: Attempt 5/5 failed for Prompt #12... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,581 - ERROR - Item failed: 冬夜如墨，都铎庄园的烛火在寒风中摇曳。富可敌国却行踪诡秘的约翰·Q·博迪先生，此刻正与七位心腹共赴一... Error: Attempt 5/5 failed for Prompt #13... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,581 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪诡秘的约翰·Q·博迪先生，正在宅邸里举办一场... Error: Attempt 5/5 failed for Prompt #14... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,581 - ERROR - Item failed: 冬夜，寒风如刀。约翰·Q·博迪先生——那位富可敌国却行踪诡秘的绅士——在都铎庄园举办了一场小型而奢华... Error: Attempt 5/5 failed for Prompt #15... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,737 - WARNING - Attempt 1/5 failed for Prompt #45... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,739 - WARNING - Attempt 1/5 failed for Prompt #44... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,743 - WARNING - Attempt 1/5 failed for Prompt #41... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,769 - WARNING - Attempt 1/5 failed for Prompt #43... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,771 - WARNING - Attempt 2/5 failed for Prompt #33... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,805 - WARNING - Attempt 1/5 failed for Prompt #46... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,902 - WARNING - Attempt 1/5 failed for Prompt #47... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,920 - WARNING - Attempt 1/5 failed for Prompt #48... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,925 - WARNING - Attempt 1/5 failed for Prompt #50... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,966 - WARNING - Attempt 1/5 failed for Prompt #49... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,973 - WARNING - Attempt 2/5 failed for Prompt #34... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:31,981 - WARNING - Attempt 1/5 failed for Prompt #42... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,227 - WARNING - Attempt 2/5 failed for Prompt #45... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,231 - WARNING - Attempt 2/5 failed for Prompt #44... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,232 - WARNING - Attempt 2/5 failed for Prompt #41... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,239 - WARNING - Attempt 2/5 failed for Prompt #46... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,242 - WARNING - Attempt 2/5 failed for Prompt #43... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,273 - WARNING - Attempt 3/5 failed for Prompt #26... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,381 - WARNING - Attempt 2/5 failed for Prompt #47... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,398 - WARNING - Attempt 2/5 failed for Prompt #50... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,403 - WARNING - Attempt 2/5 failed for Prompt #48... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,409 - WARNING - Attempt 3/5 failed for Prompt #29... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:34,411 - WARNING - Attempt 3/5 failed for Prompt #28... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,045 - WARNING - Attempt 3/5 failed for Prompt #27... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,056 - WARNING - Attempt 2/5 failed for Prompt #36... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,057 - WARNING - Attempt 2/5 failed for Prompt #32... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,059 - WARNING - Attempt 2/5 failed for Prompt #37... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,212 - WARNING - Attempt 2/5 failed for Prompt #39... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,320 - WARNING - Attempt 2/5 failed for Prompt #35... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,347 - WARNING - Attempt 2/5 failed for Prompt #40... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,369 - WARNING - Attempt 2/5 failed for Prompt #42... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,447 - WARNING - Attempt 3/5 failed for Prompt #33... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,448 - WARNING - Attempt 2/5 failed for Prompt #38... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,453 - WARNING - Attempt 3/5 failed for Prompt #30... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,464 - WARNING - Attempt 2/5 failed for Prompt #49... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,465 - WARNING - Attempt 3/5 failed for Prompt #34... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:35,503 - WARNING - Attempt 3/5 failed for Prompt #31... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:36,337 - WARNING - Attempt 3/5 failed for Prompt #41... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:36,355 - WARNING - Attempt 3/5 failed for Prompt #45... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:36,372 - WARNING - Attempt 3/5 failed for Prompt #44... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:36,373 - WARNING - Attempt 3/5 failed for Prompt #43... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:36,438 - WARNING - Attempt 3/5 failed for Prompt #46... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:36,450 - WARNING - Attempt 3/5 failed for Prompt #47... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:36,492 - WARNING - Attempt 3/5 failed for Prompt #50... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:36,516 - WARNING - Attempt 3/5 failed for Prompt #48... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:37,132 - WARNING - Attempt 3/5 failed for Prompt #36... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:37,137 - WARNING - Attempt 3/5 failed for Prompt #37... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:37,148 - WARNING - Attempt 3/5 failed for Prompt #32... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:37,300 - WARNING - Attempt 3/5 failed for Prompt #39... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:37,409 - WARNING - Attempt 3/5 failed for Prompt #35... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:37,437 - WARNING - Attempt 3/5 failed for Prompt #40... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:37,452 - WARNING - Attempt 3/5 failed for Prompt #42... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:37,535 - WARNING - Attempt 3/5 failed for Prompt #49... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:37,619 - WARNING - Attempt 3/5 failed for Prompt #38... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:38,379 - WARNING - Attempt 4/5 failed for Prompt #26... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:38,490 - WARNING - Attempt 4/5 failed for Prompt #29... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:38,491 - WARNING - Attempt 4/5 failed for Prompt #28... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:39,129 - WARNING - Attempt 4/5 failed for Prompt #27... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:39,522 - WARNING - Attempt 4/5 failed for Prompt #33... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:39,525 - WARNING - Attempt 4/5 failed for Prompt #30... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:39,549 - WARNING - Attempt 4/5 failed for Prompt #34... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:39,658 - WARNING - Attempt 4/5 failed for Prompt #31... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:40,420 - WARNING - Attempt 4/5 failed for Prompt #41... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:40,437 - WARNING - Attempt 4/5 failed for Prompt #45... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:40,449 - WARNING - Attempt 4/5 failed for Prompt #43... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:40,454 - WARNING - Attempt 4/5 failed for Prompt #44... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:40,511 - WARNING - Attempt 4/5 failed for Prompt #46... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:40,526 - WARNING - Attempt 4/5 failed for Prompt #47... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:40,639 - WARNING - Attempt 4/5 failed for Prompt #48... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:40,642 - WARNING - Attempt 4/5 failed for Prompt #50... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:41,210 - WARNING - Attempt 4/5 failed for Prompt #36... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:41,281 - WARNING - Attempt 4/5 failed for Prompt #37... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:41,320 - WARNING - Attempt 4/5 failed for Prompt #32... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:41,413 - WARNING - Attempt 4/5 failed for Prompt #39... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:41,550 - WARNING - Attempt 4/5 failed for Prompt #35... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:41,575 - WARNING - Attempt 4/5 failed for Prompt #40... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:41,578 - WARNING - Attempt 4/5 failed for Prompt #42... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:41,668 - WARNING - Attempt 4/5 failed for Prompt #49... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:42,191 - WARNING - Attempt 4/5 failed for Prompt #38... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:46,536 - WARNING - Attempt 5/5 failed for Prompt #26... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:46,536 - ERROR - Failed to process prompt after 5 attempts: #26...
+2025-04-25 15:28:46,576 - WARNING - Attempt 5/5 failed for Prompt #29... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:46,577 - ERROR - Failed to process prompt after 5 attempts: #29...
+2025-04-25 15:28:46,578 - WARNING - Attempt 5/5 failed for Prompt #28... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:46,578 - ERROR - Failed to process prompt after 5 attempts: #28...
+2025-04-25 15:28:47,249 - WARNING - Attempt 5/5 failed for Prompt #27... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,249 - ERROR - Failed to process prompt after 5 attempts: #27...
+2025-04-25 15:28:47,607 - WARNING - Attempt 5/5 failed for Prompt #33... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,608 - ERROR - Failed to process prompt after 5 attempts: #33...
+2025-04-25 15:28:47,616 - WARNING - Attempt 5/5 failed for Prompt #30... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,617 - ERROR - Failed to process prompt after 5 attempts: #30...
+2025-04-25 15:28:47,617 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——那位富有而神秘的绅士——正在举办一场... Error: Attempt 5/5 failed for Prompt #26... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,617 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪诡秘的约翰·Q·博迪先生，正在举办一场小型而... Error: Attempt 5/5 failed for Prompt #27... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,617 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。富可敌国却行踪诡秘的约翰·Q·博迪先生，正在宅邸里举办一场... Error: Attempt 5/5 failed for Prompt #28... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,617 - ERROR - Item failed: 冬夜如墨，都铎庄园的尖顶在风雪中若隐若现。约翰·Q·博迪先生——那位以古怪著称的富豪——正举办一场私... Error: Attempt 5/5 failed for Prompt #29... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,617 - ERROR - Item failed: 冬夜，风雪裹挟着都铎庄园的尖顶。约翰·Q·博迪先生——那位以神秘著称的富豪——正举办一场小型晚宴。水... Error: Attempt 5/5 failed for Prompt #30... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,626 - WARNING - Attempt 5/5 failed for Prompt #34... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,626 - ERROR - Failed to process prompt after 5 attempts: #34...
+2025-04-25 15:28:47,711 - WARNING - Attempt 1/5 failed for Prompt #52... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,713 - WARNING - Attempt 1/5 failed for Prompt #51... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,715 - WARNING - Attempt 1/5 failed for Prompt #53... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,719 - WARNING - Attempt 1/5 failed for Prompt #54... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,722 - WARNING - Attempt 1/5 failed for Prompt #55... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,747 - WARNING - Attempt 5/5 failed for Prompt #31... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:47,747 - ERROR - Failed to process prompt after 5 attempts: #31...
+2025-04-25 15:28:48,565 - WARNING - Attempt 5/5 failed for Prompt #45... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,565 - ERROR - Failed to process prompt after 5 attempts: #45...
+2025-04-25 15:28:48,566 - WARNING - Attempt 5/5 failed for Prompt #43... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,566 - ERROR - Failed to process prompt after 5 attempts: #43...
+2025-04-25 15:28:48,570 - WARNING - Attempt 5/5 failed for Prompt #44... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,570 - ERROR - Failed to process prompt after 5 attempts: #44...
+2025-04-25 15:28:48,574 - WARNING - Attempt 5/5 failed for Prompt #41... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,574 - ERROR - Failed to process prompt after 5 attempts: #41...
+2025-04-25 15:28:48,587 - WARNING - Attempt 5/5 failed for Prompt #46... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,587 - ERROR - Failed to process prompt after 5 attempts: #46...
+2025-04-25 15:28:48,601 - WARNING - Attempt 5/5 failed for Prompt #47... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,601 - ERROR - Failed to process prompt after 5 attempts: #47...
+2025-04-25 15:28:48,724 - WARNING - Attempt 5/5 failed for Prompt #50... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,724 - ERROR - Failed to process prompt after 5 attempts: #50...
+2025-04-25 15:28:48,725 - WARNING - Attempt 5/5 failed for Prompt #48... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,725 - ERROR - Failed to process prompt after 5 attempts: #48...
+2025-04-25 15:28:48,840 - WARNING - Attempt 2/5 failed for Prompt #53... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,844 - WARNING - Attempt 2/5 failed for Prompt #52... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,854 - WARNING - Attempt 2/5 failed for Prompt #51... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,860 - WARNING - Attempt 2/5 failed for Prompt #54... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:48,861 - WARNING - Attempt 2/5 failed for Prompt #55... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,347 - WARNING - Attempt 5/5 failed for Prompt #36... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,347 - ERROR - Failed to process prompt after 5 attempts: #36...
+2025-04-25 15:28:49,358 - WARNING - Attempt 5/5 failed for Prompt #37... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,358 - ERROR - Failed to process prompt after 5 attempts: #37...
+2025-04-25 15:28:49,421 - WARNING - Attempt 5/5 failed for Prompt #32... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,422 - ERROR - Failed to process prompt after 5 attempts: #32...
+2025-04-25 15:28:49,708 - WARNING - Attempt 5/5 failed for Prompt #39... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,708 - ERROR - Failed to process prompt after 5 attempts: #39...
+2025-04-25 15:28:49,711 - WARNING - Attempt 5/5 failed for Prompt #35... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,711 - ERROR - Failed to process prompt after 5 attempts: #35...
+2025-04-25 15:28:49,711 - ERROR - Item failed: 冬夜深沉，雪花无声地覆盖着都铎庄园的尖顶。约翰·Q·博迪先生——这位富可敌国却行踪诡秘的绅士，正在举... Error: Attempt 5/5 failed for Prompt #31... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,712 - ERROR - Item failed: 冬夜如墨，都铎庄园的尖顶刺破浓稠的黑暗。约翰·Q·博迪先生——那位以古怪著称的富豪——正举办一场私密... Error: Attempt 5/5 failed for Prompt #32... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,712 - ERROR - Item failed: 冬夜，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——那位以神秘著称的富豪——正在举办一场小型... Error: Attempt 5/5 failed for Prompt #33... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,712 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——那位富可敌国却行踪诡秘的绅士——正在... Error: Attempt 5/5 failed for Prompt #34... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,712 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——这位富可敌国却行踪诡秘的绅士，正在举... Error: Attempt 5/5 failed for Prompt #35... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,717 - WARNING - Attempt 5/5 failed for Prompt #42... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,717 - ERROR - Failed to process prompt after 5 attempts: #42...
+2025-04-25 15:28:49,717 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方锁定七名嫌疑人：皮考克夫人、... Error: Attempt 5/5 failed for Prompt #41... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,717 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方锁定五名嫌疑人：格雷中士、罗... Error: Attempt 5/5 failed for Prompt #42... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,717 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方锁定两名嫌疑人：布鲁内特先生... Error: Attempt 5/5 failed for Prompt #43... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,717 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园内举办私人晚宴，席间离奇身亡。经警方确认，案发时段庄... Error: Attempt 5/5 failed for Prompt #44... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,718 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办小型晚宴，宾客仅限亲密友人。凌晨时分，博迪先生被... Error: Attempt 5/5 failed for Prompt #45... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,722 - WARNING - Attempt 5/5 failed for Prompt #40... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,722 - ERROR - Failed to process prompt after 5 attempts: #40...
+2025-04-25 15:28:49,800 - WARNING - Attempt 5/5 failed for Prompt #49... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,801 - ERROR - Failed to process prompt after 5 attempts: #49...
+2025-04-25 15:28:49,801 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴上离奇身亡。警方锁定十名嫌疑人：罗丝夫... Error: Attempt 5/5 failed for Prompt #46... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,801 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴，凌晨时分被发现死于宅邸某房间内。经初步... Error: Attempt 5/5 failed for Prompt #47... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,801 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方锁定六名嫌疑人：普拉姆教授、... Error: Attempt 5/5 failed for Prompt #48... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,801 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方确认死亡时间约为凌晨，案发时... Error: Attempt 5/5 failed for Prompt #49... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,801 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其位于都铎庄园的宅邸内举办私人晚宴，今晨却被发现陈尸于宅内某处... Error: Attempt 5/5 failed for Prompt #50... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,823 - WARNING - Attempt 1/5 failed for Prompt #56... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,872 - WARNING - Attempt 1/5 failed for Prompt #59... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,879 - WARNING - Attempt 1/5 failed for Prompt #57... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,888 - WARNING - Attempt 1/5 failed for Prompt #58... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,893 - WARNING - Attempt 1/5 failed for Prompt #60... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,905 - WARNING - Attempt 1/5 failed for Prompt #61... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,941 - WARNING - Attempt 1/5 failed for Prompt #64... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:49,979 - WARNING - Attempt 1/5 failed for Prompt #62... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,005 - WARNING - Attempt 1/5 failed for Prompt #67... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,007 - WARNING - Attempt 1/5 failed for Prompt #68... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,040 - WARNING - Attempt 1/5 failed for Prompt #65... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,044 - WARNING - Attempt 1/5 failed for Prompt #63... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,248 - WARNING - Attempt 1/5 failed for Prompt #66... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,256 - WARNING - Attempt 1/5 failed for Prompt #69... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,364 - WARNING - Attempt 5/5 failed for Prompt #38... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,364 - ERROR - Failed to process prompt after 5 attempts: #38...
+2025-04-25 15:28:50,365 - ERROR - Item failed: 冬夜，图德庄园的灯火在风雪中摇曳。约翰·Q·博迪先生——这位神秘富豪的晚宴，最终以他陈尸某间密室而告... Error: Attempt 5/5 failed for Prompt #36... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,365 - ERROR - Item failed: 冬夜如墨，都铎庄园的尖顶在风雪中若隐若现。约翰·Q·博迪先生——这位以神秘著称的富豪，正在举办一场小... Error: Attempt 5/5 failed for Prompt #37... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,365 - ERROR - Item failed: 冬夜深沉，雪花无声地落在都铎庄园的尖顶上。约翰·Q·博迪先生——这位富有而神秘的绅士，正在宅邸里举办... Error: Attempt 5/5 failed for Prompt #38... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,365 - ERROR - Item failed: 冬夜如墨，都铎庄园的尖顶在风雪中若隐若现。约翰·Q·博迪先生——这位以神秘著称的富豪，正举办一场仅有... Error: Attempt 5/5 failed for Prompt #39... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,365 - ERROR - Item failed: 冬夜，图德庄园的灯火在风雪中摇曳。富可敌国却行踪诡秘的约翰·Q·博迪先生，正举办一场小型而奢华的晚宴... Error: Attempt 5/5 failed for Prompt #40... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,434 - WARNING - Attempt 1/5 failed for Prompt #70... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,435 - WARNING - Attempt 1/5 failed for Prompt #74... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,443 - WARNING - Attempt 1/5 failed for Prompt #73... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,446 - WARNING - Attempt 1/5 failed for Prompt #72... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,447 - WARNING - Attempt 1/5 failed for Prompt #71... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,466 - WARNING - Attempt 1/5 failed for Prompt #75... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,926 - WARNING - Attempt 3/5 failed for Prompt #52... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,937 - WARNING - Attempt 2/5 failed for Prompt #56... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,943 - WARNING - Attempt 3/5 failed for Prompt #53... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:50,951 - WARNING - Attempt 3/5 failed for Prompt #51... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,017 - WARNING - Attempt 3/5 failed for Prompt #54... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,100 - WARNING - Attempt 2/5 failed for Prompt #59... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,102 - WARNING - Attempt 2/5 failed for Prompt #58... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,114 - WARNING - Attempt 2/5 failed for Prompt #62... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,118 - WARNING - Attempt 2/5 failed for Prompt #60... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,131 - WARNING - Attempt 2/5 failed for Prompt #61... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,143 - WARNING - Attempt 2/5 failed for Prompt #64... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,151 - WARNING - Attempt 2/5 failed for Prompt #67... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,152 - WARNING - Attempt 2/5 failed for Prompt #68... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,157 - WARNING - Attempt 3/5 failed for Prompt #55... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,160 - WARNING - Attempt 2/5 failed for Prompt #57... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,161 - WARNING - Attempt 2/5 failed for Prompt #63... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,167 - WARNING - Attempt 2/5 failed for Prompt #65... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,348 - WARNING - Attempt 2/5 failed for Prompt #66... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,348 - WARNING - Attempt 2/5 failed for Prompt #69... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,511 - WARNING - Attempt 2/5 failed for Prompt #70... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,518 - WARNING - Attempt 2/5 failed for Prompt #74... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,547 - WARNING - Attempt 2/5 failed for Prompt #73... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,554 - WARNING - Attempt 2/5 failed for Prompt #71... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,558 - WARNING - Attempt 2/5 failed for Prompt #75... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:51,568 - WARNING - Attempt 2/5 failed for Prompt #72... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,021 - WARNING - Attempt 3/5 failed for Prompt #56... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,170 - WARNING - Attempt 3/5 failed for Prompt #59... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,174 - WARNING - Attempt 3/5 failed for Prompt #58... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,211 - WARNING - Attempt 3/5 failed for Prompt #62... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,212 - WARNING - Attempt 3/5 failed for Prompt #60... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,232 - WARNING - Attempt 3/5 failed for Prompt #61... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,237 - WARNING - Attempt 3/5 failed for Prompt #67... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,239 - WARNING - Attempt 3/5 failed for Prompt #64... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,251 - WARNING - Attempt 3/5 failed for Prompt #68... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,265 - WARNING - Attempt 3/5 failed for Prompt #57... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,267 - WARNING - Attempt 3/5 failed for Prompt #63... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,301 - WARNING - Attempt 3/5 failed for Prompt #65... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,445 - WARNING - Attempt 3/5 failed for Prompt #66... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,446 - WARNING - Attempt 3/5 failed for Prompt #69... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,586 - WARNING - Attempt 3/5 failed for Prompt #70... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,591 - WARNING - Attempt 3/5 failed for Prompt #74... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,641 - WARNING - Attempt 3/5 failed for Prompt #75... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,644 - WARNING - Attempt 3/5 failed for Prompt #72... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,647 - WARNING - Attempt 3/5 failed for Prompt #73... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:53,649 - WARNING - Attempt 3/5 failed for Prompt #71... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:55,005 - WARNING - Attempt 4/5 failed for Prompt #52... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:55,021 - WARNING - Attempt 4/5 failed for Prompt #53... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:55,023 - WARNING - Attempt 4/5 failed for Prompt #51... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:55,089 - WARNING - Attempt 4/5 failed for Prompt #54... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:55,232 - WARNING - Attempt 4/5 failed for Prompt #55... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,156 - WARNING - Attempt 4/5 failed for Prompt #56... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,242 - WARNING - Attempt 4/5 failed for Prompt #59... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,267 - WARNING - Attempt 4/5 failed for Prompt #58... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,357 - WARNING - Attempt 4/5 failed for Prompt #60... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,442 - WARNING - Attempt 4/5 failed for Prompt #61... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,443 - WARNING - Attempt 4/5 failed for Prompt #62... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,445 - WARNING - Attempt 4/5 failed for Prompt #64... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,447 - WARNING - Attempt 4/5 failed for Prompt #67... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,461 - WARNING - Attempt 4/5 failed for Prompt #68... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,473 - WARNING - Attempt 4/5 failed for Prompt #63... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,476 - WARNING - Attempt 4/5 failed for Prompt #57... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,490 - WARNING - Attempt 4/5 failed for Prompt #65... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,516 - WARNING - Attempt 4/5 failed for Prompt #66... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,531 - WARNING - Attempt 4/5 failed for Prompt #69... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,664 - WARNING - Attempt 4/5 failed for Prompt #70... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,669 - WARNING - Attempt 4/5 failed for Prompt #74... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,715 - WARNING - Attempt 4/5 failed for Prompt #75... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,719 - WARNING - Attempt 4/5 failed for Prompt #72... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,725 - WARNING - Attempt 4/5 failed for Prompt #73... HTTP Status: 404, Message: Not Found
+2025-04-25 15:28:57,736 - WARNING - Attempt 4/5 failed for Prompt #71... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,079 - WARNING - Attempt 5/5 failed for Prompt #52... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,080 - ERROR - Failed to process prompt after 5 attempts: #52...
+2025-04-25 15:29:03,106 - WARNING - Attempt 5/5 failed for Prompt #51... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,107 - ERROR - Failed to process prompt after 5 attempts: #51...
+2025-04-25 15:29:03,107 - WARNING - Attempt 5/5 failed for Prompt #53... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,107 - ERROR - Failed to process prompt after 5 attempts: #53...
+2025-04-25 15:29:03,178 - WARNING - Attempt 5/5 failed for Prompt #54... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,179 - ERROR - Failed to process prompt after 5 attempts: #54...
+2025-04-25 15:29:03,340 - WARNING - Attempt 5/5 failed for Prompt #55... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,341 - ERROR - Failed to process prompt after 5 attempts: #55...
+2025-04-25 15:29:03,341 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴，席间离奇身亡。经初步调查，案发时段锁定... Error: Attempt 5/5 failed for Prompt #51... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,341 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。经初步调查，案发时间为凌晨，死者... Error: Attempt 5/5 failed for Prompt #52... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,341 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方锁定五名嫌疑人：格雷中士、芥... Error: Attempt 5/5 failed for Prompt #53... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,341 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴，今晨却被发现陈尸于宅邸内。警方锁定五位... Error: Attempt 5/5 failed for Prompt #54... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,341 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方锁定两名嫌疑人：格林先生与布... Error: Attempt 5/5 failed for Prompt #55... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,428 - WARNING - Attempt 1/5 failed for Prompt #76... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,434 - WARNING - Attempt 1/5 failed for Prompt #77... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,441 - WARNING - Attempt 1/5 failed for Prompt #78... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,477 - WARNING - Attempt 1/5 failed for Prompt #80... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:03,481 - WARNING - Attempt 1/5 failed for Prompt #79... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:04,516 - WARNING - Attempt 2/5 failed for Prompt #77... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:04,521 - WARNING - Attempt 2/5 failed for Prompt #76... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:04,533 - WARNING - Attempt 2/5 failed for Prompt #78... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:04,559 - WARNING - Attempt 2/5 failed for Prompt #80... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:04,719 - WARNING - Attempt 2/5 failed for Prompt #79... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,248 - WARNING - Attempt 5/5 failed for Prompt #56... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,248 - ERROR - Failed to process prompt after 5 attempts: #56...
+2025-04-25 15:29:05,349 - WARNING - Attempt 5/5 failed for Prompt #59... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,349 - ERROR - Failed to process prompt after 5 attempts: #59...
+2025-04-25 15:29:05,350 - WARNING - Attempt 5/5 failed for Prompt #58... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,350 - ERROR - Failed to process prompt after 5 attempts: #58...
+2025-04-25 15:29:05,464 - WARNING - Attempt 5/5 failed for Prompt #60... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,464 - ERROR - Failed to process prompt after 5 attempts: #60...
+2025-04-25 15:29:05,581 - WARNING - Attempt 5/5 failed for Prompt #61... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,581 - ERROR - Failed to process prompt after 5 attempts: #61...
+2025-04-25 15:29:05,590 - WARNING - Attempt 5/5 failed for Prompt #64... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,591 - ERROR - Failed to process prompt after 5 attempts: #64...
+2025-04-25 15:29:05,601 - WARNING - Attempt 5/5 failed for Prompt #62... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,601 - ERROR - Failed to process prompt after 5 attempts: #62...
+2025-04-25 15:29:05,636 - WARNING - Attempt 5/5 failed for Prompt #67... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,637 - ERROR - Failed to process prompt after 5 attempts: #67...
+2025-04-25 15:29:05,646 - WARNING - Attempt 5/5 failed for Prompt #68... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,647 - ERROR - Failed to process prompt after 5 attempts: #68...
+2025-04-25 15:29:05,819 - WARNING - Attempt 5/5 failed for Prompt #63... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,819 - ERROR - Failed to process prompt after 5 attempts: #63...
+2025-04-25 15:29:05,861 - WARNING - Attempt 5/5 failed for Prompt #57... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,861 - ERROR - Failed to process prompt after 5 attempts: #57...
+2025-04-25 15:29:05,861 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴上离奇身亡。警方锁定十名嫌疑人：斯佳丽... Error: Attempt 5/5 failed for Prompt #56... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,862 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。经初步调查，案发时段为深夜11点... Error: Attempt 5/5 failed for Prompt #57... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,862 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方锁定十名嫌疑人：格雷中士、罗... Error: Attempt 5/5 failed for Prompt #58... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,862 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴，凌晨时分被发现死于宅邸内。警方锁定三名... Error: Attempt 5/5 failed for Prompt #59... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:05,862 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴，凌晨时分被发现死于宅邸内。警方锁定两名... Error: Attempt 5/5 failed for Prompt #60... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,080 - WARNING - Attempt 5/5 failed for Prompt #65... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,080 - ERROR - Failed to process prompt after 5 attempts: #65...
+2025-04-25 15:29:06,080 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴以悲剧收场。今晨6时许，博迪先生被发现... Error: Attempt 5/5 failed for Prompt #61... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,080 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方锁定六名嫌疑人：普拉姆教授、... Error: Attempt 5/5 failed for Prompt #62... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,081 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴上离奇身亡。警方锁定九名嫌疑人：桃小姐... Error: Attempt 5/5 failed for Prompt #63... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,081 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。经警方排查，案发时段庄园内共10... Error: Attempt 5/5 failed for Prompt #64... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,081 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的晚宴以悲剧收场。今晨，博迪先生被发现死于宅邸某... Error: Attempt 5/5 failed for Prompt #65... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,088 - WARNING - Attempt 5/5 failed for Prompt #66... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,088 - ERROR - Failed to process prompt after 5 attempts: #66...
+2025-04-25 15:29:06,092 - WARNING - Attempt 5/5 failed for Prompt #69... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,092 - ERROR - Failed to process prompt after 5 attempts: #69...
+2025-04-25 15:29:06,167 - WARNING - Attempt 5/5 failed for Prompt #74... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,167 - ERROR - Failed to process prompt after 5 attempts: #74...
+2025-04-25 15:29:06,174 - WARNING - Attempt 5/5 failed for Prompt #70... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,174 - ERROR - Failed to process prompt after 5 attempts: #70...
+2025-04-25 15:29:06,174 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的晚宴以悲剧收场。凌晨时分，博迪先生被发现死于宅... Error: Attempt 5/5 failed for Prompt #66... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,174 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴以悲剧收场。今晨，博迪先生被发现死于宅... Error: Attempt 5/5 failed for Prompt #67... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,175 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。经初步调查，案发时段为22:00... Error: Attempt 5/5 failed for Prompt #68... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,175 - ERROR - Item failed: 【晨报特讯】冬夜命案：富豪博迪离奇死于都铎庄园
+
+本报记者讯 昨夜11时至凌晨12时间，富豪约翰·Q... Error: Attempt 5/5 failed for Prompt #69... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,175 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴以悲剧收场。今晨6时许，博迪先生被发现... Error: Attempt 5/5 failed for Prompt #70... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,372 - WARNING - Attempt 5/5 failed for Prompt #75... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,372 - ERROR - Failed to process prompt after 5 attempts: #75...
+2025-04-25 15:29:06,406 - WARNING - Attempt 5/5 failed for Prompt #72... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,406 - ERROR - Failed to process prompt after 5 attempts: #72...
+2025-04-25 15:29:06,420 - WARNING - Attempt 5/5 failed for Prompt #73... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,421 - ERROR - Failed to process prompt after 5 attempts: #73...
+2025-04-25 15:29:06,456 - WARNING - Attempt 5/5 failed for Prompt #71... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,456 - ERROR - Failed to process prompt after 5 attempts: #71...
+2025-04-25 15:29:06,457 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴上离奇身亡。经初步调查，案发时段为21... Error: Attempt 5/5 failed for Prompt #71... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,457 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴以悲剧收场。凌晨时分，博迪先生被发现死... Error: Attempt 5/5 failed for Prompt #72... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,457 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴时遇害。警方锁定十名嫌疑人：罗斯夫人、怀... Error: Attempt 5/5 failed for Prompt #73... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,457 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办晚宴时遇害。警方锁定七名嫌疑人：格林先生、格雷中... Error: Attempt 5/5 failed for Prompt #74... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,457 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办晚宴时遇害。警方锁定十名嫌疑人：桃小姐、怀特夫人... Error: Attempt 5/5 failed for Prompt #75... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,509 - WARNING - Attempt 1/5 failed for Prompt #81... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,611 - WARNING - Attempt 1/5 failed for Prompt #82... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,614 - WARNING - Attempt 1/5 failed for Prompt #86... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,686 - WARNING - Attempt 1/5 failed for Prompt #83... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:06,922 - WARNING - Attempt 1/5 failed for Prompt #91... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:07,036 - WARNING - Attempt 1/5 failed for Prompt #94... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:07,110 - WARNING - Attempt 1/5 failed for Prompt #93... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:07,237 - WARNING - Attempt 1/5 failed for Prompt #96... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:07,240 - WARNING - Attempt 1/5 failed for Prompt #99... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:07,245 - WARNING - Attempt 1/5 failed for Prompt #97... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:07,249 - WARNING - Attempt 1/5 failed for Prompt #98... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:07,309 - WARNING - Attempt 3/5 failed for Prompt #77... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:09,142 - WARNING - Attempt 3/5 failed for Prompt #79... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:09,570 - WARNING - Attempt 1/5 failed for Prompt #92... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,641 - WARNING - Attempt 2/5 failed for Prompt #83... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,652 - WARNING - Attempt 2/5 failed for Prompt #86... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,662 - WARNING - Attempt 2/5 failed for Prompt #81... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,672 - WARNING - Attempt 2/5 failed for Prompt #82... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,783 - WARNING - Attempt 2/5 failed for Prompt #91... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,804 - WARNING - Attempt 2/5 failed for Prompt #94... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,806 - WARNING - Attempt 2/5 failed for Prompt #97... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,806 - WARNING - Attempt 2/5 failed for Prompt #93... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,827 - WARNING - Attempt 2/5 failed for Prompt #96... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:10,851 - WARNING - Attempt 2/5 failed for Prompt #99... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:11,509 - WARNING - Attempt 1/5 failed for Prompt #85... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:11,526 - WARNING - Attempt 1/5 failed for Prompt #89... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,094 - WARNING - Attempt 1/5 failed for Prompt #84... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,501 - WARNING - Attempt 2/5 failed for Prompt #92... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,516 - WARNING - Attempt 4/5 failed for Prompt #77... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,519 - WARNING - Attempt 1/5 failed for Prompt #88... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,519 - WARNING - Attempt 1/5 failed for Prompt #87... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,528 - WARNING - Attempt 3/5 failed for Prompt #78... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,699 - WARNING - Attempt 1/5 failed for Prompt #90... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,842 - WARNING - Attempt 2/5 failed for Prompt #85... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,842 - WARNING - Attempt 3/5 failed for Prompt #80... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,846 - WARNING - Attempt 1/5 failed for Prompt #100... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,869 - WARNING - Attempt 1/5 failed for Prompt #95... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,874 - WARNING - Attempt 2/5 failed for Prompt #89... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,877 - WARNING - Attempt 3/5 failed for Prompt #81... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,881 - WARNING - Attempt 3/5 failed for Prompt #76... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,887 - WARNING - Attempt 3/5 failed for Prompt #83... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:12,894 - WARNING - Attempt 3/5 failed for Prompt #86... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,043 - WARNING - Attempt 3/5 failed for Prompt #82... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,241 - WARNING - Attempt 3/5 failed for Prompt #97... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,261 - WARNING - Attempt 3/5 failed for Prompt #99... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,348 - WARNING - Attempt 3/5 failed for Prompt #93... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,352 - WARNING - Attempt 3/5 failed for Prompt #94... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,376 - WARNING - Attempt 2/5 failed for Prompt #84... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,389 - WARNING - Attempt 3/5 failed for Prompt #91... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,394 - WARNING - Attempt 2/5 failed for Prompt #98... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,418 - WARNING - Attempt 4/5 failed for Prompt #79... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,423 - WARNING - Attempt 3/5 failed for Prompt #96... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,684 - WARNING - Attempt 2/5 failed for Prompt #87... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,688 - WARNING - Attempt 2/5 failed for Prompt #88... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:13,844 - WARNING - Attempt 2/5 failed for Prompt #90... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:14,024 - WARNING - Attempt 2/5 failed for Prompt #95... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:14,025 - WARNING - Attempt 2/5 failed for Prompt #100... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:14,676 - WARNING - Attempt 3/5 failed for Prompt #92... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:15,200 - WARNING - Attempt 3/5 failed for Prompt #89... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:15,201 - WARNING - Attempt 3/5 failed for Prompt #85... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:15,514 - WARNING - Attempt 3/5 failed for Prompt #98... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:15,622 - WARNING - Attempt 3/5 failed for Prompt #84... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:16,033 - WARNING - Attempt 3/5 failed for Prompt #88... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:16,044 - WARNING - Attempt 3/5 failed for Prompt #87... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:16,234 - WARNING - Attempt 3/5 failed for Prompt #90... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:16,248 - WARNING - Attempt 3/5 failed for Prompt #100... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:16,256 - WARNING - Attempt 3/5 failed for Prompt #95... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:16,918 - WARNING - Attempt 4/5 failed for Prompt #78... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,018 - WARNING - Attempt 4/5 failed for Prompt #80... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,048 - WARNING - Attempt 4/5 failed for Prompt #81... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,050 - WARNING - Attempt 4/5 failed for Prompt #76... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,060 - WARNING - Attempt 4/5 failed for Prompt #83... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,100 - WARNING - Attempt 4/5 failed for Prompt #86... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,143 - WARNING - Attempt 4/5 failed for Prompt #82... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,316 - WARNING - Attempt 4/5 failed for Prompt #97... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,404 - WARNING - Attempt 4/5 failed for Prompt #99... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,435 - WARNING - Attempt 4/5 failed for Prompt #93... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,586 - WARNING - Attempt 4/5 failed for Prompt #94... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:17,960 - WARNING - Attempt 4/5 failed for Prompt #91... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:18,373 - WARNING - Attempt 4/5 failed for Prompt #96... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:18,766 - WARNING - Attempt 4/5 failed for Prompt #92... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:19,408 - WARNING - Attempt 4/5 failed for Prompt #89... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:19,700 - WARNING - Attempt 4/5 failed for Prompt #85... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:19,733 - WARNING - Attempt 4/5 failed for Prompt #98... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:19,735 - WARNING - Attempt 4/5 failed for Prompt #84... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:20,376 - WARNING - Attempt 4/5 failed for Prompt #90... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:20,381 - WARNING - Attempt 4/5 failed for Prompt #88... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:20,384 - WARNING - Attempt 4/5 failed for Prompt #87... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:20,521 - WARNING - Attempt 4/5 failed for Prompt #100... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:20,524 - WARNING - Attempt 4/5 failed for Prompt #95... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:20,643 - WARNING - Attempt 5/5 failed for Prompt #77... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:20,643 - ERROR - Failed to process prompt after 5 attempts: #77...
+2025-04-25 15:29:21,505 - WARNING - Attempt 5/5 failed for Prompt #79... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:21,505 - ERROR - Failed to process prompt after 5 attempts: #79...
+2025-04-25 15:29:25,029 - WARNING - Attempt 5/5 failed for Prompt #78... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,030 - ERROR - Failed to process prompt after 5 attempts: #78...
+2025-04-25 15:29:25,146 - WARNING - Attempt 5/5 failed for Prompt #80... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,146 - ERROR - Failed to process prompt after 5 attempts: #80...
+2025-04-25 15:29:25,206 - WARNING - Attempt 5/5 failed for Prompt #81... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,206 - ERROR - Failed to process prompt after 5 attempts: #81...
+2025-04-25 15:29:25,210 - WARNING - Attempt 5/5 failed for Prompt #86... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,210 - ERROR - Failed to process prompt after 5 attempts: #86...
+2025-04-25 15:29:25,212 - WARNING - Attempt 5/5 failed for Prompt #83... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,212 - ERROR - Failed to process prompt after 5 attempts: #83...
+2025-04-25 15:29:25,218 - WARNING - Attempt 5/5 failed for Prompt #82... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,218 - ERROR - Failed to process prompt after 5 attempts: #82...
+2025-04-25 15:29:25,224 - WARNING - Attempt 5/5 failed for Prompt #76... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,225 - ERROR - Failed to process prompt after 5 attempts: #76...
+2025-04-25 15:29:25,225 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴以悲剧收场。今晨6时许，博迪先生被发现... Error: Attempt 5/5 failed for Prompt #76... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,225 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的晚宴上离奇身亡。经初步调查，案发时间为深夜10... Error: Attempt 5/5 failed for Prompt #77... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,225 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办晚宴时离奇身亡。经初步调查，案发时段为22:15... Error: Attempt 5/5 failed for Prompt #78... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,225 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办的私人晚宴以悲剧收场。凌晨时分，博迪先生被发现死... Error: Attempt 5/5 failed for Prompt #79... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,225 - ERROR - Item failed: 【晨报特讯】昨夜，富豪约翰·Q·博迪在其都铎庄园举办私人晚宴，今晨却被发现陈尸于宅邸某处。经警方核实... Error: Attempt 5/5 failed for Prompt #80... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,315 - WARNING - Attempt 1/5 failed for Prompt #103... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,321 - WARNING - Attempt 1/5 failed for Prompt #102... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,342 - WARNING - Attempt 1/5 failed for Prompt #105... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,472 - WARNING - Attempt 1/5 failed for Prompt #104... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,545 - WARNING - Attempt 1/5 failed for Prompt #101... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,604 - WARNING - Attempt 5/5 failed for Prompt #99... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,605 - ERROR - Failed to process prompt after 5 attempts: #99...
+2025-04-25 15:29:25,642 - WARNING - Attempt 5/5 failed for Prompt #93... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,642 - ERROR - Failed to process prompt after 5 attempts: #93...
+2025-04-25 15:29:25,645 - WARNING - Attempt 5/5 failed for Prompt #97... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,645 - ERROR - Failed to process prompt after 5 attempts: #97...
+2025-04-25 15:29:25,801 - WARNING - Attempt 5/5 failed for Prompt #94... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:25,801 - ERROR - Failed to process prompt after 5 attempts: #94...
+2025-04-25 15:29:26,049 - WARNING - Attempt 5/5 failed for Prompt #91... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:26,049 - ERROR - Failed to process prompt after 5 attempts: #91...
+2025-04-25 15:29:26,393 - WARNING - Attempt 2/5 failed for Prompt #103... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:26,411 - WARNING - Attempt 2/5 failed for Prompt #102... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:26,648 - WARNING - Attempt 2/5 failed for Prompt #105... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:26,650 - WARNING - Attempt 5/5 failed for Prompt #96... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:26,650 - ERROR - Failed to process prompt after 5 attempts: #96...
+2025-04-25 15:29:26,816 - WARNING - Attempt 2/5 failed for Prompt #104... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:26,816 - WARNING - Attempt 2/5 failed for Prompt #101... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:26,864 - WARNING - Attempt 5/5 failed for Prompt #92... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:26,864 - ERROR - Failed to process prompt after 5 attempts: #92...
+2025-04-25 15:29:27,552 - WARNING - Attempt 5/5 failed for Prompt #89... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:27,553 - ERROR - Failed to process prompt after 5 attempts: #89...
+2025-04-25 15:29:27,805 - WARNING - Attempt 5/5 failed for Prompt #85... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:27,805 - ERROR - Failed to process prompt after 5 attempts: #85...
+2025-04-25 15:29:27,821 - WARNING - Attempt 5/5 failed for Prompt #84... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:27,821 - ERROR - Failed to process prompt after 5 attempts: #84...
+2025-04-25 15:29:27,822 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富商约翰·Q·博迪在图德庄园举办... Error: Attempt 5/5 failed for Prompt #81... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:27,822 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富商约翰·Q·博迪在图德庄园举办... Error: Attempt 5/5 failed for Prompt #82... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:27,822 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #83... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:27,822 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富商约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #84... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:27,822 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #85... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:27,828 - WARNING - Attempt 5/5 failed for Prompt #98... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:27,829 - ERROR - Failed to process prompt after 5 attempts: #98...
+2025-04-25 15:29:27,989 - WARNING - Attempt 1/5 failed for Prompt #106... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,029 - WARNING - Attempt 1/5 failed for Prompt #109... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,031 - WARNING - Attempt 1/5 failed for Prompt #107... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,048 - WARNING - Attempt 1/5 failed for Prompt #108... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,049 - WARNING - Attempt 1/5 failed for Prompt #110... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,804 - WARNING - Attempt 5/5 failed for Prompt #87... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,805 - ERROR - Failed to process prompt after 5 attempts: #87...
+2025-04-25 15:29:28,805 - WARNING - Attempt 5/5 failed for Prompt #88... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,805 - ERROR - Failed to process prompt after 5 attempts: #88...
+2025-04-25 15:29:28,806 - WARNING - Attempt 5/5 failed for Prompt #90... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,806 - ERROR - Failed to process prompt after 5 attempts: #90...
+2025-04-25 15:29:28,806 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富商约翰·Q·博迪在图德庄园举办... Error: Attempt 5/5 failed for Prompt #86... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,806 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富商约翰·Q·博迪在图德庄园举办... Error: Attempt 5/5 failed for Prompt #87... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,806 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #88... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,806 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富商约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #89... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:28,806 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+法医报告显示，富豪约翰·Q·博迪死于凌晨时... Error: Attempt 5/5 failed for Prompt #90... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:29,910 - WARNING - Attempt 3/5 failed for Prompt #103... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:29,912 - WARNING - Attempt 3/5 failed for Prompt #102... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:29,997 - WARNING - Attempt 5/5 failed for Prompt #100... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:29,997 - ERROR - Failed to process prompt after 5 attempts: #100...
+2025-04-25 15:29:29,998 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #96... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:29,998 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #97... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:29,998 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富商约翰·Q·博迪在图德庄园举办... Error: Attempt 5/5 failed for Prompt #98... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:29,998 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #99... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:29,998 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #100... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:30,161 - WARNING - Attempt 1/5 failed for Prompt #112... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:30,162 - WARNING - Attempt 1/5 failed for Prompt #111... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:30,246 - WARNING - Attempt 1/5 failed for Prompt #113... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:30,858 - WARNING - Attempt 1/5 failed for Prompt #118... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:30,889 - WARNING - Attempt 1/5 failed for Prompt #117... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:33,199 - WARNING - Attempt 1/5 failed for Prompt #116... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:35,077 - WARNING - Attempt 2/5 failed for Prompt #113... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:35,273 - WARNING - Attempt 2/5 failed for Prompt #118... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:35,435 - WARNING - Attempt 2/5 failed for Prompt #117... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:36,068 - WARNING - Attempt 4/5 failed for Prompt #103... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:36,106 - WARNING - Attempt 1/5 failed for Prompt #115... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:36,492 - WARNING - Attempt 3/5 failed for Prompt #105... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:36,493 - WARNING - Attempt 5/5 failed for Prompt #95... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:36,493 - ERROR - Failed to process prompt after 5 attempts: #95...
+2025-04-25 15:29:36,493 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+法医报告显示，富豪约翰·Q·博迪死于凌晨时... Error: Attempt 5/5 failed for Prompt #91... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:36,493 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #92... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:36,494 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #93... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:36,494 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+法医报告显示，约翰·Q·博迪先生的死亡时间... Error: Attempt 5/5 failed for Prompt #94... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:36,494 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #95... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:38,754 - WARNING - Attempt 2/5 failed for Prompt #112... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:40,985 - WARNING - Attempt 1/5 failed for Prompt #121... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:40,986 - WARNING - Attempt 1/5 failed for Prompt #125... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:40,986 - WARNING - Attempt 1/5 failed for Prompt #124... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:40,987 - WARNING - Attempt 1/5 failed for Prompt #123... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:40,988 - WARNING - Attempt 2/5 failed for Prompt #107... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:41,032 - WARNING - Attempt 1/5 failed for Prompt #120... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:41,033 - WARNING - Attempt 2/5 failed for Prompt #108... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:41,033 - WARNING - Attempt 2/5 failed for Prompt #109... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:41,634 - WARNING - Attempt 3/5 failed for Prompt #104... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:41,709 - WARNING - Attempt 2/5 failed for Prompt #115... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:41,722 - WARNING - Attempt 3/5 failed for Prompt #101... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:41,737 - WARNING - Attempt 2/5 failed for Prompt #106... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:42,353 - WARNING - Attempt 1/5 failed for Prompt #114... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:42,673 - WARNING - Attempt 1/5 failed for Prompt #122... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:43,432 - WARNING - Attempt 2/5 failed for Prompt #111... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:43,444 - WARNING - Attempt 1/5 failed for Prompt #119... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:43,448 - WARNING - Attempt 3/5 failed for Prompt #113... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:43,505 - WARNING - Attempt 2/5 failed for Prompt #121... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:43,506 - WARNING - Attempt 2/5 failed for Prompt #124... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:43,761 - WARNING - Attempt 2/5 failed for Prompt #110... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:43,884 - WARNING - Attempt 4/5 failed for Prompt #102... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:44,004 - WARNING - Attempt 2/5 failed for Prompt #123... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:45,034 - WARNING - Attempt 2/5 failed for Prompt #125... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:45,050 - WARNING - Attempt 2/5 failed for Prompt #120... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:45,126 - WARNING - Attempt 2/5 failed for Prompt #122... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:45,205 - WARNING - Attempt 3/5 failed for Prompt #115... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:45,357 - WARNING - Attempt 4/5 failed for Prompt #105... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:45,500 - WARNING - Attempt 5/5 failed for Prompt #103... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:45,500 - ERROR - Failed to process prompt after 5 attempts: #103...
+2025-04-25 15:29:45,749 - WARNING - Attempt 3/5 failed for Prompt #118... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,111 - WARNING - Attempt 3/5 failed for Prompt #109... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,113 - WARNING - Attempt 2/5 failed for Prompt #116... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,140 - WARNING - Attempt 3/5 failed for Prompt #107... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,163 - WARNING - Attempt 3/5 failed for Prompt #108... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,472 - WARNING - Attempt 3/5 failed for Prompt #106... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,600 - WARNING - Attempt 3/5 failed for Prompt #124... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,605 - WARNING - Attempt 3/5 failed for Prompt #121... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,647 - WARNING - Attempt 3/5 failed for Prompt #117... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,800 - WARNING - Attempt 2/5 failed for Prompt #119... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:46,800 - WARNING - Attempt 4/5 failed for Prompt #104... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,000 - WARNING - Attempt 2/5 failed for Prompt #114... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,095 - WARNING - Attempt 3/5 failed for Prompt #111... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,424 - WARNING - Attempt 3/5 failed for Prompt #123... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,575 - WARNING - Attempt 4/5 failed for Prompt #101... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,583 - WARNING - Attempt 3/5 failed for Prompt #125... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,584 - WARNING - Attempt 3/5 failed for Prompt #112... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,592 - WARNING - Attempt 3/5 failed for Prompt #120... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,686 - WARNING - Attempt 3/5 failed for Prompt #110... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,739 - WARNING - Attempt 3/5 failed for Prompt #122... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:47,892 - WARNING - Attempt 4/5 failed for Prompt #113... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:48,292 - WARNING - Attempt 3/5 failed for Prompt #116... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:48,937 - WARNING - Attempt 3/5 failed for Prompt #119... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:49,257 - WARNING - Attempt 3/5 failed for Prompt #114... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:49,276 - WARNING - Attempt 4/5 failed for Prompt #115... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:49,824 - WARNING - Attempt 4/5 failed for Prompt #118... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:50,196 - WARNING - Attempt 4/5 failed for Prompt #109... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:50,251 - WARNING - Attempt 4/5 failed for Prompt #107... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:50,277 - WARNING - Attempt 4/5 failed for Prompt #108... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:50,543 - WARNING - Attempt 4/5 failed for Prompt #106... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:50,675 - WARNING - Attempt 4/5 failed for Prompt #124... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:50,697 - WARNING - Attempt 4/5 failed for Prompt #121... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:50,747 - WARNING - Attempt 4/5 failed for Prompt #117... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:51,192 - WARNING - Attempt 4/5 failed for Prompt #111... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:51,518 - WARNING - Attempt 4/5 failed for Prompt #123... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:51,663 - WARNING - Attempt 4/5 failed for Prompt #125... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:51,689 - WARNING - Attempt 4/5 failed for Prompt #112... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:51,695 - WARNING - Attempt 4/5 failed for Prompt #120... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:51,800 - WARNING - Attempt 4/5 failed for Prompt #110... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:51,869 - WARNING - Attempt 4/5 failed for Prompt #122... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:51,953 - WARNING - Attempt 5/5 failed for Prompt #102... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:51,954 - ERROR - Failed to process prompt after 5 attempts: #102...
+2025-04-25 15:29:52,375 - WARNING - Attempt 4/5 failed for Prompt #116... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:53,031 - WARNING - Attempt 4/5 failed for Prompt #119... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:53,381 - WARNING - Attempt 4/5 failed for Prompt #114... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:53,452 - WARNING - Attempt 5/5 failed for Prompt #105... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:53,453 - ERROR - Failed to process prompt after 5 attempts: #105...
+2025-04-25 15:29:54,891 - WARNING - Attempt 5/5 failed for Prompt #104... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:54,893 - ERROR - Failed to process prompt after 5 attempts: #104...
+2025-04-25 15:29:55,673 - WARNING - Attempt 5/5 failed for Prompt #101... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,674 - ERROR - Failed to process prompt after 5 attempts: #101...
+2025-04-25 15:29:55,674 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #101... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,674 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。你坐在其中一把上，对面是探长。他推过来一份档案，声音沙哑：
+
+『... Error: Attempt 5/5 failed for Prompt #102... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,674 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+探长将档案袋甩在桌上，烟灰缸震得叮当作响。... Error: Attempt 5/5 failed for Prompt #103... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,674 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #104... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,675 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #105... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,769 - WARNING - Attempt 1/5 failed for Prompt #126... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,780 - WARNING - Attempt 1/5 failed for Prompt #129... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,782 - WARNING - Attempt 1/5 failed for Prompt #127... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,782 - WARNING - Attempt 1/5 failed for Prompt #128... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:55,816 - WARNING - Attempt 1/5 failed for Prompt #130... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:56,002 - WARNING - Attempt 5/5 failed for Prompt #113... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:56,002 - ERROR - Failed to process prompt after 5 attempts: #113...
+2025-04-25 15:29:56,870 - WARNING - Attempt 2/5 failed for Prompt #126... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:56,922 - WARNING - Attempt 2/5 failed for Prompt #127... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:56,922 - WARNING - Attempt 2/5 failed for Prompt #128... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:56,933 - WARNING - Attempt 2/5 failed for Prompt #130... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:56,934 - WARNING - Attempt 2/5 failed for Prompt #129... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:57,352 - WARNING - Attempt 5/5 failed for Prompt #115... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:57,352 - ERROR - Failed to process prompt after 5 attempts: #115...
+2025-04-25 15:29:57,895 - WARNING - Attempt 5/5 failed for Prompt #118... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:57,895 - ERROR - Failed to process prompt after 5 attempts: #118...
+2025-04-25 15:29:58,272 - WARNING - Attempt 5/5 failed for Prompt #109... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:58,272 - ERROR - Failed to process prompt after 5 attempts: #109...
+2025-04-25 15:29:58,325 - WARNING - Attempt 5/5 failed for Prompt #107... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:58,325 - ERROR - Failed to process prompt after 5 attempts: #107...
+2025-04-25 15:29:58,352 - WARNING - Attempt 5/5 failed for Prompt #108... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:58,352 - ERROR - Failed to process prompt after 5 attempts: #108...
+2025-04-25 15:29:58,630 - WARNING - Attempt 5/5 failed for Prompt #106... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:58,630 - ERROR - Failed to process prompt after 5 attempts: #106...
+2025-04-25 15:29:58,770 - WARNING - Attempt 5/5 failed for Prompt #124... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:58,771 - ERROR - Failed to process prompt after 5 attempts: #124...
+2025-04-25 15:29:58,771 - WARNING - Attempt 5/5 failed for Prompt #121... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:58,771 - ERROR - Failed to process prompt after 5 attempts: #121...
+2025-04-25 15:29:58,817 - WARNING - Attempt 5/5 failed for Prompt #117... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:58,817 - ERROR - Failed to process prompt after 5 attempts: #117...
+2025-04-25 15:29:58,950 - WARNING - Attempt 3/5 failed for Prompt #126... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,010 - WARNING - Attempt 3/5 failed for Prompt #127... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,012 - WARNING - Attempt 3/5 failed for Prompt #128... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,026 - WARNING - Attempt 3/5 failed for Prompt #129... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,027 - WARNING - Attempt 3/5 failed for Prompt #130... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,279 - WARNING - Attempt 5/5 failed for Prompt #111... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,279 - ERROR - Failed to process prompt after 5 attempts: #111...
+2025-04-25 15:29:59,584 - WARNING - Attempt 5/5 failed for Prompt #123... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,584 - ERROR - Failed to process prompt after 5 attempts: #123...
+2025-04-25 15:29:59,746 - WARNING - Attempt 5/5 failed for Prompt #125... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,746 - ERROR - Failed to process prompt after 5 attempts: #125...
+2025-04-25 15:29:59,757 - WARNING - Attempt 5/5 failed for Prompt #112... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,757 - ERROR - Failed to process prompt after 5 attempts: #112...
+2025-04-25 15:29:59,769 - WARNING - Attempt 5/5 failed for Prompt #120... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,769 - ERROR - Failed to process prompt after 5 attempts: #120...
+2025-04-25 15:29:59,886 - WARNING - Attempt 5/5 failed for Prompt #110... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,886 - ERROR - Failed to process prompt after 5 attempts: #110...
+2025-04-25 15:29:59,886 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #106... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,886 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #107... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,886 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+探长，这是关于约翰·Q·博迪先生的案件。在... Error: Attempt 5/5 failed for Prompt #108... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,886 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜深沉，富豪约翰·Q·博迪在都铎庄园举办... Error: Attempt 5/5 failed for Prompt #109... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,887 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #110... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,997 - WARNING - Attempt 5/5 failed for Prompt #122... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,998 - ERROR - Failed to process prompt after 5 attempts: #122...
+2025-04-25 15:29:59,998 - ERROR - Item failed: （皮鞋跟敲击大理石地面的声音由远及近）
+
+『咚、咚、咚』
+
+管家颤抖的油灯照亮血迹时，整座都铎庄园还... Error: Attempt 5/5 failed for Prompt #121... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,998 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声渐近）
+『凌晨3:17，都铎庄园供暖系统发出嗡鸣时，我们在喷泉池发现了约... Error: Attempt 5/5 failed for Prompt #122... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,998 - ERROR - Item failed: （皮鞋踏过橡木地板的闷响由远及近，壁炉柴火噼啪声突然中断）
+
+『死亡时间介于23:45至午夜——』法... Error: Attempt 5/5 failed for Prompt #123... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,998 - ERROR - Item failed: 【声效：皮鞋跟敲击橡木地板，回声在长廊中渐渐消散】
+
+『验尸报告显示——』法医的橡胶手套在金属台面擦... Error: Attempt 5/5 failed for Prompt #124... HTTP Status: 404, Message: Not Found
+2025-04-25 15:29:59,998 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近，壁炉柴火突然‘噼啪’爆响）
+
+『凌晨3:17分，都铎庄园主卧』... Error: Attempt 5/5 failed for Prompt #125... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,006 - WARNING - Attempt 1/5 failed for Prompt #131... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,007 - WARNING - Attempt 1/5 failed for Prompt #133... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,008 - WARNING - Attempt 1/5 failed for Prompt #132... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,008 - WARNING - Attempt 1/5 failed for Prompt #134... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,015 - WARNING - Attempt 1/5 failed for Prompt #135... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,081 - WARNING - Attempt 1/5 failed for Prompt #136... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,121 - WARNING - Attempt 1/5 failed for Prompt #140... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,128 - WARNING - Attempt 1/5 failed for Prompt #139... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,129 - WARNING - Attempt 1/5 failed for Prompt #138... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,168 - WARNING - Attempt 1/5 failed for Prompt #137... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,453 - WARNING - Attempt 5/5 failed for Prompt #116... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:00,453 - ERROR - Failed to process prompt after 5 attempts: #116...
+2025-04-25 15:30:01,083 - WARNING - Attempt 2/5 failed for Prompt #133... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,088 - WARNING - Attempt 2/5 failed for Prompt #132... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,088 - WARNING - Attempt 2/5 failed for Prompt #131... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,089 - WARNING - Attempt 2/5 failed for Prompt #134... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,104 - WARNING - Attempt 2/5 failed for Prompt #135... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,114 - WARNING - Attempt 5/5 failed for Prompt #119... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,115 - ERROR - Failed to process prompt after 5 attempts: #119...
+2025-04-25 15:30:01,115 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #116... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,115 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+探长将一叠档案甩在桌面上，烟灰缸里的雪茄还... Error: Attempt 5/5 failed for Prompt #117... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,115 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。你坐在其中一把上，对面是刑侦队长。他推过来一份档案，烟灰缸里的雪... Error: Attempt 5/5 failed for Prompt #118... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,115 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+那是个飘雪的冬夜，神秘的富豪庄主约翰·Q·... Error: Attempt 5/5 failed for Prompt #119... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,115 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #120... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,154 - WARNING - Attempt 2/5 failed for Prompt #136... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,193 - WARNING - Attempt 1/5 failed for Prompt #142... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,195 - WARNING - Attempt 1/5 failed for Prompt #145... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,206 - WARNING - Attempt 1/5 failed for Prompt #144... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,209 - WARNING - Attempt 1/5 failed for Prompt #143... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,210 - WARNING - Attempt 2/5 failed for Prompt #140... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,211 - WARNING - Attempt 1/5 failed for Prompt #141... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,226 - WARNING - Attempt 2/5 failed for Prompt #139... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,230 - WARNING - Attempt 2/5 failed for Prompt #138... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,260 - WARNING - Attempt 2/5 failed for Prompt #137... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,461 - WARNING - Attempt 5/5 failed for Prompt #114... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,462 - ERROR - Failed to process prompt after 5 attempts: #114...
+2025-04-25 15:30:01,462 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #111... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,462 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #112... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,462 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+冬夜，富豪约翰·Q·博迪在都铎庄园举办了一... Error: Attempt 5/5 failed for Prompt #113... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,462 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。侦探缓缓吐出一口烟圈，将档案推到你面前。
+
+『约翰·Q·博迪死了... Error: Attempt 5/5 failed for Prompt #114... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,462 - ERROR - Item failed: 黑色灯光下，只有一张桌子与两把椅子。真相藏在对话之间。
+
+法医报告显示，富豪约翰·Q·博迪死于都铎庄... Error: Attempt 5/5 failed for Prompt #115... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,535 - WARNING - Attempt 1/5 failed for Prompt #147... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,537 - WARNING - Attempt 1/5 failed for Prompt #146... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,546 - WARNING - Attempt 1/5 failed for Prompt #148... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,548 - WARNING - Attempt 1/5 failed for Prompt #149... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:01,549 - WARNING - Attempt 1/5 failed for Prompt #150... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,268 - WARNING - Attempt 2/5 failed for Prompt #145... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,295 - WARNING - Attempt 2/5 failed for Prompt #142... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,320 - WARNING - Attempt 2/5 failed for Prompt #144... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,352 - WARNING - Attempt 2/5 failed for Prompt #143... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,364 - WARNING - Attempt 2/5 failed for Prompt #141... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,605 - WARNING - Attempt 2/5 failed for Prompt #146... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,610 - WARNING - Attempt 2/5 failed for Prompt #147... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,629 - WARNING - Attempt 2/5 failed for Prompt #150... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,630 - WARNING - Attempt 2/5 failed for Prompt #148... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:02,632 - WARNING - Attempt 2/5 failed for Prompt #149... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,028 - WARNING - Attempt 4/5 failed for Prompt #126... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,077 - WARNING - Attempt 4/5 failed for Prompt #128... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,083 - WARNING - Attempt 4/5 failed for Prompt #127... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,097 - WARNING - Attempt 4/5 failed for Prompt #129... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,099 - WARNING - Attempt 4/5 failed for Prompt #130... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,174 - WARNING - Attempt 3/5 failed for Prompt #134... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,175 - WARNING - Attempt 3/5 failed for Prompt #132... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,177 - WARNING - Attempt 3/5 failed for Prompt #131... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,179 - WARNING - Attempt 3/5 failed for Prompt #133... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,188 - WARNING - Attempt 3/5 failed for Prompt #135... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,233 - WARNING - Attempt 3/5 failed for Prompt #136... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,285 - WARNING - Attempt 3/5 failed for Prompt #140... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,318 - WARNING - Attempt 3/5 failed for Prompt #138... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,326 - WARNING - Attempt 3/5 failed for Prompt #139... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:03,342 - WARNING - Attempt 3/5 failed for Prompt #137... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,338 - WARNING - Attempt 3/5 failed for Prompt #145... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,370 - WARNING - Attempt 3/5 failed for Prompt #142... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,387 - WARNING - Attempt 3/5 failed for Prompt #144... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,446 - WARNING - Attempt 3/5 failed for Prompt #143... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,448 - WARNING - Attempt 3/5 failed for Prompt #141... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,684 - WARNING - Attempt 3/5 failed for Prompt #146... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,686 - WARNING - Attempt 3/5 failed for Prompt #147... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,749 - WARNING - Attempt 3/5 failed for Prompt #150... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,750 - WARNING - Attempt 3/5 failed for Prompt #148... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:04,751 - WARNING - Attempt 3/5 failed for Prompt #149... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,256 - WARNING - Attempt 4/5 failed for Prompt #133... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,258 - WARNING - Attempt 4/5 failed for Prompt #132... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,275 - WARNING - Attempt 4/5 failed for Prompt #135... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,276 - WARNING - Attempt 4/5 failed for Prompt #134... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,279 - WARNING - Attempt 4/5 failed for Prompt #131... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,306 - WARNING - Attempt 4/5 failed for Prompt #136... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,370 - WARNING - Attempt 4/5 failed for Prompt #140... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,389 - WARNING - Attempt 4/5 failed for Prompt #138... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,414 - WARNING - Attempt 4/5 failed for Prompt #139... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:07,424 - WARNING - Attempt 4/5 failed for Prompt #137... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,557 - WARNING - Attempt 4/5 failed for Prompt #144... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,558 - WARNING - Attempt 4/5 failed for Prompt #142... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,558 - WARNING - Attempt 4/5 failed for Prompt #145... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,719 - WARNING - Attempt 4/5 failed for Prompt #143... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,720 - WARNING - Attempt 4/5 failed for Prompt #141... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,802 - WARNING - Attempt 4/5 failed for Prompt #146... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,826 - WARNING - Attempt 4/5 failed for Prompt #148... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,837 - WARNING - Attempt 4/5 failed for Prompt #147... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,840 - WARNING - Attempt 4/5 failed for Prompt #149... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:08,866 - WARNING - Attempt 4/5 failed for Prompt #150... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,103 - WARNING - Attempt 5/5 failed for Prompt #126... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,103 - ERROR - Failed to process prompt after 5 attempts: #126...
+2025-04-25 15:30:11,146 - WARNING - Attempt 5/5 failed for Prompt #128... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,146 - ERROR - Failed to process prompt after 5 attempts: #128...
+2025-04-25 15:30:11,166 - WARNING - Attempt 5/5 failed for Prompt #127... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,166 - ERROR - Failed to process prompt after 5 attempts: #127...
+2025-04-25 15:30:11,171 - WARNING - Attempt 5/5 failed for Prompt #129... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,171 - ERROR - Failed to process prompt after 5 attempts: #129...
+2025-04-25 15:30:11,178 - WARNING - Attempt 5/5 failed for Prompt #130... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,178 - ERROR - Failed to process prompt after 5 attempts: #130...
+2025-04-25 15:30:11,178 - ERROR - Item failed: （皮鞋跟敲击大理石地面的声音由远及近）
+
+『验尸报告显示...死亡时间在凌晨三点左右。』
+（纸张翻动... Error: Attempt 5/5 failed for Prompt #126... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,179 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近）
+『验尸报告显示——死亡时间介于凌晨2至3点之间』
+（金属器械... Error: Attempt 5/5 failed for Prompt #127... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,179 - ERROR - Item failed: （皮鞋跟敲击大理石地面的声音由远及近）
+『案发时间：凌晨3点17分』（金属怀表合盖声）
+（推门声伴随... Error: Attempt 5/5 failed for Prompt #128... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,179 - ERROR - Item failed: 【声效环绕】
+
+皮鞋跟叩击橡木地板的回音在都铎公馆的走廊间游荡，壁炉里的火焰投下摇曳的暗影。约翰·Q... Error: Attempt 5/5 failed for Prompt #129... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,179 - ERROR - Item failed: （皮鞋踏过橡木地板的闷响由远及近，壁炉柴火突然爆出噼啪声）
+
+『十二月二十一日，凌晨三点十七分』
+（... Error: Attempt 5/5 failed for Prompt #130... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,333 - WARNING - Attempt 1/5 failed for Prompt #154... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,334 - WARNING - Attempt 1/5 failed for Prompt #155... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,340 - WARNING - Attempt 1/5 failed for Prompt #152... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,342 - WARNING - Attempt 1/5 failed for Prompt #151... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:11,345 - WARNING - Attempt 1/5 failed for Prompt #153... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:12,420 - WARNING - Attempt 2/5 failed for Prompt #154... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:12,421 - WARNING - Attempt 2/5 failed for Prompt #155... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:12,429 - WARNING - Attempt 2/5 failed for Prompt #151... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:12,433 - WARNING - Attempt 2/5 failed for Prompt #153... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:12,434 - WARNING - Attempt 2/5 failed for Prompt #152... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:14,504 - WARNING - Attempt 3/5 failed for Prompt #155... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:14,521 - WARNING - Attempt 3/5 failed for Prompt #154... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:14,522 - WARNING - Attempt 3/5 failed for Prompt #151... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:14,541 - WARNING - Attempt 3/5 failed for Prompt #153... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:14,543 - WARNING - Attempt 3/5 failed for Prompt #152... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,360 - WARNING - Attempt 5/5 failed for Prompt #132... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,361 - ERROR - Failed to process prompt after 5 attempts: #132...
+2025-04-25 15:30:15,361 - WARNING - Attempt 5/5 failed for Prompt #133... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,361 - ERROR - Failed to process prompt after 5 attempts: #133...
+2025-04-25 15:30:15,364 - WARNING - Attempt 5/5 failed for Prompt #134... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,364 - ERROR - Failed to process prompt after 5 attempts: #134...
+2025-04-25 15:30:15,364 - WARNING - Attempt 5/5 failed for Prompt #135... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,364 - ERROR - Failed to process prompt after 5 attempts: #135...
+2025-04-25 15:30:15,369 - WARNING - Attempt 5/5 failed for Prompt #131... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,369 - ERROR - Failed to process prompt after 5 attempts: #131...
+2025-04-25 15:30:15,369 - ERROR - Item failed: （皮鞋踏过橡木地板的闷响由远及近，壁炉柴火噼啪声突然中断）
+
+『各位请注意——』管家颤抖的声音穿透雨... Error: Attempt 5/5 failed for Prompt #131... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,369 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近）
+『验尸报告显示——』法医的声音在都铎庄园拱顶下震颤，『约翰·... Error: Attempt 5/5 failed for Prompt #132... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,370 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声渐近）
+『咚、咚、咚』
+管家颤抖的油灯照亮门缝渗出的血迹——约翰·Q·博... Error: Attempt 5/5 failed for Prompt #133... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,370 - ERROR - Item failed: （皮鞋跟敲击橡木地板的回声由远及近）
+『12月21日，暴雪封路前最后一场晚宴』管家颤抖的钢笔尖在日记... Error: Attempt 5/5 failed for Prompt #134... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,370 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近）
+『各位请保持现场——』探长的手电光束扫过都铎庄园挑高的穹顶，... Error: Attempt 5/5 failed for Prompt #135... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,380 - WARNING - Attempt 5/5 failed for Prompt #136... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,380 - ERROR - Failed to process prompt after 5 attempts: #136...
+2025-04-25 15:30:15,516 - WARNING - Attempt 1/5 failed for Prompt #156... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,517 - WARNING - Attempt 1/5 failed for Prompt #158... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,519 - WARNING - Attempt 1/5 failed for Prompt #159... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,521 - WARNING - Attempt 1/5 failed for Prompt #160... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,522 - WARNING - Attempt 1/5 failed for Prompt #157... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,524 - WARNING - Attempt 5/5 failed for Prompt #140... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,524 - ERROR - Failed to process prompt after 5 attempts: #140...
+2025-04-25 15:30:15,541 - WARNING - Attempt 5/5 failed for Prompt #138... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,541 - ERROR - Failed to process prompt after 5 attempts: #138...
+2025-04-25 15:30:15,563 - WARNING - Attempt 5/5 failed for Prompt #137... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,564 - ERROR - Failed to process prompt after 5 attempts: #137...
+2025-04-25 15:30:15,566 - WARNING - Attempt 5/5 failed for Prompt #139... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,566 - ERROR - Failed to process prompt after 5 attempts: #139...
+2025-04-25 15:30:15,566 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回响由远及近）
+『验尸报告显示——』（纸张翻动声戛然而止）
+『约翰·Q·博迪... Error: Attempt 5/5 failed for Prompt #136... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,566 - ERROR - Item failed: （皮鞋跟敲击大理石地面的声音由远及近）
+
+『验尸报告显示——』（纸张翻动声戛然而止）
+
+在都铎庄园那... Error: Attempt 5/5 failed for Prompt #137... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,566 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近）
+『验尸报告显示——』
+（纸张翻动声突然停顿）
+『约翰·Q·博... Error: Attempt 5/5 failed for Prompt #138... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,566 - ERROR - Item failed: （皮鞋跟敲击大理石地面的声音由远及近）
+
+『验尸报告显示——』（纸张翻动声戛然而止）
+
+在都铎庄园被... Error: Attempt 5/5 failed for Prompt #139... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,566 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回音由远及近）
+『各位——』管家颤抖的嗓音在都铎庄园的穿堂风里裂开，『老爷他... Error: Attempt 5/5 failed for Prompt #140... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,667 - WARNING - Attempt 1/5 failed for Prompt #163... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,695 - WARNING - Attempt 1/5 failed for Prompt #165... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,698 - WARNING - Attempt 1/5 failed for Prompt #164... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,705 - WARNING - Attempt 1/5 failed for Prompt #161... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:15,709 - WARNING - Attempt 1/5 failed for Prompt #162... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,595 - WARNING - Attempt 2/5 failed for Prompt #158... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,611 - WARNING - Attempt 2/5 failed for Prompt #156... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,623 - WARNING - Attempt 2/5 failed for Prompt #160... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,629 - WARNING - Attempt 2/5 failed for Prompt #159... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,632 - WARNING - Attempt 2/5 failed for Prompt #157... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,644 - WARNING - Attempt 5/5 failed for Prompt #145... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,644 - ERROR - Failed to process prompt after 5 attempts: #145...
+2025-04-25 15:30:16,644 - WARNING - Attempt 5/5 failed for Prompt #142... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,644 - ERROR - Failed to process prompt after 5 attempts: #142...
+2025-04-25 15:30:16,649 - WARNING - Attempt 5/5 failed for Prompt #144... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,650 - ERROR - Failed to process prompt after 5 attempts: #144...
+2025-04-25 15:30:16,740 - WARNING - Attempt 2/5 failed for Prompt #163... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,770 - WARNING - Attempt 2/5 failed for Prompt #165... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,770 - WARNING - Attempt 2/5 failed for Prompt #164... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,780 - WARNING - Attempt 2/5 failed for Prompt #161... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,801 - WARNING - Attempt 2/5 failed for Prompt #162... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,805 - WARNING - Attempt 5/5 failed for Prompt #143... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,805 - ERROR - Failed to process prompt after 5 attempts: #143...
+2025-04-25 15:30:16,806 - WARNING - Attempt 5/5 failed for Prompt #141... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,806 - ERROR - Failed to process prompt after 5 attempts: #141...
+2025-04-25 15:30:16,806 - ERROR - Item failed: 【皮鞋跟敲击大理石地面的声音由远及近】
+
+『验尸报告显示——』法医的声音在 Tudor 公馆的穹顶下... Error: Attempt 5/5 failed for Prompt #141... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,806 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近）
+『验尸报告显示——死亡时间02:00 AM，现场无挣扎痕迹.... Error: Attempt 5/5 failed for Prompt #142... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,806 - ERROR - Item failed: 【声效：壁炉柴火噼啪声渐弱】
+
+『咚、咚、咚』——午夜钟声在都铎庄园回荡时，约翰·Q·博迪先生的头颅... Error: Attempt 5/5 failed for Prompt #143... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,806 - ERROR - Item failed: 【皮鞋跟敲击大理石地面的回响中】
+
+『十二月二十一日，暴雪夜』
+壁炉火光在都铎庄园的彩窗上投下摇曳暗... Error: Attempt 5/5 failed for Prompt #144... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,806 - ERROR - Item failed: 【雨夜古宅】
+
+皮鞋跟敲击橡木地板的声响在回廊间回荡，壁灯将八道影子投在都铎庄园的胡桃木门上。约翰·... Error: Attempt 5/5 failed for Prompt #145... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,891 - WARNING - Attempt 5/5 failed for Prompt #146... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,893 - ERROR - Failed to process prompt after 5 attempts: #146...
+2025-04-25 15:30:16,961 - WARNING - Attempt 5/5 failed for Prompt #147... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,961 - ERROR - Failed to process prompt after 5 attempts: #147...
+2025-04-25 15:30:16,962 - WARNING - Attempt 1/5 failed for Prompt #170... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,962 - WARNING - Attempt 1/5 failed for Prompt #167... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,962 - WARNING - Attempt 5/5 failed for Prompt #148... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,963 - ERROR - Failed to process prompt after 5 attempts: #148...
+2025-04-25 15:30:16,963 - WARNING - Attempt 1/5 failed for Prompt #166... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,963 - WARNING - Attempt 1/5 failed for Prompt #169... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,964 - WARNING - Attempt 1/5 failed for Prompt #168... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,964 - WARNING - Attempt 5/5 failed for Prompt #149... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:16,964 - ERROR - Failed to process prompt after 5 attempts: #149...
+2025-04-25 15:30:17,283 - WARNING - Attempt 5/5 failed for Prompt #150... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,283 - ERROR - Failed to process prompt after 5 attempts: #150...
+2025-04-25 15:30:17,284 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近）
+『验尸报告显示——』（纸张翻动声戛然而止）
+『约翰·Q·博迪... Error: Attempt 5/5 failed for Prompt #146... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,284 - ERROR - Item failed: （皮鞋跟敲击大理石地面的声音由远及近）
+
+『凶案报告：都铎庄园·雪夜密室』
+
+（档案袋被甩在桌上的闷... Error: Attempt 5/5 failed for Prompt #147... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,284 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近，突然戛然而止）
+
+『死亡时间：冬夜凌晨，坐标：都铎庄园』法医的... Error: Attempt 5/5 failed for Prompt #148... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,284 - ERROR - Item failed: （皮鞋跟敲击大理石地面的声音由远及近）
+
+『验尸报告显示——』（纸张翻动声戛然而止）
+
+在都铎庄园被... Error: Attempt 5/5 failed for Prompt #149... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,284 - ERROR - Item failed: 【皮鞋踩过橡木地板的闷响】
+"约翰·Q·博迪先生的尸体是在凌晨发现的..."探长的手电光束掠过都铎庄... Error: Attempt 5/5 failed for Prompt #150... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,368 - WARNING - Attempt 1/5 failed for Prompt #171... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,372 - WARNING - Attempt 1/5 failed for Prompt #172... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,374 - WARNING - Attempt 1/5 failed for Prompt #175... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,376 - WARNING - Attempt 1/5 failed for Prompt #173... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:17,381 - WARNING - Attempt 1/5 failed for Prompt #174... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,037 - WARNING - Attempt 2/5 failed for Prompt #170... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,039 - WARNING - Attempt 2/5 failed for Prompt #169... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,040 - WARNING - Attempt 2/5 failed for Prompt #167... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,049 - WARNING - Attempt 2/5 failed for Prompt #168... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,050 - WARNING - Attempt 2/5 failed for Prompt #166... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,445 - WARNING - Attempt 2/5 failed for Prompt #171... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,449 - WARNING - Attempt 2/5 failed for Prompt #175... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,449 - WARNING - Attempt 2/5 failed for Prompt #172... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,450 - WARNING - Attempt 2/5 failed for Prompt #174... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,458 - WARNING - Attempt 2/5 failed for Prompt #173... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,577 - WARNING - Attempt 4/5 failed for Prompt #155... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,599 - WARNING - Attempt 4/5 failed for Prompt #151... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,600 - WARNING - Attempt 4/5 failed for Prompt #154... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,614 - WARNING - Attempt 4/5 failed for Prompt #152... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,615 - WARNING - Attempt 4/5 failed for Prompt #153... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,673 - WARNING - Attempt 3/5 failed for Prompt #158... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,709 - WARNING - Attempt 3/5 failed for Prompt #160... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,713 - WARNING - Attempt 3/5 failed for Prompt #156... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,713 - WARNING - Attempt 3/5 failed for Prompt #159... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,717 - WARNING - Attempt 3/5 failed for Prompt #157... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,816 - WARNING - Attempt 3/5 failed for Prompt #163... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,843 - WARNING - Attempt 3/5 failed for Prompt #164... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,844 - WARNING - Attempt 3/5 failed for Prompt #165... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,866 - WARNING - Attempt 3/5 failed for Prompt #162... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:18,867 - WARNING - Attempt 3/5 failed for Prompt #161... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,143 - WARNING - Attempt 3/5 failed for Prompt #167... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,147 - WARNING - Attempt 3/5 failed for Prompt #169... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,148 - WARNING - Attempt 3/5 failed for Prompt #166... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,149 - WARNING - Attempt 3/5 failed for Prompt #168... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,149 - WARNING - Attempt 3/5 failed for Prompt #170... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,516 - WARNING - Attempt 3/5 failed for Prompt #175... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,517 - WARNING - Attempt 3/5 failed for Prompt #172... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,519 - WARNING - Attempt 3/5 failed for Prompt #171... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,524 - WARNING - Attempt 3/5 failed for Prompt #174... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:20,544 - WARNING - Attempt 3/5 failed for Prompt #173... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,745 - WARNING - Attempt 4/5 failed for Prompt #158... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,779 - WARNING - Attempt 4/5 failed for Prompt #156... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,781 - WARNING - Attempt 4/5 failed for Prompt #160... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,783 - WARNING - Attempt 4/5 failed for Prompt #159... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,801 - WARNING - Attempt 4/5 failed for Prompt #157... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,891 - WARNING - Attempt 4/5 failed for Prompt #163... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,910 - WARNING - Attempt 4/5 failed for Prompt #165... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,916 - WARNING - Attempt 4/5 failed for Prompt #164... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,941 - WARNING - Attempt 4/5 failed for Prompt #162... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:22,971 - WARNING - Attempt 4/5 failed for Prompt #161... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,219 - WARNING - Attempt 4/5 failed for Prompt #167... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,223 - WARNING - Attempt 4/5 failed for Prompt #169... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,224 - WARNING - Attempt 4/5 failed for Prompt #166... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,235 - WARNING - Attempt 4/5 failed for Prompt #170... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,237 - WARNING - Attempt 4/5 failed for Prompt #168... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,591 - WARNING - Attempt 4/5 failed for Prompt #175... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,618 - WARNING - Attempt 4/5 failed for Prompt #172... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,621 - WARNING - Attempt 4/5 failed for Prompt #171... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,625 - WARNING - Attempt 4/5 failed for Prompt #174... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:24,627 - WARNING - Attempt 4/5 failed for Prompt #173... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,663 - WARNING - Attempt 5/5 failed for Prompt #155... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,663 - ERROR - Failed to process prompt after 5 attempts: #155...
+2025-04-25 15:30:26,829 - WARNING - Attempt 5/5 failed for Prompt #154... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,830 - ERROR - Failed to process prompt after 5 attempts: #154...
+2025-04-25 15:30:26,906 - WARNING - Attempt 5/5 failed for Prompt #151... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,906 - ERROR - Failed to process prompt after 5 attempts: #151...
+2025-04-25 15:30:26,907 - WARNING - Attempt 5/5 failed for Prompt #153... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,907 - ERROR - Failed to process prompt after 5 attempts: #153...
+2025-04-25 15:30:26,910 - WARNING - Attempt 5/5 failed for Prompt #152... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,910 - ERROR - Failed to process prompt after 5 attempts: #152...
+2025-04-25 15:30:26,911 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近）
+『各位——』管家突然掐灭烛火，黑暗中有金属落地的脆响，『主人... Error: Attempt 5/5 failed for Prompt #151... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,911 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回响由远及近）
+『验尸报告显示——』（纸张翻动声戛然而止）
+『波迪先生死于凌... Error: Attempt 5/5 failed for Prompt #152... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,911 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回响由远及近）
+『验尸报告显示——死亡时间04:00整』（金属器械碰撞声）
+... Error: Attempt 5/5 failed for Prompt #153... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,911 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近）
+
+『咚、咚、咚』管家颤抖着推开图书室的门：「探长...博迪先... Error: Attempt 5/5 failed for Prompt #154... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:26,911 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声渐近）
+『验尸报告显示——死亡时间介于昨夜10:30至凌晨1:00之间』... Error: Attempt 5/5 failed for Prompt #155... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:27,051 - WARNING - Attempt 1/5 failed for Prompt #176... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:27,061 - WARNING - Attempt 1/5 failed for Prompt #177... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:27,062 - WARNING - Attempt 1/5 failed for Prompt #179... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:27,166 - WARNING - Attempt 1/5 failed for Prompt #180... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:27,176 - WARNING - Attempt 1/5 failed for Prompt #178... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:28,249 - WARNING - Attempt 2/5 failed for Prompt #176... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:28,257 - WARNING - Attempt 2/5 failed for Prompt #177... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:28,296 - WARNING - Attempt 2/5 failed for Prompt #179... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:28,297 - WARNING - Attempt 2/5 failed for Prompt #180... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:28,299 - WARNING - Attempt 2/5 failed for Prompt #178... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,324 - WARNING - Attempt 3/5 failed for Prompt #176... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,337 - WARNING - Attempt 3/5 failed for Prompt #177... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,380 - WARNING - Attempt 3/5 failed for Prompt #179... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,386 - WARNING - Attempt 3/5 failed for Prompt #180... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,386 - WARNING - Attempt 3/5 failed for Prompt #178... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,819 - WARNING - Attempt 5/5 failed for Prompt #158... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,820 - ERROR - Failed to process prompt after 5 attempts: #158...
+2025-04-25 15:30:30,851 - WARNING - Attempt 5/5 failed for Prompt #156... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,851 - ERROR - Failed to process prompt after 5 attempts: #156...
+2025-04-25 15:30:30,866 - WARNING - Attempt 5/5 failed for Prompt #160... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,866 - ERROR - Failed to process prompt after 5 attempts: #160...
+2025-04-25 15:30:30,871 - WARNING - Attempt 5/5 failed for Prompt #159... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,871 - ERROR - Failed to process prompt after 5 attempts: #159...
+2025-04-25 15:30:30,883 - WARNING - Attempt 5/5 failed for Prompt #157... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,883 - ERROR - Failed to process prompt after 5 attempts: #157...
+2025-04-25 15:30:30,883 - ERROR - Item failed: 【雨夜古宅】
+
+*雨水敲击彩绘玻璃的声音中，老式座钟突然发出刺耳的齿轮卡顿声*
+
+探长："各位都听见... Error: Attempt 5/5 failed for Prompt #156... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,883 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回声由远及近）
+
+『咚、咚、咚』
+
+管家颤抖的声音划破黑暗："诸位...老爷... Error: Attempt 5/5 failed for Prompt #157... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,883 - ERROR - Item failed: 【皮鞋跟敲击大理石地面的回音渐近】
+
+『凶案发生在午夜的古堡——』管家颤抖的声音被雷声劈碎。约翰·Q... Error: Attempt 5/5 failed for Prompt #158... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,883 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回响由远及近）
+
+『验尸报告显示——』
+（纸张翻动声戛然而止）
+
+『约翰·Q... Error: Attempt 5/5 failed for Prompt #159... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:30,883 - ERROR - Item failed: （皮鞋跟敲击大理石地面的回响由远及近）
+
+『凶案现场报告：都铎庄园，2月13日凌晨』
+（金属门把手转... Error: Attempt 5/5 failed for Prompt #160... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,013 - WARNING - Attempt 1/5 failed for Prompt #181... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,015 - WARNING - Attempt 1/5 failed for Prompt #182... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,028 - WARNING - Attempt 1/5 failed for Prompt #185... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,031 - WARNING - Attempt 1/5 failed for Prompt #184... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,034 - WARNING - Attempt 1/5 failed for Prompt #183... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,036 - WARNING - Attempt 5/5 failed for Prompt #163... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,036 - ERROR - Failed to process prompt after 5 attempts: #163...
+2025-04-25 15:30:31,283 - WARNING - Attempt 5/5 failed for Prompt #165... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,284 - ERROR - Failed to process prompt after 5 attempts: #165...
+2025-04-25 15:30:31,291 - WARNING - Attempt 5/5 failed for Prompt #164... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,291 - ERROR - Failed to process prompt after 5 attempts: #164...
+2025-04-25 15:30:31,294 - WARNING - Attempt 5/5 failed for Prompt #162... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,295 - ERROR - Failed to process prompt after 5 attempts: #162...
+2025-04-25 15:30:31,315 - WARNING - Attempt 5/5 failed for Prompt #161... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,315 - ERROR - Failed to process prompt after 5 attempts: #161...
+2025-04-25 15:30:31,315 - ERROR - Item failed: 案件编号：TD-1942-01
+归档日期：████年██月██日
+
+■ 案件概述：
+富豪约翰·Q·博... Error: Attempt 5/5 failed for Prompt #161... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,316 - ERROR - Item failed: 案件编号：TD-1942
+归档日期：████-██-██
+
+▌案件摘要
+被害人：约翰·Q·博迪（男，... Error: Attempt 5/5 failed for Prompt #162... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,316 - ERROR - Item failed: 案件编号：TD-1942
+归档日期：████-██-██
+
+███年冬夜，富豪约翰·Q·博迪于都铎庄... Error: Attempt 5/5 failed for Prompt #163... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,316 - ERROR - Item failed: 案件编号：TD-1942-12
+归档日期：██████
+解密等级：Ⅲ级
+
+——以下内容节选自████... Error: Attempt 5/5 failed for Prompt #164... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,316 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+地点：都铎庄园
+时间：冬季深夜
+
+【卷宗摘要】
+死者... Error: Attempt 5/5 failed for Prompt #165... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,405 - WARNING - Attempt 1/5 failed for Prompt #186... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,420 - WARNING - Attempt 1/5 failed for Prompt #187... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,431 - WARNING - Attempt 1/5 failed for Prompt #188... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,432 - WARNING - Attempt 1/5 failed for Prompt #189... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:31,433 - WARNING - Attempt 1/5 failed for Prompt #190... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,143 - WARNING - Attempt 2/5 failed for Prompt #181... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,155 - WARNING - Attempt 2/5 failed for Prompt #182... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,171 - WARNING - Attempt 2/5 failed for Prompt #185... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,181 - WARNING - Attempt 2/5 failed for Prompt #184... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,184 - WARNING - Attempt 2/5 failed for Prompt #183... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,292 - WARNING - Attempt 5/5 failed for Prompt #169... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,293 - ERROR - Failed to process prompt after 5 attempts: #169...
+2025-04-25 15:30:32,296 - WARNING - Attempt 5/5 failed for Prompt #167... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,296 - ERROR - Failed to process prompt after 5 attempts: #167...
+2025-04-25 15:30:32,297 - WARNING - Attempt 5/5 failed for Prompt #166... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,297 - ERROR - Failed to process prompt after 5 attempts: #166...
+2025-04-25 15:30:32,303 - WARNING - Attempt 5/5 failed for Prompt #170... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,303 - ERROR - Failed to process prompt after 5 attempts: #170...
+2025-04-25 15:30:32,321 - WARNING - Attempt 5/5 failed for Prompt #168... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,321 - ERROR - Failed to process prompt after 5 attempts: #168...
+2025-04-25 15:30:32,321 - ERROR - Item failed: 案件编号：X-1945-12-24
+归档等级：绝密
+
+[现场概述]
+寒冬深夜，富豪约翰·Q·博迪于都... Error: Attempt 5/5 failed for Prompt #166... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,321 - ERROR - Item failed: 案件编号：TD-1942-WN
+归档日期：██████
+
+███年冬夜，富豪约翰·Q·博迪于都铎庄园... Error: Attempt 5/5 failed for Prompt #167... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,322 - ERROR - Item failed: 案件编号：TD-1942-12
+归档日期：██████
+
+███年冬夜，富豪约翰·Q·博迪在其都铎庄... Error: Attempt 5/5 failed for Prompt #168... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,322 - ERROR - Item failed: 档案编号：TD-1942-12
+案件类型：密室谋杀
+地点：都铎庄园
+时间：冬季深夜
+
+被害人：约翰·... Error: Attempt 5/5 failed for Prompt #169... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,322 - ERROR - Item failed: 案件编号：NW-1947-12
+归档日期：██████
+
+███年冬夜，富豪约翰·Q·博迪于都铎庄园... Error: Attempt 5/5 failed for Prompt #170... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,534 - WARNING - Attempt 1/5 failed for Prompt #194... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,535 - WARNING - Attempt 1/5 failed for Prompt #191... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,539 - WARNING - Attempt 1/5 failed for Prompt #192... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,540 - WARNING - Attempt 1/5 failed for Prompt #195... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,541 - WARNING - Attempt 1/5 failed for Prompt #193... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,715 - WARNING - Attempt 2/5 failed for Prompt #186... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,715 - WARNING - Attempt 2/5 failed for Prompt #188... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,718 - WARNING - Attempt 2/5 failed for Prompt #187... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,719 - WARNING - Attempt 2/5 failed for Prompt #189... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,721 - WARNING - Attempt 2/5 failed for Prompt #190... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,803 - WARNING - Attempt 5/5 failed for Prompt #175... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,803 - ERROR - Failed to process prompt after 5 attempts: #175...
+2025-04-25 15:30:32,804 - WARNING - Attempt 5/5 failed for Prompt #173... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,804 - ERROR - Failed to process prompt after 5 attempts: #173...
+2025-04-25 15:30:32,804 - WARNING - Attempt 5/5 failed for Prompt #174... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,804 - ERROR - Failed to process prompt after 5 attempts: #174...
+2025-04-25 15:30:32,804 - WARNING - Attempt 5/5 failed for Prompt #172... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,805 - ERROR - Failed to process prompt after 5 attempts: #172...
+2025-04-25 15:30:32,805 - WARNING - Attempt 5/5 failed for Prompt #171... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,805 - ERROR - Failed to process prompt after 5 attempts: #171...
+2025-04-25 15:30:32,805 - ERROR - Item failed: 案件编号：TD-1942
+归档日期：██████
+
+███年冬夜，富豪约翰·Q·博迪在其都铎庄园举办... Error: Attempt 5/5 failed for Prompt #171... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,805 - ERROR - Item failed: 案件编号：TD-1942-12
+归档日期：██████
+
+███年冬夜，富豪约翰·Q·博迪在其都铎庄... Error: Attempt 5/5 failed for Prompt #172... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,805 - ERROR - Item failed: 案件编号：TD-1942-12
+归档日期：██████
+
+███年冬夜，富豪约翰·Q·博迪在其都铎庄... Error: Attempt 5/5 failed for Prompt #173... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,805 - ERROR - Item failed: 案件编号：T-1942-01-07
+归档日期：██████
+
+【现场概述】
+冬季深夜，富豪约翰·Q·... Error: Attempt 5/5 failed for Prompt #174... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,805 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+时间：1992年冬夜
+地点：都铎庄园
+
+【被害人】
+... Error: Attempt 5/5 failed for Prompt #175... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,939 - WARNING - Attempt 1/5 failed for Prompt #197... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,948 - WARNING - Attempt 1/5 failed for Prompt #198... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,949 - WARNING - Attempt 1/5 failed for Prompt #196... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:32,949 - WARNING - Attempt 1/5 failed for Prompt #199... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:33,042 - WARNING - Attempt 1/5 failed for Prompt #200... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:33,632 - WARNING - Attempt 2/5 failed for Prompt #194... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:33,635 - WARNING - Attempt 2/5 failed for Prompt #191... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:33,760 - WARNING - Attempt 2/5 failed for Prompt #192... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:33,764 - WARNING - Attempt 2/5 failed for Prompt #195... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:33,801 - WARNING - Attempt 2/5 failed for Prompt #193... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,044 - WARNING - Attempt 2/5 failed for Prompt #197... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,047 - WARNING - Attempt 2/5 failed for Prompt #198... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,059 - WARNING - Attempt 2/5 failed for Prompt #196... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,072 - WARNING - Attempt 2/5 failed for Prompt #199... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,124 - WARNING - Attempt 2/5 failed for Prompt #200... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,254 - WARNING - Attempt 3/5 failed for Prompt #182... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,256 - WARNING - Attempt 3/5 failed for Prompt #185... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,260 - WARNING - Attempt 3/5 failed for Prompt #181... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,269 - WARNING - Attempt 3/5 failed for Prompt #184... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,279 - WARNING - Attempt 3/5 failed for Prompt #183... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,400 - WARNING - Attempt 4/5 failed for Prompt #176... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,447 - WARNING - Attempt 4/5 failed for Prompt #177... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,464 - WARNING - Attempt 4/5 failed for Prompt #179... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,471 - WARNING - Attempt 4/5 failed for Prompt #180... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,473 - WARNING - Attempt 4/5 failed for Prompt #178... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,812 - WARNING - Attempt 3/5 failed for Prompt #189... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,818 - WARNING - Attempt 3/5 failed for Prompt #188... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,819 - WARNING - Attempt 3/5 failed for Prompt #186... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,822 - WARNING - Attempt 3/5 failed for Prompt #187... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:34,831 - WARNING - Attempt 3/5 failed for Prompt #190... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:35,742 - WARNING - Attempt 3/5 failed for Prompt #191... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:35,765 - WARNING - Attempt 3/5 failed for Prompt #194... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:35,908 - WARNING - Attempt 3/5 failed for Prompt #192... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:35,909 - WARNING - Attempt 3/5 failed for Prompt #195... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:35,910 - WARNING - Attempt 3/5 failed for Prompt #193... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:36,158 - WARNING - Attempt 3/5 failed for Prompt #198... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:36,160 - WARNING - Attempt 3/5 failed for Prompt #197... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:36,204 - WARNING - Attempt 3/5 failed for Prompt #199... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:36,205 - WARNING - Attempt 3/5 failed for Prompt #196... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:36,259 - WARNING - Attempt 3/5 failed for Prompt #200... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:38,336 - WARNING - Attempt 4/5 failed for Prompt #185... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:38,438 - WARNING - Attempt 4/5 failed for Prompt #181... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:38,439 - WARNING - Attempt 4/5 failed for Prompt #182... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:38,444 - WARNING - Attempt 4/5 failed for Prompt #184... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:39,537 - WARNING - Attempt 4/5 failed for Prompt #183... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:39,559 - WARNING - Attempt 4/5 failed for Prompt #189... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:39,629 - WARNING - Attempt 4/5 failed for Prompt #186... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:39,750 - WARNING - Attempt 4/5 failed for Prompt #187... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:39,767 - WARNING - Attempt 4/5 failed for Prompt #190... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:39,772 - WARNING - Attempt 4/5 failed for Prompt #188... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,016 - WARNING - Attempt 4/5 failed for Prompt #194... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,017 - WARNING - Attempt 4/5 failed for Prompt #191... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,156 - WARNING - Attempt 4/5 failed for Prompt #192... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,174 - WARNING - Attempt 4/5 failed for Prompt #195... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,179 - WARNING - Attempt 4/5 failed for Prompt #193... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,284 - WARNING - Attempt 4/5 failed for Prompt #198... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,332 - WARNING - Attempt 4/5 failed for Prompt #197... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,719 - WARNING - Attempt 4/5 failed for Prompt #199... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,774 - WARNING - Attempt 4/5 failed for Prompt #196... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:40,798 - WARNING - Attempt 4/5 failed for Prompt #200... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,510 - WARNING - Attempt 5/5 failed for Prompt #176... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,510 - ERROR - Failed to process prompt after 5 attempts: #176...
+2025-04-25 15:30:42,535 - WARNING - Attempt 5/5 failed for Prompt #177... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,535 - ERROR - Failed to process prompt after 5 attempts: #177...
+2025-04-25 15:30:42,540 - WARNING - Attempt 5/5 failed for Prompt #179... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,540 - ERROR - Failed to process prompt after 5 attempts: #179...
+2025-04-25 15:30:42,542 - WARNING - Attempt 5/5 failed for Prompt #180... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,542 - ERROR - Failed to process prompt after 5 attempts: #180...
+2025-04-25 15:30:42,563 - WARNING - Attempt 5/5 failed for Prompt #178... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,563 - ERROR - Failed to process prompt after 5 attempts: #178...
+2025-04-25 15:30:42,564 - ERROR - Item failed: 案件编号：TD-1942-12
+归档日期：██████
+案件概述：████年冬夜，富豪约翰·Q·博迪... Error: Attempt 5/5 failed for Prompt #176... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,564 - ERROR - Item failed: 案件编号：NT-1945-12
+归档日期：██████
+
+███年冬夜，富豪约翰·Q·博迪在其都铎庄... Error: Attempt 5/5 failed for Prompt #177... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,564 - ERROR - Item failed: 案件编号：TD-1942-12
+归档日期：███████
+
+███年冬夜，富豪约翰·Q·博迪在其都铎... Error: Attempt 5/5 failed for Prompt #178... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,564 - ERROR - Item failed: 案件编号：TD-1942-12
+归档日期：██████
+
+███年冬夜，富豪约翰·Q·博迪在其都铎庄... Error: Attempt 5/5 failed for Prompt #179... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:42,564 - ERROR - Item failed: 案件编号：TD-1942-12
+归档日期：██████
+解密等级：Ⅲ级
+
+——以下为档案正文——
+
+... Error: Attempt 5/5 failed for Prompt #180... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:46,518 - WARNING - Attempt 5/5 failed for Prompt #185... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:46,518 - ERROR - Failed to process prompt after 5 attempts: #185...
+2025-04-25 15:30:46,519 - WARNING - Attempt 5/5 failed for Prompt #181... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:46,519 - ERROR - Failed to process prompt after 5 attempts: #181...
+2025-04-25 15:30:46,520 - WARNING - Attempt 5/5 failed for Prompt #182... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:46,520 - ERROR - Failed to process prompt after 5 attempts: #182...
+2025-04-25 15:30:46,527 - WARNING - Attempt 5/5 failed for Prompt #184... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:46,528 - ERROR - Failed to process prompt after 5 attempts: #184...
+2025-04-25 15:30:47,685 - WARNING - Attempt 5/5 failed for Prompt #189... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,685 - ERROR - Failed to process prompt after 5 attempts: #189...
+2025-04-25 15:30:47,692 - WARNING - Attempt 5/5 failed for Prompt #183... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,692 - ERROR - Failed to process prompt after 5 attempts: #183...
+2025-04-25 15:30:47,692 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+时间：1992年冬夜
+地点：都铎庄园
+
+【卷宗摘要】... Error: Attempt 5/5 failed for Prompt #181... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,692 - ERROR - Item failed: 案件编号：B-1942-12-24
+归档等级：绝密
+
+——以下内容节选自都铎庄园凶杀案调查档案——
+... Error: Attempt 5/5 failed for Prompt #182... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,692 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+地点：都铎庄园
+时间：1992年2月13日 22:0... Error: Attempt 5/5 failed for Prompt #183... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,692 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+时间：1992年冬夜
+地点：都铎庄园
+
+【卷宗摘要】... Error: Attempt 5/5 failed for Prompt #184... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,692 - ERROR - Item failed: 案件编号：X-7429
+归档日期：██████
+
+——以下为绝密档案节选——
+
+■ 事件概述
+19█... Error: Attempt 5/5 failed for Prompt #185... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,716 - WARNING - Attempt 5/5 failed for Prompt #186... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,716 - ERROR - Failed to process prompt after 5 attempts: #186...
+2025-04-25 15:30:47,830 - WARNING - Attempt 5/5 failed for Prompt #187... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,831 - ERROR - Failed to process prompt after 5 attempts: #187...
+2025-04-25 15:30:47,885 - WARNING - Attempt 5/5 failed for Prompt #190... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,885 - ERROR - Failed to process prompt after 5 attempts: #190...
+2025-04-25 15:30:47,896 - WARNING - Attempt 5/5 failed for Prompt #188... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,896 - ERROR - Failed to process prompt after 5 attempts: #188...
+2025-04-25 15:30:47,896 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+时间戳：1992年冬夜
+
+[现场概述]
+富豪约翰·Q... Error: Attempt 5/5 failed for Prompt #186... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,896 - ERROR - Item failed: 档案编号：TD-1947-12
+案件类型：密室谋杀
+地点：都铎庄园
+时间：1947年12月21日 2... Error: Attempt 5/5 failed for Prompt #187... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,897 - ERROR - Item failed: 案件编号：TD-1947-12
+归档日期：██████
+
+███年冬夜，约翰·Q·博迪先生于都铎庄园... Error: Attempt 5/5 failed for Prompt #188... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,897 - ERROR - Item failed: 档案编号：X-1946-12-24
+案件类型：密闭空间谋杀
+地点：都铎庄园
+
+【被害人】
+约翰·Q·... Error: Attempt 5/5 failed for Prompt #189... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:47,897 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+时间：1992年冬夜
+地点：都铎庄园
+
+【被害人】约... Error: Attempt 5/5 failed for Prompt #190... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,091 - WARNING - Attempt 5/5 failed for Prompt #194... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,091 - ERROR - Failed to process prompt after 5 attempts: #194...
+2025-04-25 15:30:48,097 - WARNING - Attempt 5/5 failed for Prompt #191... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,098 - ERROR - Failed to process prompt after 5 attempts: #191...
+2025-04-25 15:30:48,346 - WARNING - Attempt 5/5 failed for Prompt #192... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,346 - ERROR - Failed to process prompt after 5 attempts: #192...
+2025-04-25 15:30:48,352 - WARNING - Attempt 5/5 failed for Prompt #195... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,352 - ERROR - Failed to process prompt after 5 attempts: #195...
+2025-04-25 15:30:48,466 - WARNING - Attempt 5/5 failed for Prompt #193... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,466 - ERROR - Failed to process prompt after 5 attempts: #193...
+2025-04-25 15:30:48,467 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+时间：1992年12月21日
+地点：都铎庄园
+
+【卷... Error: Attempt 5/5 failed for Prompt #191... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,467 - ERROR - Item failed: 档案编号：TD-1947-12
+案件类型：密闭空间谋杀
+时间：冬至夜23:00至次日01:00
+地点... Error: Attempt 5/5 failed for Prompt #192... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,467 - ERROR - Item failed: 案件编号：TD-1947-12
+归档日期：██████
+解密等级：Ⅲ级
+
+——以下为现场勘验报告节选... Error: Attempt 5/5 failed for Prompt #193... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,467 - ERROR - Item failed: 档案编号：TD-1947-12
+案件名称：都铎庄园午夜凶案
+归档日期：██████
+
+■ 案件概述：... Error: Attempt 5/5 failed for Prompt #194... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,467 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+时间：1992年冬夜
+地点：都铎庄园
+
+【被害人】约... Error: Attempt 5/5 failed for Prompt #195... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,472 - WARNING - Attempt 5/5 failed for Prompt #198... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,472 - ERROR - Failed to process prompt after 5 attempts: #198...
+2025-04-25 15:30:48,475 - WARNING - Attempt 5/5 failed for Prompt #197... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,475 - ERROR - Failed to process prompt after 5 attempts: #197...
+2025-04-25 15:30:48,850 - WARNING - Attempt 5/5 failed for Prompt #199... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,850 - ERROR - Failed to process prompt after 5 attempts: #199...
+2025-04-25 15:30:48,897 - WARNING - Attempt 5/5 failed for Prompt #196... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,897 - ERROR - Failed to process prompt after 5 attempts: #196...
+2025-04-25 15:30:48,905 - WARNING - Attempt 5/5 failed for Prompt #200... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,906 - ERROR - Failed to process prompt after 5 attempts: #200...
+2025-04-25 15:30:48,906 - ERROR - Item failed: 案件编号：TD-1947-12
+归档日期：███████
+
+███庄园命案调查报告（绝密）
+
+1. ... Error: Attempt 5/5 failed for Prompt #196... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,906 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密室谋杀
+时间：1992年冬夜
+地点：都铎庄园
+
+【卷宗摘要】
+富... Error: Attempt 5/5 failed for Prompt #197... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,907 - ERROR - Item failed: 档案编号：X-7429
+案件类型：密闭空间谋杀
+时间：1992年冬夜
+地点：都铎庄园
+
+【卷宗摘要】... Error: Attempt 5/5 failed for Prompt #198... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,907 - ERROR - Item failed: 案件编号：T-1945-12-24
+归档等级：绝密
+
+——以下为现场勘验报告节选——
+
+时间：冬至夜... Error: Attempt 5/5 failed for Prompt #199... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,907 - ERROR - Item failed: 案件编号：TD-1942-12
+归档日期：██████
+案件状态：已结案
+
+——以下为封存档案正文—... Error: Attempt 5/5 failed for Prompt #200... HTTP Status: 404, Message: Not Found
+2025-04-25 15:30:48,924 - INFO - Successfully wrote results to output/tc_200_zh_output.json
