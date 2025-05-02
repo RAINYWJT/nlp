@@ -23,8 +23,7 @@ def main():
     parser.add_argument("--retry-delay", type=int, default=1, help="Initial delay between retries (seconds)")
    
     parser.add_argument("--input-file", type=str, default='data/tc_200_zh.json', help="Input file")
-    parser.add_argument("--output-file", type=str, default='output/tc_200_zh_output1.json', help="Output file")
-    
+        
     # free QWQ
     # parser.add_argument("--api-token", type=str, default="sk-hlYe4pTTlQvc6ocDKp0knQP7EiQuJas5MLlAatGVeV5cINdR",  help="API token")
     # parser.add_argument("--base-url", type=str, default="https://api.suanli.cn/v1/chat/completions", help="API base URL")
@@ -47,7 +46,8 @@ def main():
             retry_delay=args.retry_delay,
         )
 
-        processor.run(args.input_file, args.output_file, args.number)
+        output_file = 'output/tc_200_zh_output_api.json'
+        processor.run(args.input_file, output_file, args.number)
 
     elif args.method == 1:
         print("---------------   Method Prompt Engineer!   ---------------")
@@ -59,17 +59,34 @@ def main():
             retry_delay=args.retry_delay,
         )
 
-        processor.run(args.input_file, args.output_file, args.number)
+        output_file = 'output/tc_200_zh_output_pe.json'
+        processor.run(args.input_file, output_file, args.number)
 
     elif args.method == 2:
         print("---------------   Method Tools!   ---------------")
-        # TODO()
-        pass
+        processor = LogicTools(
+            api_token=args.api_token,
+            base_url=args.base_url,
+            model=args.model,
+            max_retries=args.max_retries,
+            retry_delay=args.retry_delay,
+        )
+
+        output_file = 'output/tc_200_zh_output_tool.json'
+        processor.run(args.input_file, output_file, args.number)
 
     elif args.method == 3:
         print("---------------   Method Agents!   ---------------")
-        # TODO()
-        pass
+        processor = Agents(
+            api_token=args.api_token,
+            base_url=args.base_url,
+            model=args.model,
+            max_retries=args.max_retries,
+            retry_delay=args.retry_delay,
+        )
+
+        output_file = 'output/tc_200_zh_output_agent.json'
+        processor.run(args.input_file, output_file, args.number)
 
     else:
         raise ValueError("Invalid method selected")
