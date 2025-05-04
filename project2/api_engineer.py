@@ -3,7 +3,64 @@ import time
 from tqdm import tqdm
 from typing import List, Dict
 from openai import OpenAI
-from utils import *
+
+
+def evaluate_response(response, solution):
+    # print(response, solution)
+    """Evaluate the match between the model response and the standard answer."""
+    # response_lower = response.lower()
+    # expected_answers = [f"{key}. {value}".lower() for key, value in solution.items()]
+    # all_correct = all(expected_answer in response_lower for expected_answer in expected_answers)
+    # accuracy = 1.0 if all_correct else 0.0
+    # return accuracy
+    return 1.0 if response == solution else 0.0
+
+def evaluate_response_require(response, solution):
+    # response_lower = response.lower()
+    # expected_answers = [f"{key}. {value}".lower() for key, value in solution.items()]
+    # expected_answers = expected_answers[:4]
+    # correct_count = sum(1 for expected_answer in expected_answers if expected_answer in response_lower)
+    # accuracy = correct_count / len(expected_answers) if expected_answers else 0.0
+    # return accuracy
+    response = {k: str(v).strip().lower() for k, v in response.items()}
+    solution = {k: str(v).strip().lower() for k, v in solution.items()}
+    
+    # 检查键是否一致
+    if set(response.keys()) != set(solution.keys()):
+        return 0.0
+    
+    # 提取前4项的键
+    require_keys = list(solution.keys())[:4]
+    if not require_keys:  # 避免空列表
+        return 0.0
+    
+    # 计算匹配数
+    correct = sum(1 for key in require_keys if response.get(key) == solution.get(key))
+    return correct / len(require_keys)
+
+def evaluate_response_optional(response, solution):
+    # response_lower = response.lower()
+    # expected_answers = [f"{key}. {value}".lower() for key, value in solution.items()]
+    # expected_answers = expected_answers[4:]
+    # correct_count = sum(1 for expected_answer in expected_answers if expected_answer in response_lower)
+    # accuracy = correct_count / len(expected_answers) if expected_answers else 0.0
+    # return accuracy
+    response = {k: str(v).strip().lower() for k, v in response.items()}
+    solution = {k: str(v).strip().lower() for k, v in solution.items()}
+    
+    # 检查键是否一致
+    if set(response.keys()) != set(solution.keys()):
+        return 0.0
+    
+    # 提取剩余项的键
+    optional_keys = list(solution.keys())[4:]
+    if not optional_keys:  # 避免空列表
+        return 0.0
+    
+    # 计算匹配数
+    correct = sum(1 for key in optional_keys if response.get(key) == solution.get(key))
+    return correct / len(optional_keys)
+
 
 class SyncApiProcessor:
     def __init__(self, api_token: str, base_url: str, model: str, max_retries: int, retry_delay: int):
@@ -97,12 +154,6 @@ class SyncApiProcessor:
 
         items = data[:number] if number > 0 else data
         total = len(items)
-
-        results = []
-        processed = 0
-        total_accuracy = 0.0
-        require_acc = 0.0
-        optinal_acc = 0.0
 
         results = []
         processed = 0

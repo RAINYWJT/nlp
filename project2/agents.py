@@ -3,7 +3,45 @@ import time
 from tqdm import tqdm
 from typing import List, Dict
 from openai import OpenAI
-from utils import *
+
+
+def evaluate_response(response, solution):
+    return 1.0 if response == solution else 0.0
+
+def evaluate_response_require(response, solution):
+    response = {k: str(v).strip().lower() for k, v in response.items()}
+    solution = {k: str(v).strip().lower() for k, v in solution.items()}
+    
+    # 检查键是否一致
+    if set(response.keys()) != set(solution.keys()):
+        return 0.0
+    
+    # 提取前4项的键
+    require_keys = list(solution.keys())[:4]
+    if not require_keys:  # 避免空列表
+        return 0.0
+    
+    # 计算匹配数
+    correct = sum(1 for key in require_keys if response.get(key) == solution.get(key))
+    return correct / len(require_keys)
+
+def evaluate_response_optional(response, solution):
+    response = {k: str(v).strip().lower() for k, v in response.items()}
+    solution = {k: str(v).strip().lower() for k, v in solution.items()}
+    
+    # 检查键是否一致
+    if set(response.keys()) != set(solution.keys()):
+        return 0.0
+    
+    # 提取剩余项的键
+    optional_keys = list(solution.keys())[4:]
+    if not optional_keys:  # 避免空列表
+        return 0.0
+    
+    # 计算匹配数
+    correct = sum(1 for key in optional_keys if response.get(key) == solution.get(key))
+    return correct / len(optional_keys)
+
 
 
 class Agents:
@@ -51,10 +89,42 @@ class Agents:
             reply = self.chat(messages)
             messages.append({"role": "assistant", "content": reply})
 
+        questions = self.extract_questions_from_prompt(case_prompt)
+        # print(questions)
         # 最终由法官总结
-        messages.append({"role": "user", "content": "请你作为法官，综合大家的发言，给出最终推理结论：谁是凶手？"})
+        messages.append({"role": "user", "content": 
+            f"""
+            请你作为法官，综合大家的发言，给出最终推理结论：
+            请回答以下问题：
+
+            {questions}
+            """
+        })
+        
         final_response = self.chat(messages)
         return {"dialogue": messages, "conclusion": final_response}
+
+    def extract_solution(self, text: str) -> dict:
+        """从文本中提取答案"""
+        import re
+        match = re.search(r"(.*?答案.*?)\s*(.*)", text, re.DOTALL)
+        if not match:
+            return {}
+        answer_block = match.group(2).strip()
+
+        # 提取 A-K 的答案
+        matches = re.findall(r'([A-F])\.\s*(\S+)', answer_block)
+        return {k: v for k, v in matches}
+    
+    def extract_questions_from_prompt(self, prompt: str) -> str:
+        # 使用正则表达式提取 "请回答以下问题" 后的所有内容
+        import re
+        match = re.search(r"请回答以下问题：(.+)", prompt, re.DOTALL)
+        if match:
+            return match.group(1).strip()  # 提取并去掉前后多余的空白字符
+        else:
+            return None  # 如果没有匹配到则返回 None
+
 
     def run(self, input_file: str, output_file: str, number: int = -1):
         with open(input_file, "r", encoding="utf-8") as f:
@@ -65,35 +135,43 @@ class Agents:
 
         results = []
         acc = 0
+        require = 0
+        optinal = 0
 
         for item in tqdm(data, desc="多智能体对话中"):
             prompt = item["prompt"]
             solution = item["solution"]
 
             result = self.simulate_dialogue(prompt)
+            print(result)
+            # 提取推理结果中的答案
+            prediction = self.extract_solution(result["conclusion"])
 
-            # 粗略评价准确率
-            predicted = {"凶手": None}
-            for name in ["A", "B", "C", "D", "E"]:
-                if name in result["conclusion"]:
-                    predicted["凶手"] = name
-                    break
+            # 计算准确度
+            accuracy = evaluate_response(prediction, solution)
+            require_acc = evaluate_response_require(prediction, solution)
+            optinal_acc = evaluate_response_optional(prediction, solution)
 
-            accuracy = evaluate_response(predicted, solution)
             acc += accuracy
+            require += require_acc
+            optinal += optinal_acc
 
             results.append({
                 "prompt": prompt,
-                "response": result,
+                "response": prediction,
                 "solution": solution,
-                "accuracy": accuracy
+                "accuracy": accuracy,
+                "req_acc": require_acc,
+                "opt_acc": optinal_acc
             })
 
         summary = {
             "results": results,
             "statistics": {
                 "total": len(data),
-                "average_accuracy": acc / len(data) if data else 0
+                "average_accuracy": acc / len(data) if data else 0,
+                "average_require": require_acc / len(data) if data else 0,
+                "average_optional": optinal_acc / len(data) if data else 0
             }
         }
 

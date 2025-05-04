@@ -1,8 +1,50 @@
 import json
 import time
 from tqdm import tqdm
-from utils import *
 from openai import OpenAI
+
+
+def evaluate_response(response, solution):
+    # 统一小写并去除空格
+    response = {k: str(v).strip().lower() for k, v in response.items()}
+    solution = {k: str(v).strip().lower() for k, v in solution.items()}
+
+    # 判断是否完全匹配
+    if response == solution:
+        return 1.0
+    
+    else: 
+        return 0
+
+def evaluate_response_require(response, solution):
+    response = {k: str(v).strip().lower() for k, v in response.items()}
+    solution = {k: str(v).strip().lower() for k, v in solution.items()}
+    
+    if set(response.keys()) != set(solution.keys()):
+        return 0.0
+    
+    require_keys = list(solution.keys())[:4]
+    if not require_keys:
+        return 0.0
+    
+    correct = sum(1 for key in require_keys if response.get(key) == solution.get(key))
+    return correct / len(require_keys)
+
+
+def evaluate_response_optional(response, solution):
+    response = {k: str(v).strip().lower() for k, v in response.items()}
+    solution = {k: str(v).strip().lower() for k, v in solution.items()}
+
+    if set(response.keys()) != set(solution.keys()):
+        return 0.0
+    
+    optional_keys = list(solution.keys())[4:]
+    if not optional_keys:
+        return 0.0
+    
+    correct = sum(1 for key in optional_keys if response.get(key) == solution.get(key))
+    return correct / len(optional_keys)
+
 
 
 class PromptEngineer:
@@ -27,7 +69,7 @@ class PromptEngineer:
         return f"你是福尔摩斯，接到一个案子：{question} 请详细推理并找出答案。"
 
     def prompt_step_by_step(self, question: str) -> str:
-        return f"请一步步推理以下问题，并给出最终答案：{question}"
+        return f"请一步步推理以下问题，并给出符合逻辑的正确的最终答案：{question}"
 
     def call_model(self, prompt: str) -> str:
         for attempt in range(self.max_retries):
@@ -60,6 +102,13 @@ class PromptEngineer:
         results = []
         total = len(items)
 
+        # 初始化统计字典，每个策略的方法单独存储统计
+        accuracy_stats = {strategy_name: {"total_accuracy": 0.0, "total_require_acc": 0.0, "total_optional_acc": 0.0}
+                        for strategy_name in self.strategies}
+        
+        processed = {strategy_name: {"accuracy": 0, "require_acc": 0, "optional_acc": 0}
+                    for strategy_name in self.strategies}
+
         for idx, item in enumerate(tqdm(items, desc="Prompt Strategies")):
             question = item.get("question") or item.get("prompt")
             if not question:
@@ -73,22 +122,69 @@ class PromptEngineer:
                 "solution": ground_truth
             }
 
+            # 累计每个策略的准确度
             for strategy_name, strategy_fn in self.strategies.items():
                 prompt = strategy_fn(question)
                 response = self.call_model(prompt)
                 prediction = self.extract_solution(response)
-                acc = evaluate_response(prediction, ground_truth)
+
+                # 使用 evaluate_response 方法计算准确度
+                accuracy = evaluate_response(prediction, ground_truth)
+                accuracy_stats[strategy_name]["total_accuracy"] += accuracy
+                processed[strategy_name]["accuracy"] += 1
+
+                # 使用 evaluate_response_require 和 evaluate_response_optional 方法计算准确度
+                require_acc_value = evaluate_response_require(prediction, ground_truth)
+                optional_acc_value = evaluate_response_optional(prediction, ground_truth)
+
+                accuracy_stats[strategy_name]["total_require_acc"] += require_acc_value
+                accuracy_stats[strategy_name]["total_optional_acc"] += optional_acc_value
+
+                processed[strategy_name]["require_acc"] += 1 if require_acc_value > 0 else 0
+                processed[strategy_name]["optional_acc"] += 1 if optional_acc_value > 0 else 0
 
                 result["strategies"][strategy_name] = {
                     "prompt": prompt,
                     "response": response,
                     "parsed": prediction,
-                    "accuracy": acc
+                    "accuracy": accuracy,
+                    "req_acc": require_acc_value,
+                    "opt_acc": optional_acc_value
                 }
 
             results.append(result)
 
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(results, f, ensure_ascii=False, indent=2)
+        # 计算不同方法的平均准确度
+        strategy_averages = {}
+        for strategy_name in self.strategies:
+            avg_accuracy = accuracy_stats[strategy_name]["total_accuracy"] / processed[strategy_name]["accuracy"] if processed[strategy_name]["accuracy"] else 0.0
+            avg_require_acc = accuracy_stats[strategy_name]["total_require_acc"] / processed[strategy_name]["require_acc"] if processed[strategy_name]["require_acc"] else 0.0
+            avg_optional_acc = accuracy_stats[strategy_name]["total_optional_acc"] / processed[strategy_name]["optional_acc"] if processed[strategy_name]["optional_acc"] else 0.0
 
+            strategy_averages[strategy_name] = {
+                "average_accuracy": avg_accuracy,
+                "average_require_acc": avg_require_acc,
+                "average_optional_acc": avg_optional_acc
+            }
+
+        # 添加统计信息到输出
+        output = {
+            "results": results,
+            "statistics": {
+                "total_samples_in_file": total,
+                "processed_samples_successfully": sum(processed[strategy]["accuracy"] for strategy in self.strategies),
+                "strategies_averages": strategy_averages,
+            },
+        }
+
+        # 保存结果到文件
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
+
+        # 打印处理结果
         print(f"Processed {len(results)} samples with {len(self.strategies)} strategies.")
+        for strategy_name, averages in strategy_averages.items():
+            print(f"Strategy: {strategy_name}")
+            print(f"Average accuracy: {averages['average_accuracy']:.2%}")
+            print(f"Average require accuracy: {averages['average_require_acc']:.2%}")
+            print(f"Average optional accuracy: {averages['average_optional_acc']:.2%}")

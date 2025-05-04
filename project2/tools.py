@@ -3,11 +3,43 @@ import time
 from tqdm import tqdm
 from typing import List, Dict
 from openai import OpenAI
-from utils import *
+
+
+def evaluate_response(response, solution):
+    return 1.0 if response == solution else 0.0
+
+def evaluate_response_require(response, solution):
+    response = {k: str(v).strip().lower() for k, v in response.items()}
+    solution = {k: str(v).strip().lower() for k, v in solution.items()}
+    
+    if set(response.keys()) != set(solution.keys()):
+        return 0.0
+    
+    require_keys = list(solution.keys())[:4]
+    if not require_keys:
+        return 0.0
+    
+    correct = sum(1 for key in require_keys if response.get(key) == solution.get(key))
+    return correct / len(require_keys)
+
+def evaluate_response_optional(response, solution):
+    response = {k: str(v).strip().lower() for k, v in response.items()}
+    solution = {k: str(v).strip().lower() for k, v in solution.items()}
+    
+    if set(response.keys()) != set(solution.keys()):
+        return 0.0
+
+    optional_keys = list(solution.keys())[4:]
+    if not optional_keys:  
+        return 0.0
+    
+    correct = sum(1 for key in optional_keys if response.get(key) == solution.get(key))
+    return correct / len(optional_keys)
+
 
 
 class LogicTools:
-    def __init__(self, api_token: str, base_url: str, model: str, max_retries: int, retry_delay: int):
+    def __init__(self, api_token: str, base_url: str, model: str, max_retries: int = 3, retry_delay: int = 5):
         self.api_token = api_token
         self.base_url = base_url
         self.model = model
@@ -20,62 +52,59 @@ class LogicTools:
         )
 
     def extract_clues(self, prompt: str) -> List[str]:
-        """使用模型提取线索句"""
+        """Extract key clues from the puzzle prompt using LLM"""
+        system_msg = """You are a detective assistant that extracts key logical clues from murder mystery puzzles. 
+        Extract ONLY the factual clues, ignoring narrative descriptions. List each clue on a new line."""
+        
         for attempt in range(self.max_retries):
             try:
                 response = self.client.chat.completions.create(
                     model=self.model,
-                    messages=[{
-                        "role": "user",
-                        "content": f"请将以下文本中的每个人的发言提取为 JSON 格式列表，例如：['A: ...', 'B: ...']：\n\n{prompt}"
-                    }],
-                    temperature=0
+                    messages=[
+                        {"role": "system", "content": system_msg},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.1
                 )
-                text = response.choices[0].message.content
-                clues = self.parse_response_to_clues(text)
-                return clues
+                clues = response.choices[0].message.content.split('\n')
+                return [clue.strip() for clue in clues if clue.strip()]
             except Exception as e:
-                print(f"提取线索失败，重试 {attempt + 1}/{self.max_retries}：{e}")
+                if attempt == self.max_retries - 1:
+                    raise
                 time.sleep(self.retry_delay)
+        
         return []
 
-    def parse_response_to_clues(self, text: str) -> List[str]:
-        """简单解析成 ["A: ...", "B: ..."] 格式"""
-        lines = text.strip().split("\n")
-        return [line.strip("“”\"") for line in lines if ":" in line]
-
-    def logical_solver(self, clues: List[str]) -> Dict:
-        """核心逻辑推理工具：只有一个人说真话"""
-        people = ['A', 'B', 'C', 'D', 'E']
-        suspects = set(p[0] for p in clues if ":" in p)
-
-        for killer in suspects:
-            truth_tellers = 0
-            for clue in clues:
-                speaker, statement = clue.split(":", 1)
-                speaker = speaker.strip()
-                statement = statement.strip()
-
-                is_truth = False
-                if "不是" in statement and killer in statement:
-                    is_truth = False
-                elif "是" in statement and killer in statement:
-                    is_truth = True
-                elif f"{killer}不是凶手" in statement:
-                    is_truth = False
-                elif f"{killer}是凶手" in statement:
-                    is_truth = True
-
-                if is_truth:
-                    truth_tellers += 1
-
-            if truth_tellers == 1:
-                return {"凶手": killer}
-
-        return {"凶手": "无法判断"}
+    def logical_solver(self, clues: List[str], question: str) -> Dict:
+        """Solve the logic puzzle using extracted clues"""
+        system_msg = """You are an expert logic puzzle solver. Use the given clues to solve the mystery.
+        Respond with ONLY a JSON object containing the answers to all questions in the format:
+        {"A": "answer1", "B": "answer2", ...}"""
+        
+        clues_text = "\n".join(f"- {clue}" for clue in clues)
+        prompt = f"Clues:\n{clues_text}\n\nQuestion: {question}"
+        
+        for attempt in range(self.max_retries):
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=[
+                        {"role": "system", "content": system_msg},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.1,
+                    response_format={"type": "json_object"}
+                )
+                return json.loads(response.choices[0].message.content)
+            except Exception as e:
+                if attempt == self.max_retries - 1:
+                    raise
+                time.sleep(self.retry_delay)
+        
+        return {}
 
     def run(self, input_file: str, output_file: str, number: int = -1):
-        """运行完整流程"""
+        """Run the complete puzzle solving pipeline"""
         with open(input_file, "r", encoding="utf-8") as f:
             data = json.load(f)
 
@@ -86,31 +115,40 @@ class LogicTools:
         acc_total, acc_req, acc_opt = 0, 0, 0
         success = 0
 
-        for item in tqdm(data, desc="使用工具进行推理"):
+        for item in tqdm(data, desc="Solving puzzles"):
             prompt = item["prompt"]
             solution = item["solution"]
+            question = item.get("question", "Answer all the questions in the prompt")
 
-            clues = self.extract_clues(prompt)
-            result = self.logical_solver(clues)
+            try:
+                # Extract key clues
+                clues = self.extract_clues(prompt)
+                
+                # Solve the puzzle
+                result = self.logical_solver(clues, question)
 
-            acc = evaluate_response(result, solution)
-            acc_r = evaluate_response_require(result, solution)
-            acc_o = evaluate_response_optional(result, solution)
+                # Evaluate results
+                acc = evaluate_response(result, solution)
+                acc_r = evaluate_response_require(result, solution)
+                acc_o = evaluate_response_optional(result, solution)
 
-            acc_total += acc
-            acc_req += acc_r
-            acc_opt += acc_o
-            success += 1
+                acc_total += acc
+                acc_req += acc_r
+                acc_opt += acc_o
+                success += 1
 
-            results.append({
-                "prompt": prompt,
-                "clues": clues,
-                "response": result,
-                "solution": solution,
-                "accuracy": acc,
-                "req_acc": acc_r,
-                "opt_acc": acc_o
-            })
+                results.append({
+                    "prompt": prompt,
+                    "clues": clues,
+                    "response": result,
+                    "solution": solution,
+                    "accuracy": acc,
+                    "req_acc": acc_r,
+                    "opt_acc": acc_o
+                })
+            except Exception as e:
+                print(f"Error processing item: {e}")
+                continue
 
         summary = {
             "results": results,
@@ -126,4 +164,7 @@ class LogicTools:
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(summary, f, ensure_ascii=False, indent=2)
 
-        print(f"完成！共处理 {success}/{len(data)} 条，准确率：{summary['statistics']['average_accuracy']:.2%}")
+        print(f"Complete! Processed {success}/{len(data)} puzzles")
+        print(f"Average accuracy: {summary['statistics']['average_accuracy']:.2%}")
+        print(f"Required questions accuracy: {summary['statistics']['average_require_accuracy']:.2%}")
+        print(f"Optional questions accuracy: {summary['statistics']['average_optional_accuracy']:.2%}")
