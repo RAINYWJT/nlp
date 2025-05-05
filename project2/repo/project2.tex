@@ -131,13 +131,58 @@
     Prompt序列推理 & - & - & - \\
     \bottomrule
     \end{tabular}
-    \caption{方法性能对比一}
+    \caption{方法性能对比二}
 \end{table}
 
 
 \subsection{任务三：工具使用}
 
 \subsection{任务四：多智能体对话}
+
+编写代码，模拟现实场景中的多智能体交流，让多个 LLM 以不同角色协
+同解决问题。这个地方我们主要实现一个法庭的辩论这种情形。
+
+因为这个地方跟破案解密有关，我们设置一个法官和证人这种，然后通过self.loop去控制法官和证人会交锋多少轮次。其实我们想做的就是一个类似于GAN一样的，证人讲证据，然后法官二次判断这样来。然后最后法官作出总结陈词。
+
+首先可以证明的是，因为反复问询这种手段的存在性，我们有必要在不同的loop轮次上进行不同次数的实验，因为这可能意味着也许证人提供更多的细节内容，那么法官会更倾向于做出正确选择。
+
+\textbf{首先从准确率上说}
+
+我们首先看在loop为1的情况下的正确率，这个就是最基本的一种情况了，问一次然后总结。
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+    \toprule
+    \textbf{方法} & \textbf{原指标准确度} & \textbf{必答准确度} &\textbf{选答准确度}\\
+    \midrule
+    Agent loop1 & - & - & - \\
+    \bottomrule
+    \end{tabular}
+    \caption{方法性能对比四}
+\end{table}
+
+那么其实，我们可以增加loop次数，由于经费有限，我们随机挑选5个例子来做这个任务，看看五个例子的预测效果会随着loop变化怎么变。
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+    \toprule
+    \textbf{方法} & \textbf{原指标准确度} & \textbf{必答准确度} &\textbf{选答准确度}\\
+    \midrule
+    Agent loop1 & - & - & - \\
+    \hline
+    Agent loop3 & - & - & - \\
+    \hline
+    Agent loop5 & - & - & - \\
+    \bottomrule
+    \end{tabular}
+    \caption{方法性能对比四}
+\end{table}
+
+\textbf{然后从趣味性上说}
+
+我们可以截取一下对话例子：
 
 \section{复现主要实现结果，包括执行命令和环境依赖}
 
@@ -152,6 +197,34 @@ python3 main.py --method 0 -n 0
 其中，method0,1,2,3代表4个不同方法，0代表运行所有数据。
 
 \section{不同方法的实验结果如何}
+
+下面给出四个方法的汇总表格实现：
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+    \toprule
+    \textbf{方法} & \textbf{原指标准确度} & \textbf{必答准确度} &\textbf{选答准确度}\\
+    \midrule
+    API & - & - & - \\
+    \hline
+    Prompt福尔摩斯 & - & - & - \\
+    \hline
+    Prompt序列推理 & - & - & - \\
+    \hline
+    Tools & - & - & - \\
+    \hline
+    Agent loop1（ALL） & - & - & - \\
+    \hline
+    Agent loop1（Random 5） & - & - & - \\
+    \hline
+    Agent loop3（Random 5） & - & - & - \\
+    \hline
+    Agent loop5（Random 5） & - & - & - \\
+    \bottomrule
+    \end{tabular}
+    \caption{方法性能对比四}
+\end{table}
+
 
 \section{遇到的具体问题，如何解决}
 

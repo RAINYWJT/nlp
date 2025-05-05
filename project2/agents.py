@@ -146,9 +146,9 @@ class Agents:
         ]
 
         response = self.client.chat.completions.create(
-            model=self.model,  # 如 "gpt-3.5-turbo" 或 "gpt-4"
+            model=self.model,
             messages=messages,
-            temperature=0.1  # 低随机性，确保稳定输出
+            temperature=0.1 
         )
 
         # 解析 LLM 返回的字典（假设返回的是合法 Python 字典字符串）
