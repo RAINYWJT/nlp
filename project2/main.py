@@ -1,9 +1,9 @@
 import argparse
 
-from api_engineer import SyncApiProcessor
-from prompt_engineer import PromptEngineer
-from tools import LogicTools
-from agents import Agents
+from api_engineer import *
+from prompt_engineer import *
+from tools import *
+from agents import *
 
 
 def main():
@@ -12,9 +12,11 @@ def main():
 
 
     parser.add_argument("-n", "--number", type=int, default=0, help="Number of prompts to process (0 for all)")
+    parser.add_argument("--loop",  type=int, default=1)
+    
+    
     parser.add_argument("--max-retries", type=int, default=5, help="Max retry times")
     parser.add_argument("--retry-delay", type=int, default=1, help="Initial delay between retries (seconds)")
-   
     parser.add_argument("--input-file", type=str, default='data/tc_200_zh.json', help="Input file")
         
     # free QWQ
@@ -76,9 +78,10 @@ def main():
             model=args.model,
             max_retries=args.max_retries,
             retry_delay=args.retry_delay,
+            loop = args.loop
         )
 
-        output_file = 'output/tc_200_zh_output_agent.json'
+        output_file = f'output/tc_200_zh_output_agent_{args.loop}.json'
         processor.run(args.input_file, output_file, args.number)
 
     else:

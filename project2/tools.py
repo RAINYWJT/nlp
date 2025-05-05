@@ -51,6 +51,53 @@ class LogicTools:
             base_url=self.base_url
         )
 
+    
+    def extract_questions_from_prompt(self, prompt: str) -> str:
+        # 使用正则表达式提取 "请回答以下问题" 后的所有内容
+        import re
+        match = re.search(r"请回答以下问题：(.+)", prompt, re.DOTALL)
+        if match:
+            return match.group(1).strip()  # 提取并去掉前后多余的空白字符
+        else:
+            return None  # 如果没有匹配到则返回 None
+
+    def extract_solution(self, conclusion_text, case_prompt):
+        # 构造 Prompt，让 LLM 提取关键信息并格式化
+        questions = self.extract_questions_from_prompt(case_prompt)
+        prompt = f"""
+        请从以下侦探推理结论中提取关键信息，并严格按照指定格式回答：
+
+        **原始结论：**
+        {conclusion_text}
+
+        **要求格式：**
+        {questions}
+
+        **要求：**
+        1. 只提取关键信息，不要解释推理过程。
+        2. 只返回 Python 字典，格式为："A": "格林先生", "B": "喷泉厅", ...。
+        3. 严格按以上格式返回答案.
+        """
+
+        messages = [
+            {"role": "system", "content": "你是一个专业的侦探助手，擅长从文本中提取关键信息并结构化输出。"},
+            {"role": "user", "content": prompt}
+        ]
+
+        response = self.client.chat.completions.create(
+            model=self.model, 
+            messages=messages,
+            temperature=0.1  
+        )
+
+        # 解析 LLM 返回的字典（假设返回的是合法 Python 字典字符串）
+        import ast
+        try:
+            result_dict = ast.literal_eval(response.choices[0].message.content.strip())
+            return result_dict
+        except (SyntaxError, ValueError):
+            return {}
+
     def extract_clues(self, prompt: str) -> List[str]:
         """Extract key clues from the puzzle prompt using LLM"""
         system_msg = """You are a detective assistant that extracts key logical clues from murder mystery puzzles. 
@@ -126,6 +173,7 @@ class LogicTools:
                 
                 # Solve the puzzle
                 result = self.logical_solver(clues, question)
+                result = self.extract_solution(result , prompt)
 
                 # Evaluate results
                 acc = evaluate_response(result, solution)
@@ -168,3 +216,4 @@ class LogicTools:
         print(f"Average accuracy: {summary['statistics']['average_accuracy']:.2%}")
         print(f"Required questions accuracy: {summary['statistics']['average_require_accuracy']:.2%}")
         print(f"Optional questions accuracy: {summary['statistics']['average_optional_accuracy']:.2%}")
+

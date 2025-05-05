@@ -45,12 +45,13 @@ def evaluate_response_optional(response, solution):
 
 
 class Agents:
-    def __init__(self, api_token: str, base_url: str, model: str, max_retries: int, retry_delay: int):
+    def __init__(self, api_token: str, base_url: str, model: str, max_retries: int, retry_delay: int, loop: int):
         self.api_token = api_token
         self.base_url = base_url
         self.model = model
         self.max_retries = max_retries
         self.retry_delay = retry_delay
+        self.loop = loop
 
         self.client = OpenAI(api_key=self.api_token, base_url=self.base_url)
 
@@ -60,7 +61,7 @@ class Agents:
                 response = self.client.chat.completions.create(
                     model=self.model,
                     messages=messages,
-                    temperature=0.7
+                    temperature=0.1
                 )
                 return response.choices[0].message.content.strip()
             except Exception as e:
@@ -70,12 +71,16 @@ class Agents:
 
     def simulate_dialogue(self, case_prompt: str) -> Dict:
         """多智能体对话逻辑"""
+        questions = self.extract_questions_from_prompt(case_prompt)
+        print(questions)
+        # assert 0
+
         messages = [
             {"role": "system", "content": "你是一个法官，请主持一次关于凶杀案的多方调查会议。请调用侦探和证人的陈述，最终得出结论。"},
             {"role": "user", "content": f"案件描述如下：{case_prompt}。请开始案件调查并主持对话。"}
         ]
 
-        for round in range(3):  # 多轮交互
+        for round in range(self.loop):  # 多轮交互
             reply = self.chat(messages)
             messages.append({"role": "assistant", "content": reply})
 
@@ -89,33 +94,72 @@ class Agents:
             reply = self.chat(messages)
             messages.append({"role": "assistant", "content": reply})
 
-        questions = self.extract_questions_from_prompt(case_prompt)
-        # print(questions)
         # 最终由法官总结
         messages.append({"role": "user", "content": 
             f"""
             请你作为法官，综合大家的发言，给出最终推理结论：
             请回答以下问题：
 
+            特别注意，要按照格式回答！
+
             {questions}
             """
         })
-        
+                
         final_response = self.chat(messages)
         return {"dialogue": messages, "conclusion": final_response}
 
-    def extract_solution(self, text: str) -> dict:
-        """从文本中提取答案"""
-        import re
-        match = re.search(r"(.*?答案.*?)\s*(.*)", text, re.DOTALL)
-        if not match:
-            return {}
-        answer_block = match.group(2).strip()
+    # def extract_solution2(self, text: str) -> dict:
+    #     """从文本中提取答案"""
+    #     import re
+    #     match = re.search(r"(.*?答案.*?)\s*(.*)", text, re.DOTALL)
+    #     if not match:
+    #         return {}
+    #     answer_block = match.group(2).strip()
 
-        # 提取 A-K 的答案
-        matches = re.findall(r'([A-F])\.\s*(\S+)', answer_block)
-        return {k: v for k, v in matches}
+    #     # 提取 A-K 的答案
+    #     matches = re.findall(r'([A-K])\.\s*(\S+)', answer_block)
+    #     return {k: v for k, v in matches}
     
+
+    def extract_solution(self, conclusion_text, case_prompt):
+        # 构造 Prompt，让 LLM 提取关键信息并格式化
+        questions = self.extract_questions_from_prompt(case_prompt)
+        prompt = f"""
+        请从以下侦探推理结论中提取关键信息，并严格按照指定格式回答：
+
+        **原始结论：**
+        {conclusion_text}
+
+        **要求格式：**
+        {questions}
+
+        **要求：**
+        1. 只提取关键信息，不要解释推理过程。
+        2. 只返回 Python 字典，格式为："A": "格林先生", "B": "喷泉厅", ...。
+        3. 严格按以上格式返回答案.
+        """
+
+        messages = [
+            {"role": "system", "content": "你是一个专业的侦探助手，擅长从文本中提取关键信息并结构化输出。"},
+            {"role": "user", "content": prompt}
+        ]
+
+        response = self.client.chat.completions.create(
+            model=self.model,  # 如 "gpt-3.5-turbo" 或 "gpt-4"
+            messages=messages,
+            temperature=0.1  # 低随机性，确保稳定输出
+        )
+
+        # 解析 LLM 返回的字典（假设返回的是合法 Python 字典字符串）
+        import ast
+        try:
+            result_dict = ast.literal_eval(response.choices[0].message.content.strip())
+            return result_dict
+        except (SyntaxError, ValueError):
+            # 如果解析失败，手动提取（备用方案）
+            return {}
+            
     def extract_questions_from_prompt(self, prompt: str) -> str:
         # 使用正则表达式提取 "请回答以下问题" 后的所有内容
         import re
@@ -143,10 +187,11 @@ class Agents:
             solution = item["solution"]
 
             result = self.simulate_dialogue(prompt)
-            print(result)
+            print(result["conclusion"])
             # 提取推理结果中的答案
-            prediction = self.extract_solution(result["conclusion"])
-
+            prediction = self.extract_solution(result["conclusion"], prompt)
+            print(prediction)
+            
             # 计算准确度
             accuracy = evaluate_response(prediction, solution)
             require_acc = evaluate_response_require(prediction, solution)
