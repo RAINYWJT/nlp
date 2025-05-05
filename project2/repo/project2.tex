@@ -58,16 +58,98 @@
 % \normalsize
 \maketitle
 
+首先做一个简介：
+
+这次的任务基本是用四个不同方法去尝试把一个解密游戏做好。
+
+\textbf{本来想用免费ai的，比如Free QWQ之类的，但是这一类ai有一个通病就是连接极度不稳定，而且算力分配是有问题的，所以我自费了Kimi，用的模型是中等强度的moonshot-v1-32k。}
+
+\textbf{本次作业制作成本极高。}
+
+同时，由于这个作业评价指标不唯一，所以我设计了三个评价指标
+\begin{itemize}
+    \item 指标一：是否全部答对。只有0，1二值。
+    \item 指标二：在必须回答的问题中，回答对了多少。（非附加问题准确度）
+    \item 指标三：在非必须回答问题中，回答对了多少。（附加问题准确度）
+\end{itemize}
+这个指标设置相对简单，因为我们不去很严格的考虑ai全部能答对，其实这种指标相对的武断了。我们也要考虑到答对了一部分这个情况。
+
 \section{实现方法，对自己设计的代码模块用简洁的语言描述}
 \subsection{任务一：调用 API 生成}
 
+首先是调用api生成，这里我重新写了一个框架，基本思路非常非常easy，就是喂进来一个算一个。
+
+当然，ai错的还是有很多的，我们在这里挑选几个case来观察一下准确率：
+
+\textbf{首先是一个完全正确的例子：}
+
+\textbf{然后是一个部分正确的例子：}
+
+\textbf{最后是一个完全错误的例子：}
+
+可以看出ai的推理还是有缺陷的，我们给出在kimi的moonshot-v1-32k下的准确度：
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+    \toprule
+    \textbf{方法} & \textbf{原指标准确度} & \textbf{必答准确度} &\textbf{选答准确度}\\
+    \midrule
+    API & 2\% & 27.62\% & 27.95\% \\
+    \bottomrule
+    \end{tabular}
+    \caption{方法性能对比一}
+\end{table}
+
+
 \subsection{任务二：Prompt Engineer}
+
+这个任务要求我们化身prompt大师，我们在上面任务的基础上，增加了两个可能帮助我们的大模型进一步生成更准确的推理的prompt：
+
+\textbf{Prompt1: 你是福尔摩斯}:具体操作为：
+\begin{lstlisting}[language=python]
+    def prompt_sherlock(self, question: str) -> str:
+    return f"你是福尔摩斯，接到一个案子：{question} 请详细推理并找出答案。"
+\end{lstlisting}
+
+\textbf{Prompt2: 序列化推导问题}:具体操作为：
+\begin{lstlisting}[language=python]
+    def prompt_step_by_step(self, question: str) -> str:
+    return f"请一步步推理以下问题，并给出符合逻辑的正确的最终答案：{question}"
+\end{lstlisting}
+
+这两个方法最主要功能就是，提醒大模型你的身份，或者你该怎么做，大模型就不会去乱做或者没有任何先验的情况下乱搞。我们得到的结果如下：
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+    \toprule
+    \textbf{方法} & \textbf{原指标准确度} & \textbf{必答准确度} &\textbf{选答准确度}\\
+    \midrule
+    Prompt福尔摩斯 & - & - & - \\
+    \hline
+    Prompt序列推理 & - & - & - \\
+    \bottomrule
+    \end{tabular}
+    \caption{方法性能对比一}
+\end{table}
+
 
 \subsection{任务三：工具使用}
 
 \subsection{任务四：多智能体对话}
 
 \section{复现主要实现结果，包括执行命令和环境依赖}
+
+所有的环境依赖都在requirements.txt中.
+
+你可以选择用指令：\textbf{sh run.sh}来运行程序
+
+如果想单独运行：main.py即可。指令如下:
+
+python3 main.py --method 0 -n 0
+
+其中，method0,1,2,3代表4个不同方法，0代表运行所有数据。
 
 \section{不同方法的实验结果如何}
 

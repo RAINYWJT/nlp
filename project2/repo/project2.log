@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  25 APR 2025 10:31
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  5 MAY 2025 17:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -630,9 +630,11 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
 ) [1
 
-]
+] [2]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./project2.aux)
  ***********
@@ -643,12 +645,12 @@ Package rerunfilecheck Info: File `project2.out' has not changed.
 (rerunfilecheck)             Checksum: 368B487BBC3494BBE631A6978FF782BE;1336.
  ) 
 Here is how much of TeX's memory you used:
- 17770 strings out of 474773
- 359995 string characters out of 5757724
- 1928839 words of memory out of 5000000
- 39713 multiletter control sequences out of 15000+600000
- 563768 words of font info for 74 fonts, out of 8000000 for 9000
+ 18108 strings out of 474773
+ 372456 string characters out of 5757724
+ 1957839 words of memory out of 5000000
+ 40039 multiletter control sequences out of 15000+600000
+ 565667 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 74i,6n,81p,291b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,10n,81p,291b,1741s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on project2.pdf (1 page).
+Output written on project2.pdf (2 pages).
