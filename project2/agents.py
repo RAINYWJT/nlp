@@ -187,10 +187,11 @@ class Agents:
             solution = item["solution"]
 
             result = self.simulate_dialogue(prompt)
-            print(result["conclusion"])
+            # print(result)
+            # assert 0
             # 提取推理结果中的答案
             prediction = self.extract_solution(result["conclusion"], prompt)
-            print(prediction)
+            # print(prediction)
             
             # 计算准确度
             accuracy = evaluate_response(prediction, solution)

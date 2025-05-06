@@ -116,7 +116,7 @@ class SyncApiProcessor:
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0,
                 )
-                # print(response_text)
+                # print(response)
                 result = self.extract_solution(response.choices[0].message.content , prompt)
 
 
