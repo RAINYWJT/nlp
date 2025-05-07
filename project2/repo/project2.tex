@@ -154,6 +154,60 @@
 
 这个结构不止可以保证一定的准确度，因为有llm兜底，而且可以尽量保证结果合理性。
 
+但是对于自然语言，我们似乎没有任何的形式化规则可以拿来一次性搞定所有的内容，所以我们考虑用ai来提取规则，因为我们可以看到，大语言模型对于单个任务并非复杂任务做的还是比较好的。
+
+基本实现思路呢如下：
+
+\begin{lstlisting}[language=python]
+    # 第一步：用LLM解析所有线索
+    structured_data = self._parse_with_llm(clues)
+    
+    # 第二步：用LLM检测所有冲突
+    conflict_report = self._detect_conflicts_with_llm(structured_data)
+\end{lstlisting}
+
+然后我们可以分为以下一些实现：（1）首先是提取部分
+\begin{lstlisting}[language=python]
+    system_msg = """你是一个专业的案件分析助手。请将以下线索解析:
+    {
+        "time_ranges": [
+            {
+                "person": "人名",
+                "start": 开始时间(float),
+                "end": 结束时间(float),
+                "location": "地点"
+            },
+            ...
+        ],
+        "location_logs": [
+            {
+                "person": "人名",
+                "time": 时间点(float),
+                "location": "地点"
+            },
+            ...
+        ]
+    }"""
+\end{lstlisting}
+
+（2）提取冲突：
+
+\begin{lstlisting}[language=python]
+    system_msg = """请分析以下事件数据，检测并返回所有冲突：
+    1. 时间线冲突(同一人时间重叠)
+    2. 空间冲突(同一时间不同地点)
+    3. 移动可行性(地点间移动时间不足)
+    
+    返回格式：
+    {
+        "time_conflicts": [{"person": "人名", "conflict": "冲突描述"}, ...],
+        "space_conflicts": [{"time": 时间, "conflict": "冲突描述"}, ...],
+        "movement_errors": [{"person": "人名", "error": "错误描述"}, ...],
+        "reliable_locations": {"人名": "最可信位置", ...}
+    }"""
+\end{lstlisting}
+
+通过设置这四个时间冲突，空间冲突，动作错误，位置错误这些，就可以提取一个合理的答案了。
 
 \begin{table}[h]
     \centering
@@ -161,11 +215,13 @@
     \toprule
     \textbf{方法} & \textbf{原指标准确度} & \textbf{必答准确度} &\textbf{选答准确度}\\
     \midrule
-    Tools方法 & 0.53\$ & 26.07\% & 26.78\% \\
+    Tools方法 & 3.5\% & 26.75\% & 27.29\% \\
     \bottomrule
     \end{tabular}
     \caption{方法性能对比三}
 \end{table}
+
+看起来，在这个3.5的准确率下，在原准确率下，还是不错的，但是目前看起来，在普遍正确率下做的一般吧，好像这种基于逻辑的判断方式效果一般。
 
 \subsection{任务四：多智能体对话}
 
@@ -275,21 +331,22 @@ python3 main.py --method 0 -n 0
     \toprule
     \textbf{方法} & \textbf{原指标准确度} & \textbf{必答准确度} &\textbf{选答准确度}\\
     \midrule
-    API & - & - & - \\
+    API & 2\% & 27.62\% & 27.95\% \\
     \hline
-    Prompt福尔摩斯 & - & - & - \\
+    Prompt福尔摩斯 & 3\% & 46.79\% & 57.95\% \\
     \hline
-    Prompt序列推理 & - & - & - \\
+    Prompt序列推理 & 3.5\% & 42.62\% & 54.42\% \\
     \hline
-    Tools & - & - & - \\
+    Tools & 3.5\% & 26.75\% & 27.29\% \\
     \hline
-    Agent loop1（ALL） & - & - & - \\
+    Agent loop1（ALL） & 2\% & 26.63\% & 25.75\% \\
     \hline
-    Agent loop1（Random 5） & - & - & - \\
     \hline
-    Agent loop3（Random 5） & - & - & - \\
+    Agent loop1（Random 5） & 40\% & 20\% & 20\% \\
     \hline
-    Agent loop5（Random 5） & - & - & - \\
+    Agent loop3（Random 5） & 40\% & 20\% & 20\% \\
+    \hline
+    Agent loop5（Random 5） & 0\% & 10\% & 0\% \\
     \bottomrule
     \end{tabular}
     \caption{方法性能对比四}

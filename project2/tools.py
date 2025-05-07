@@ -50,7 +50,7 @@ class LogicTools:
 
     def _parse_with_llm(self, clues: List[str]) -> Dict:
         """使用LLM解析所有线索，提取结构化时间线和位置信息"""
-        system_msg = """你是一个专业的事件分析助手。请将以下线索解析为结构化JSON格式：
+        system_msg = """你是一个专业的案件分析助手。请将以下线索解析：
         {
             "time_ranges": [
                 {
