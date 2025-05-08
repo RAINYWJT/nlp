@@ -4,7 +4,7 @@ from api_engineer import *
 from prompt_engineer import *
 from tools import *
 from agents import *
-
+from reforce_pe import *
 
 def main():
     parser = argparse.ArgumentParser(description="Simplified API Processor (sync version)")
@@ -82,6 +82,19 @@ def main():
         )
 
         output_file = f'output/tc_200_zh_output_agent_{args.loop}.json'
+        processor.run(args.input_file, output_file, args.number)
+
+    elif args.method == 4:
+        print("---------------   Method Reinforce Prompt Engineer!   ---------------")
+        processor = RePromptEngineer(
+            api_token=args.api_token,
+            base_url=args.base_url,
+            model=args.model,
+            max_retries=args.max_retries,
+            retry_delay=args.retry_delay,
+        )
+
+        output_file = 'output/tc_200_zh_output_repe.json'
         processor.run(args.input_file, output_file, args.number)
 
     else:
