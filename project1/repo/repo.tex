@@ -59,7 +59,7 @@
 \maketitle
 \textbf{写在开头，请助教老师一定要看完这份报告。先说结果，方便老师评价,\\
     正常方法 F0.5: 0.1991 ± 0.0049，\\
-    用了预训练模型（作弊方法） F0.5: 0.4120}
+    用了预训练模型（挺作弊的一个方法） F0.5: 0.4120}
 
 综述，首先观察代码结构，逻辑如下：
 \begin{itemize}
@@ -279,7 +279,7 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 
 所以我们尝试去不用预训练的去弄一个bert架构的。同时引入3种噪声，insert，delete，replace。但是
 有一个问题是，训练集太小了，bert完全训练不出来，最后结果就是一个都不对。
-
+\textbf{(尝试过数据增强，但是由于本身数据集是稀疏的，然后就会导致一个问题，就是数据增强的时候，很多结果本身带来了噪声，导致更不准确了)}
 \begin{figure}[H]
     \centering
     \label{nn}
@@ -384,7 +384,7 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
 
 
 \section{不同实验方法的对比结果}
-
+Ps:ml模型没有固定种子，所以可能运行出来有所略微区别。
 \begin{table}[H]
     \centering
     \begin{tabular}{ccccccc}
@@ -434,6 +434,12 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
     听起来可能有点怪，不在test做学习，也就是说，我们的就用\textbf{训练集}分布去fit测试集分布。但这样对于这个任务（非在线的）其实好像是不泄漏的。
     所以我也尝试这么去做一下。
 
+    简单的讲两者的区别就是：
+    \begin{itemize}
+        \item 第一个把train和test都作为学习集了。
+        \item 第二个train拿来学习，然后把学到的在线模型拿到test评估。
+    \end{itemize}
+
     \begin{figure}[H]
         \centering
         \label{olnc}
@@ -447,7 +453,7 @@ ngram模型主要是要修改\_train\_ngram\_model,对于这个东西，首先�
         \centering
         \begin{tabular}{ccc}
         \toprule
-        \textbf{模型} & \textbf{在线学习模型} & \textbf{在线不学习模型}\\
+        \textbf{模型} & \textbf{在线学习模型} & \textbf{在线学习模型2}\\
         \midrule
         F0.5 & \textbf{0.1812 ± 0.0055} & \textbf{0.1991 ± 0.0049}  \\
         \bottomrule

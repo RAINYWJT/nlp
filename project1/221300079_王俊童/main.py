@@ -227,6 +227,12 @@ def main():
     for sample in tqdm(test_data, ncols=100):
         source = sample['source']
         corrected = corrector.correct(source)
+
+        # print(sample['label'])
+        # print(sample['source'])
+        # print(corrected)
+        # print(sample['target'])
+        # print(' ')
         predictions.append(
             {'source': source, 'prediction': corrected, 'target': sample['target'], 'label': sample['label']}
         )

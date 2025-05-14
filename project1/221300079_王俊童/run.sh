@@ -18,7 +18,7 @@ pip install -r requirements.txt
 echo "验证环境中依赖是否有冲突..."
 pip check
 
-echo "✅ 环境检查完毕！你现在可以运行主程序了，例如："
+echo "✅ 环境检查完毕！现在可以运行主程序了："
 
 echo "请选择你要运行的模型: "
 echo "1. Rule-based"

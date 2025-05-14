@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  11 APR 2025 09:35
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.8.29)  23 APR 2025 09:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -696,12 +696,12 @@ Overfull \hbox (29.24982pt too wide) in paragraph at lines 347--348
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
+[7]
 Overfull \hbox (11.24963pt too wide) in paragraph at lines 353--354
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[7]
+
 Underfull \hbox (badness 10000) in paragraph at lines 424--424
 []\TU/FandolSong-Regular(0)/b/n/10 模
  []
@@ -724,9 +724,10 @@ Overfull \hbox (5.01772pt too wide) in paragraph at lines 426--426
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[8]
 File: ../pic/olnc.png Graphic file (type bmp)
 <../pic/olnc.png>
-[8] [9]
+ [9]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./repo.aux)
  ***********
@@ -739,10 +740,10 @@ Package rerunfilecheck Info: File `repo.out' has not changed.
 Here is how much of TeX's memory you used:
  18107 strings out of 474773
  377241 string characters out of 5757724
- 1975839 words of memory out of 5000000
+ 1976839 words of memory out of 5000000
  40025 multiletter control sequences out of 15000+600000
  565539 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 74i,10n,81p,469b,1661s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,81p,469b,1661s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on repo.pdf (9 pages).
